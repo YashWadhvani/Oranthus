@@ -8,8 +8,8 @@ import { categoryPageQuery } from "@/sanity/lib/queries";
 
 type CategoryProduct = {
   _id: string;
-  name?: string | null;
-  slug?: string | null;
+  name: string;
+  slug: string;
   description?: string | null;
   thumbnailUrl?: string | null;
   thumbnailAlt?: string | null;

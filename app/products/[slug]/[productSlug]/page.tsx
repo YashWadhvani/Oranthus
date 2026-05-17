@@ -13,9 +13,41 @@ type ProductPageProps = {
   }>;
 };
 
+type ProductDetail = {
+  _id: string;
+  name: string;
+  description?: string | null;
+  sourcing?: string | null;
+  slug?: string | null;
+  thumbnailUrl?: string | null;
+  thumbnailAlt?: string | null;
+  category?: {
+    _id: string;
+    title?: string | null;
+    slug?: string | null;
+  } | null;
+  grade?: string | null;
+  specifications?: {
+    label?: string | null;
+    value?: string | null;
+  }[] | null;
+  packaging?: string | null;
+  moq?: string | null;
+  moqNote?: string | null;
+  origin?: string | null;
+  leadTime?: string | null;
+  shelfLife?: string | null;
+  storageInstructions?: string | null;
+  applications?: string[] | null;
+  certificationNotes?: string[] | null;
+};
+
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug, productSlug } = await params;
-  const product = await client.fetch(productPageQuery, { slug, productSlug });
+  const product = await client.fetch<ProductDetail | null>(productPageQuery, {
+    categorySlug: slug,
+    productSlug,
+  });
 
   if (!product) {
     notFound();
@@ -103,7 +135,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <CardContent className="p-8">
               <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">Specifications</p>
               <div className="mt-6 space-y-4">
-                {product.specifications?.length ? product.specifications.map((spec: { label?: string; value?: string }) => (
+                {product.specifications?.length ? product.specifications.map((spec) => (
                   <div key={`${spec.label}-${spec.value}`} className="flex items-start justify-between gap-4 border-b border-[#ECE8DF] pb-3">
                     <span className="text-sm font-medium text-[#111111]">{spec.label}</span>
                     <span className="text-sm text-[#555555] text-right">{spec.value}</span>
