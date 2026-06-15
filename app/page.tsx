@@ -1,103 +1,68 @@
-import SlideHero from "../components/home/SlideHero";
-import Marquee from "../components/home/Marquee";
-import AnimatedStats from "../components/home/AnimatedStats";
-import About from "../components/home/About";
-import TradeScaleSection from "@/components/home/TradeScaleSection";
+import SlideHero from "@/components/home/SlideHero";
+import Marquee from "@/components/home/Marquee";
+import AnimatedStats from "@/components/home/AnimatedStats";
+import About from "@/components/home/About";
+import Services from "@/components/home/Services";
 import Categories from "@/components/home/Categories";
 import Certifications from "@/components/home/Certifications";
 import CTA from "@/components/home/CTA";
-import OperationsSection from "@/components/home/OperationsSection";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import Services from "@/components/home/Services";
-import ProductCategories from "@/components/home/ProductCategories";
+import TradeScaleSection from "@/components/home/TradeScaleSection";
 
 import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
 
 export default async function HomePage() {
-  const content = await client.fetch(homepageQuery);
-  const homepage = content?.homepage;
-  const heroSlides =
-    homepage?.heroSlides && homepage.heroSlides.length > 0
-      ? homepage.heroSlides
-      : homepage?.heroTitle || homepage?.heroSubtitle || homepage?.heroEyebrow
-      ? [
-          {
-            imageUrl: homepage?.heroImageUrl,
-            imageAlt: homepage?.heroImageAlt,
-            eyebrow: homepage?.heroEyebrow,
-            title: homepage?.heroTitle,
-            subtitle: homepage?.heroSubtitle,
-            ctaText: homepage?.heroCtaText,
-            ctaHref: "#products",
-            secondaryCtaText: homepage?.heroSecondaryCtaText,
-            secondaryCtaHref: homepage?.heroSecondaryCtaHref,
-          },
-        ]
-      : null;
+    const content = await client.fetch(homepageQuery);
 
-  return (
-    <>
-      <SlideHero slides={heroSlides} />
+    const homepage = content?.homepage;
+    const about = content?.about;
 
-      <Marquee items={content?.homepage?.marqueeItems} />
+    return (
+        <>
+            {/* Hero */}
 
-      <AnimatedStats stats={content?.homepage?.statCounters} />
+            <SlideHero slides={homepage?.heroSlides ?? []} />
 
-      <About
-        eyebrow={homepage?.aboutEyebrow}
-        title={homepage?.aboutTitle}
-        description={homepage?.aboutDescription}
-        stats={homepage?.aboutStats}
-      />
+            {/* Marquee */}
 
-      <ProductCategories
-        eyebrow={homepage?.productCategoriesEyebrow}
-        title={homepage?.productCategoriesTitle}
-        description={homepage?.productCategoriesDescription}
-        categories={homepage?.productCategories}
-      />
+            <Marquee items={homepage?.marqueeItems ?? []} />
 
-      <Services
-        eyebrow={homepage?.servicesEyebrow}
-        title={homepage?.servicesTitle}
-        description={homepage?.servicesDescription}
-        services={homepage?.services}
-      />
+            {/* Stats */}
 
-      <TradeScaleSection office={content?.contactInfo} />
+            <AnimatedStats stats={homepage?.stats ?? []} />
 
-      <Categories
-        eyebrow={homepage?.categoriesEyebrow}
-        title={homepage?.categoriesTitle}
-        description={homepage?.categoriesDescription}
-        categories={content?.categories}
-      />
+            {/* About Preview */}
 
-      <WhyChooseUs
-        eyebrow={homepage?.whyChooseUsEyebrow}
-        title={homepage?.whyChooseUsTitle}
-        description={homepage?.whyChooseUsDescription}
-        features={homepage?.whyChooseUsFeatures}
-      />
+            <About
+                title={about?.overviewTitle}
+                description={about?.overviewDescription}
+                stats={about?.stats}
+            />
 
-      <OperationsSection
-      />
+            {/* Services */}
 
-      <Certifications
-        eyebrow={homepage?.certificationsEyebrow}
-        title={homepage?.certificationsTitle}
-        description={homepage?.certificationsDescription}
-        certifications={content?.certifications}
-      />
+            <Services services={homepage?.featuredServices ?? []} />
 
-      <CTA
-        eyebrow={homepage?.ctaEyebrow}
-        title={homepage?.ctaTitle}
-        description={homepage?.ctaDescription}
-        buttonText={homepage?.ctaButtonText}
-        buttonHref={homepage?.ctaButtonHref}
-      />
-    </>
-  );
+            {/* Categories */}
+
+            <Categories categories={homepage?.featuredCategories ?? []} />
+
+            {/* Trade Section */}
+
+            <TradeScaleSection office={content?.siteSettings} />
+
+            {/* Certifications */}
+
+            <Certifications certifications={content?.certifications ?? []} />
+
+            {/* CTA */}
+
+            <CTA
+                title={homepage?.ctaTitle}
+                description={homepage?.ctaDescription}
+                buttonText={homepage?.ctaButtonText}
+                buttonHref={homepage?.ctaButtonHref}
+            />
+        </>
+    );
 }

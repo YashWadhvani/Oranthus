@@ -1,87 +1,106 @@
-// src/components/layout/Footer.tsx
-
 import Link from "next/link";
 
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Contact", href: "/contact" },
-];
-
-type ContactInfo = {
-  email?: string | null;
-  phone?: string | null;
-  address?: string | null;
-  whatsapp?: string | null;
-};
+import { SiteSettings } from "@/types/site-settings";
 
 type FooterProps = {
-  contactInfo?: ContactInfo | null;
+    siteSettings?: SiteSettings | null;
 };
 
-export default function Footer({ contactInfo }: FooterProps) {
-  return (
-    <footer className="border-t border-[#ECE8DF] bg-[#FAF8F5]">
-      <div className="container-width py-20">
-        
-        <div className="grid gap-16 md:grid-cols-3">
-          
-          {/* Brand */}
-          <div>
-            <h2
-              className="text-3xl font-semibold text-[#111111]"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              Oranthus
-            </h2>
+const quickLinks = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Products", href: "/products" },
+    { label: "Services", href: "/services" },
+    { label: "Contact", href: "/contact" },
+];
 
-            <p className="mt-6 max-w-sm text-base leading-relaxed text-[#555555] font-light">
-              Premium exporters of high-quality dried products,
-              delivering excellence, trust, and global standards.
-            </p>
-          </div>
+export default function Footer({ siteSettings }: FooterProps) {
+    return (
+        <footer className="border-t border-[#ECE8DF] bg-[#FAF8F5]">
+            <div className="container-width py-20">
+                <div className="grid gap-16 md:grid-cols-3">
+                    <div>
+                        <h2
+                            className="text-3xl font-semibold text-[#111111]"
+                            style={{ fontFamily: "var(--font-playfair)" }}
+                        >
+                            {siteSettings?.companyName || "ORANTHUS"}
+                        </h2>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-[#111111]">
-              Quick Links
-            </h3>
+                        <p className="mt-6 max-w-sm text-base leading-relaxed text-[#555555] font-light">
+                            {siteSettings?.tagline ||
+                                "Born in India. Built for the World."}
+                        </p>
+                    </div>
 
-            <div className="mt-6 flex flex-col gap-4">
-              {quickLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-base text-[#555555] transition-colors hover:text-[#D9A96B] font-light"
-                >
-                  {link.label}
-                </Link>
-              ))}
+                    <div>
+                        <h3 className="text-lg font-semibold text-[#111111]">
+                            Quick Links
+                        </h3>
+
+                        <div className="mt-6 flex flex-col gap-4">
+                            {quickLinks.map((link) => (
+                                <Link
+                                    key={link.label}
+                                    href={link.href}
+                                    className="text-base font-light text-[#555555] transition-colors hover:text-[#D9A96B]"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-lg font-semibold text-[#111111]">
+                            Contact
+                        </h3>
+
+                        <div className="mt-6 space-y-4 text-base font-light text-[#555555]">
+                            {siteSettings?.address && (
+                                <p>{siteSettings.address}</p>
+                            )}
+
+                            {siteSettings?.email && (
+                                <a
+                                    href={`mailto:${siteSettings.email}`}
+                                    className="block hover:text-[#D9A96B]"
+                                >
+                                    {siteSettings.email}
+                                </a>
+                            )}
+
+                            {siteSettings?.phone && (
+                                <a
+                                    href={`tel:${siteSettings.phone}`}
+                                    className="block hover:text-[#D9A96B]"
+                                >
+                                    {siteSettings.phone}
+                                </a>
+                            )}
+
+                            {siteSettings?.website && (
+                                <a
+                                    href={siteSettings.website}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="block hover:text-[#D9A96B]"
+                                >
+                                    {siteSettings.website}
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-16 border-t border-[#ECE8DF] pt-8 text-center">
+                    <p className="text-sm font-light text-[#555555]">
+                        © {new Date().getFullYear()}{" "}
+                        {siteSettings?.companyName || "ORANTHUS"}. All rights
+                        reserved.
+                    </p>
+                </div>
             </div>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg font-semibold text-[#111111]">
-              Contact
-            </h3>
-
-            <div className="mt-6 space-y-4 text-base text-[#555555] font-light">
-              <p>{contactInfo?.address || "Ahmedabad, Gujarat, India"}</p>
-              <p>{contactInfo?.email || "contact@oranthus.com"}</p>
-              <p>{contactInfo?.phone || "+91 98765 43210"}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-16 border-t border-[#ECE8DF] pt-8 text-center">
-          <p className="text-sm text-[#555555] font-light">
-            © {new Date().getFullYear()} Oranthus. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 }

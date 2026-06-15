@@ -1,135 +1,74 @@
 import { defineQuery } from "next-sanity";
 
-export const homepageQuery = defineQuery(`
-  {
-    "homepage": *[_type == "homepage"][0]{
-      heroSlides[]{
-        "imageUrl": coalesce(imageUrl, image.asset->url),
-        "imageAlt": coalesce(image.alt, title),
-        eyebrow,
-        title,
-        subtitle,
-        ctaText,
-        ctaHref,
-        secondaryCtaText,
-        secondaryCtaHref
-      },
-      marqueeItems[]{
-        text
-      },
-      statCounters[]{
-        value,
-        label,
-        suffix
-      },
-      heroEyebrow,
-      heroTitle,
-      heroSubtitle,
-      heroCtaText,
-      heroSecondaryCtaText,
-      heroSecondaryCtaHref,
-      "heroImageUrl": heroImage.asset->url,
-      "heroImageAlt": coalesce(heroImage.alt, heroTitle),
-      heroStats[]{
-        value,
-        label
-      },
-      aboutEyebrow,
-      aboutTitle,
-      aboutDescription,
-      aboutVisionEyebrow,
-      aboutVisionTitle,
-      aboutVisionDescription,
-      aboutMissionEyebrow,
-      aboutMissionTitle,
-      aboutMissionDescription,
-      aboutValuesEyebrow,
-      aboutValuesTitle,
-      aboutValuesDescription,
-      aboutValues[] {
-        title,
-        description,
-        icon
-      },
-      aboutFounderEyebrow,
-      aboutFounderTitle,
-      aboutFounderName,
-      aboutFounderRole,
-      aboutFounderMessage,
-      aboutSourcingEyebrow,
-      aboutSourcingTitle,
-      aboutSourcingDescription,
-      aboutSourcingPoints,
-      aboutStats[]{
-        value,
-        label
-      },
-      categoriesEyebrow,
-      categoriesTitle,
-      categoriesDescription,
-      whyChooseUsEyebrow,
-      whyChooseUsTitle,
-      whyChooseUsDescription,
-      whyChooseUsFeatures[]{
-        title,
-        description,
-        icon
-      },
-      certificationsEyebrow,
-      certificationsTitle,
-      certificationsDescription,
-      ctaEyebrow,
-      ctaTitle,
-      ctaDescription,
-      ctaButtonText,
-      ctaButtonHref,
-      servicesEyebrow,
-      servicesTitle,
-      servicesDescription,
-      services[]{
-        title,
-        description,
-        icon
-      },
-      productCategoriesEyebrow,
-      productCategoriesTitle,
-      productCategoriesDescription,
-      productCategories[]{
-        name,
-        description,
-        items
-      }
+export const homepageQuery = `
+{
+  "homepage": *[_type == "homepage"][0]{
+    heroSlides,
+    marqueeItems,
+    stats,
+
+    featuredCategories[]->{
+      _id,
+      name,
+      description,
+      image,
+      "slug": slug.current
     },
-    "categories": *[_type == "category"] | order(title asc) {
+
+    featuredServices[]->{
       _id,
       title,
       description,
-      "slug": slug.current,
-      "imageUrl": image.asset->url,
-      "imageAlt": coalesce(image.alt, title),
-      "productCount": count(*[_type == "product" && references(^._id)])
+      icon,
+      "slug": slug.current
     },
-    "certifications": *[_type == "certification"] | order(title asc) {
-      _id,
-      title,
-      "imageUrl": image.asset->url,
-      "imageAlt": coalesce(image.alt, title),
-      description,
-      issuer,
-      scope,
-      validity,
-      standards
-    },
-    "contactInfo": *[_type == "contactInfo"][0]{
-      email,
-      phone,
-      address,
-      whatsapp,
-      mapEmbedUrl,
-      businessHours
-    }
-  }
-`);
+
+    ctaTitle,
+    ctaDescription,
+    ctaButtonText,
+    ctaButtonHref
+  },
+
+  "about": *[_type == "aboutPage"][0]{
+    overviewTitle,
+    overviewDescription,
+    stats
+  },
+
+  "categories": *[_type == "category"] | order(name asc),
+
+  "services": *[_type == "service"] | order(title asc),
+
+  "certifications": *[_type == "certification"],
+
+  "siteSettings": *[_type == "siteSettings"][0]
+}
+`;
+
+export const aboutPreviewQuery = `
+*[_type=="aboutPage"][0]{
+  overviewTitle,
+  overviewDescription,
+  stats
+}
+`;
+
+export const whyChooseUsQuery = `
+*[_type=="whyChooseUs"][0]{
+  title,
+  description,
+  features
+}
+`;
+
+export const certificationsQuery = `
+*[_type=="certification"]{
+  _id,
+  title,
+  image,
+  description
+}
+`;
 
 export const productsPageQuery = defineQuery(`
   {
@@ -209,3 +148,26 @@ export const productPageQuery = defineQuery(`
     certificationNotes
   }
 `);
+
+export const siteSettingsQuery = `
+  *[_type == "siteSettings"][0]{
+    companyName,
+    tagline,
+
+    logo,
+    favicon,
+
+    email,
+    phone,
+    whatsapp,
+    website,
+    address,
+    googleMapsLink,
+
+    seoTitle,
+    seoDescription,
+    ogImage,
+
+    socialLinks
+  }
+`;

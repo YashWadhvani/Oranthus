@@ -1,14 +1,14 @@
-import { defineType, defineField } from "sanity";
+import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "product",
-  title: "Products",
+  title: "Product",
   type: "document",
 
   fields: [
     defineField({
       name: "name",
-      title: "Product Name",
+      title: "Name",
       type: "string",
     }),
 
@@ -19,6 +19,13 @@ export default defineType({
       options: {
         source: "name",
       },
+    }),
+
+    defineField({
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "category" }],
     }),
 
     defineField({
@@ -35,51 +42,21 @@ export default defineType({
     }),
 
     defineField({
+      name: "shortDescription",
+      title: "Short Description",
+      type: "text",
+    }),
+
+    defineField({
       name: "description",
       title: "Description",
       type: "text",
     }),
 
     defineField({
-      name: "sourcing",
-      title: "Sourcing",
-      type: "text",
-    }),
-
-    defineField({
-      name: "category",
-      title: "Category",
-      type: "reference",
-      to: [{ type: "category" }],
-    }),
-
-    defineField({
-      name: "grade",
-      title: "Grade",
+      name: "origin",
+      title: "Origin",
       type: "string",
-    }),
-
-    defineField({
-      name: "specifications",
-      title: "Specifications",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            defineField({
-              name: "label",
-              title: "Label",
-              type: "string",
-            }),
-            defineField({
-              name: "value",
-              title: "Value",
-              type: "string",
-            }),
-          ],
-        },
-      ],
     }),
 
     defineField({
@@ -90,25 +67,7 @@ export default defineType({
 
     defineField({
       name: "moq",
-      title: "Minimum Order Quantity",
-      type: "string",
-    }),
-
-    defineField({
-      name: "origin",
-      title: "Origin",
-      type: "string",
-    }),
-
-    defineField({
-      name: "moqNote",
-      title: "MOQ Note",
-      type: "text",
-    }),
-
-    defineField({
-      name: "leadTime",
-      title: "Lead Time",
+      title: "MOQ",
       type: "string",
     }),
 
@@ -119,23 +78,9 @@ export default defineType({
     }),
 
     defineField({
-      name: "storageInstructions",
-      title: "Storage Instructions",
-      type: "text",
-    }),
-
-    defineField({
-      name: "applications",
-      title: "Applications",
-      type: "array",
-      of: [{ type: "string" }],
-    }),
-
-    defineField({
-      name: "certificationNotes",
-      title: "Certification Notes",
-      type: "array",
-      of: [{ type: "string" }],
+      name: "featured",
+      title: "Featured",
+      type: "boolean",
     }),
   ],
 });
