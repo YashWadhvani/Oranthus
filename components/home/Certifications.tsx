@@ -1,4 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+
+import { cardVariants, itemVariants, sectionVariants } from "./motion";
 
 type Certification = {
   _id?: string;
@@ -32,18 +37,29 @@ export default function Certifications({
   return (
     <section id="certifications" style={{ scrollMarginTop: "6rem" }} className="bg-[#FFFFFF] section-padding py-16 sm:py-24 md:py-28 lg:py-32">
       <div className="container-width">
-        <div className="mb-20 text-center max-w-3xl mx-auto">
-          <p className="mb-8 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">{eyebrow}</p>
+        <motion.div
+          className="mb-20 text-center max-w-3xl mx-auto"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-15% 0px" }}
+        >
+          <motion.p variants={itemVariants} className="mb-8 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">{eyebrow}</motion.p>
 
-          <h2 className="text-5xl lg:text-6xl font-semibold leading-[1.2] tracking-tight text-[#111111] mb-8" style={{ fontFamily: "var(--font-playfair)" }}>{title}</h2>
+          <motion.h2 variants={itemVariants} className="text-5xl lg:text-6xl font-semibold leading-[1.2] tracking-tight text-[#111111] mb-8" style={{ fontFamily: "var(--font-playfair)" }}>{title}</motion.h2>
 
-          <p className="text-lg leading-relaxed text-[#555555] font-light">{description}</p>
-        </div>
+          <motion.p variants={itemVariants} className="text-lg leading-relaxed text-[#555555] font-light">{description}</motion.p>
+        </motion.div>
 
         <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
           {certifications?.map((item, index) => (
-            <div 
+            <motion.div 
               key={item?._id ?? `${item?.title ?? "certification"}-${index}`} 
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-12% 0px" }}
+              transition={{ delay: index * 0.08 }}
               className="group flex flex-col items-center gap-5 rounded-2xl border border-[#ECE8DF] bg-[#FAF8F5] p-8 text-center shadow-[0_8px_24px_rgba(15,15,15,0.04)] hover:shadow-[0_12px_32px_rgba(15,15,15,0.08)] transition-all duration-300 hover:-translate-y-2 hover:bg-[#FFFFFF]"
             >
               <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-[#D9A96B]/10 to-transparent border border-[#D9A96B]/10 group-hover:border-[#D9A96B]/20 transition-colors">
@@ -67,7 +83,7 @@ export default function Certifications({
                   ))}
                 </div>
               ) : null}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

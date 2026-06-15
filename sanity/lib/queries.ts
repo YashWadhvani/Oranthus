@@ -3,6 +3,25 @@ import { defineQuery } from "next-sanity";
 export const homepageQuery = defineQuery(`
   {
     "homepage": *[_type == "homepage"][0]{
+      heroSlides[]{
+        "imageUrl": coalesce(imageUrl, image.asset->url),
+        "imageAlt": coalesce(image.alt, title),
+        eyebrow,
+        title,
+        subtitle,
+        ctaText,
+        ctaHref,
+        secondaryCtaText,
+        secondaryCtaHref
+      },
+      marqueeItems[]{
+        text
+      },
+      statCounters[]{
+        value,
+        label,
+        suffix
+      },
       heroEyebrow,
       heroTitle,
       heroSubtitle,
@@ -63,7 +82,23 @@ export const homepageQuery = defineQuery(`
       ctaTitle,
       ctaDescription,
       ctaButtonText,
-      ctaButtonHref
+      ctaButtonHref,
+      servicesEyebrow,
+      servicesTitle,
+      servicesDescription,
+      services[]{
+        title,
+        description,
+        icon
+      },
+      productCategoriesEyebrow,
+      productCategoriesTitle,
+      productCategoriesDescription,
+      productCategories[]{
+        name,
+        description,
+        items
+      }
     },
     "categories": *[_type == "category"] | order(title asc) {
       _id,

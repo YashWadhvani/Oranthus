@@ -24,133 +24,140 @@ type HeroProps = {
 };
 
 export default function Hero({
-  eyebrow = "Global Import & Export",
-  title = "Premium Global Exporters of Dried Products",
-  subtitle = "Delivering high-quality dried products worldwide with trusted sourcing, premium packaging, and export excellence.",
-  ctaText = "Explore Products",
-  secondaryCtaText = "Contact Us",
+  eyebrow = "INTERNATIONAL TRADE · SINCE 1999",
+  title = "Moving Markets.\nConnecting Continents.",
+  subtitle = "Oranthus is a premier international trading house, handling commodities, manufactured goods, and specialty products across 40+ countries with precision, scale, and trust.",
+  ctaText = "Partner With Us",
+  secondaryCtaText = "Explore Capabilities",
   secondaryCtaHref = "#contact",
   heroImage = "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?q=80&w=1200&auto=format&fit=crop",
-  heroImageAlt = "Premium dried products arranged for export",
+  heroImageAlt = "Container ship and port cranes at sunset",
   stats = [
-    { value: "10+", label: "Countries Served" },
-    { value: "50+", label: "Product Variants" },
+    { value: "40+", label: "Countries Served" },
+    { value: "500M+", label: "Annual Trade Volume" },
   ],
 }: HeroProps) {
   const { scrollTo } = useLenis()
+  const tickerItems = [
+    "ISO 22000 Certified",
+    "Herbs & Botanicals",
+    "Dehydrated Tomato Flakes",
+    "EU & US Import Ready",
+    "Dried Apricot & Fig",
+    "Moringa Leaf",
+  ]
+
   return (
-    <section id="home" style={{ scrollMarginTop: "6rem" }} className="relative overflow-hidden bg-[#FFFFFF] py-16 sm:py-24 md:py-28 lg:py-32 section-padding">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(217,169,107,0.06),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(17,17,17,0.01),transparent_40%)]" />
+    <section id="home" style={{ scrollMarginTop: "6rem" }} className="relative overflow-hidden min-h-[92vh] bg-[#111111] text-white">
+      <div className="absolute inset-0">
+        <Image
+          src={heroImage || "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?q=80&w=1200&auto=format&fit=crop"}
+          alt={heroImageAlt || title || "Hero image"}
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          loading="eager"
+          priority
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,15,15,0.82)_0%,rgba(15,15,15,0.62)_42%,rgba(15,15,15,0.34)_70%,rgba(15,15,15,0.24)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,169,107,0.28),transparent_26%),radial-gradient(circle_at_left_center,rgba(255,255,255,0.08),transparent_26%)]" />
+      </div>
 
-      <div className="container-width grid items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24 lg:grid-cols-2 lg:gap-40">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <p className="mb-8 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">
-            {eyebrow}
-          </p>
-
-          <h1 className="text-6xl lg:text-7xl font-semibold leading-[1.15] tracking-tight text-[#111111] mb-10 max-w-2xl" style={{ fontFamily: "var(--font-playfair)" }}>
-            {title}
-          </h1>
-
-          <p className="text-lg leading-relaxed text-[#555555] mt-8 max-w-xl font-light">
-            {subtitle}
-          </p>
-
-          <div className="mt-14 flex flex-wrap gap-6 items-center">
-            <Button asChild className="bg-[#D9A96B] px-10 py-8 text-white text-base font-medium rounded-lg hover:bg-[#c89a5a] transition-all duration-300 shadow-md hover:shadow-lg">
-              <a
-                href="#products"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo("#products", { offset: -80 })
-                }}
-              >
-                {ctaText}
-              </a>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              className="border-2 border-[#D9A96B] text-[#D9A96B] px-10 py-8 text-base font-medium rounded-lg hover:bg-[#D9A96B] hover:text-white transition-all duration-300"
+      <div className="relative z-10 flex min-h-[92vh] flex-col">
+        <div className="container-width flex-1 px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="flex min-h-[92vh] items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, ease: "easeOut" }}
+              className="max-w-4xl py-20 sm:py-24 lg:py-28"
             >
-              <a
-                href={secondaryCtaHref ?? undefined}
-                onClick={(e) => {
-                  if (secondaryCtaHref && secondaryCtaHref.startsWith("#")) {
-                    e.preventDefault()
-                    scrollTo(secondaryCtaHref, { offset: -80 })
-                  }
-                  // otherwise allow normal navigation for external/internal links
-                }}
+              <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[#F0D7AA]">
+                {eyebrow}
+              </p>
+
+              <h1
+                className="mt-6 max-w-4xl text-6xl font-semibold leading-[0.98] tracking-tight text-white sm:text-7xl lg:text-[5.5rem]"
+                style={{ fontFamily: "var(--font-playfair)" }}
               >
-                {secondaryCtaText}
-              </a>
-            </Button>
+                {title}
+              </h1>
+
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-white/82 sm:text-xl">
+                {subtitle}
+              </p>
+
+              <div className="mt-12 flex flex-wrap gap-4 sm:gap-5">
+                <Button asChild className="h-14 rounded-md bg-[#F4E6C6] px-8 text-sm font-medium text-[#1A1A1A] shadow-[0_12px_30px_rgba(0,0,0,0.22)] transition-all duration-300 hover:bg-[#fff0d6] hover:translate-y-[-1px]">
+                  <a
+                    href="#products"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollTo("#products", { offset: -96 });
+                    }}
+                  >
+                    {ctaText}
+                  </a>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-14 rounded-md border border-white/45 bg-white/6 px-8 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/12"
+                >
+                  <a
+                    href={secondaryCtaHref ?? undefined}
+                    onClick={(e) => {
+                      if (secondaryCtaHref && secondaryCtaHref.startsWith("#")) {
+                        e.preventDefault();
+                        scrollTo(secondaryCtaHref, { offset: -96 });
+                      }
+                    }}
+                  >
+                    {secondaryCtaText}
+                  </a>
+                </Button>
+              </div>
+
+              <div className="mt-14 grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-2">
+                {stats?.map((stat, index) => (
+                  <motion.div
+                    key={`${stat?.label ?? "stat"}-${index}`}
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 + index * 0.1, duration: 0.55 }}
+                    className="rounded-2xl border border-white/12 bg-white/8 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.22)] backdrop-blur-md"
+                  >
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-white/65">
+                      Statistics
+                    </p>
+                    <h3 className="mt-4 text-4xl font-semibold text-white">
+                      {stat?.value}
+                    </h3>
+                    <p className="mt-3 text-sm text-white/76">
+                      {stat?.label}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
+        </div>
 
-          <div className="mt-20 grid gap-8 sm:grid-cols-2">
-            {stats?.map((stat, index) => (
-              <motion.div
-                key={`${stat?.label ?? "stat"}-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
-                className="rounded-2xl border border-[#ECE8DF] bg-[#FAF8F5] p-8 shadow-[0_8px_24px_rgba(15,15,15,0.04)] hover:shadow-[0_12px_32px_rgba(15,15,15,0.08)] transition-shadow duration-300"
-              >
-                <p className="text-xs uppercase tracking-[0.2em] text-[#555555] font-medium">
-                  Statistics
-                </p>
-                <h3 className="text-4xl font-semibold text-[#D9A96B] mt-4">
-                  {stat?.value}
-                </h3>
-                <p className="mt-3 text-base text-[#555555] font-light">
-                  {stat?.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, ease: "easeOut" }} className="relative">
-          <div className="absolute -left-12 top-8 h-48 w-48 rounded-full bg-[#D9A96B]/6 blur-3xl" />
-          <div className="absolute -right-8 bottom-4 h-56 w-56 rounded-full bg-black/2 blur-3xl" />
-
-          <div className="overflow-hidden rounded-3xl border border-[#ECE8DF] bg-[#FFFFFF] shadow-[0_20px_60px_rgba(15,15,15,0.08)] group">
-            <div className="relative overflow-hidden h-[500px] lg:h-[620px]">
-              <Image
-                src={heroImage || "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?q=80&w=1200&auto=format&fit=crop"}
-                alt={heroImageAlt || title || "Hero image"}
-                fill
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                loading="eager"
-                priority
-              />
+        <div className="border-t border-white/10 bg-black/18 backdrop-blur-sm">
+          <div className="container-width px-4 sm:px-6 md:px-8 lg:px-12">
+            <div className="flex items-center gap-4 overflow-x-auto py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {tickerItems.map((item) => (
+                <span
+                  key={item}
+                  className="whitespace-nowrap rounded-full border border-white/12 bg-white/8 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white/78"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="absolute -bottom-12 -left-4 rounded-2xl border border-[#ECE8DF] bg-[#FFFFFF] p-8 shadow-[0_20px_50px_rgba(15,15,15,0.1)] backdrop-blur-md sm:-left-12 max-w-xs"
-          >
-            <p className="text-xs uppercase tracking-[0.3em] text-[#D9A96B] font-semibold">
-              Quality Assured
-            </p>
-            <h3 className="mt-4 text-2xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-              Export Ready
-            </h3>
-            <p className="mt-3 text-sm text-[#555555] font-light leading-relaxed">
-              Carefully sourced, packaged, and prepared for international delivery standards.
-            </p>
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

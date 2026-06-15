@@ -1,3 +1,4 @@
+import React from "react";
 import { defineType, defineField } from "sanity";
 
 export default defineType({
@@ -6,6 +7,136 @@ export default defineType({
   type: "document",
 
   fields: [
+    defineField({
+      name: "heroSlides",
+      title: "Hero Slides",
+      type: "array",
+      readOnly: false,
+      of: [
+        {
+          type: "object",
+          preview: {
+            select: {
+              image: "image",
+              title: "title",
+              eyebrow: "eyebrow",
+            },
+            prepare(selection) {
+              const { image, title, eyebrow } = selection;
+              const titleText = title || eyebrow || "Slide";
+              return {
+                title: titleText,
+                subtitle: eyebrow,
+                media: image || undefined,
+              };
+            },
+          },
+          fields: [
+            defineField({
+              name: "imageUrl",
+              title: "Image URL (optional)",
+              type: "string",
+              description:
+                "Optional: external image URL. Recommended size: 1600×900 (16:9). Use high-resolution landscape images.",
+            }),
+            defineField({
+              name: "image",
+              title: "Image Upload",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
+              description:
+                "Upload an image. Recommended size: 1600×900 (16:9). Use high-resolution landscape images. You can also provide an external URL instead.",
+            }),
+            defineField({
+              name: "eyebrow",
+              title: "Eyebrow",
+              type: "string",
+            }),
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string",
+            }),
+            defineField({
+              name: "subtitle",
+              title: "Subtitle",
+              type: "text",
+            }),
+            defineField({
+              name: "ctaText",
+              title: "Primary CTA Text",
+              type: "string",
+            }),
+            defineField({
+              name: "ctaHref",
+              title: "Primary CTA Link",
+              type: "string",
+            }),
+            defineField({
+              name: "secondaryCtaText",
+              title: "Secondary CTA Text",
+              type: "string",
+            }),
+            defineField({
+              name: "secondaryCtaHref",
+              title: "Secondary CTA Link",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
+
+    defineField({
+      name: "marqueeItems",
+      title: "Marquee Separator Items",
+      type: "array",
+      readOnly: false,
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "text",
+              title: "Text",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
+
+    defineField({
+      name: "statCounters",
+      title: "Animated Stats Counters",
+      type: "array",
+      readOnly: false,
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "value",
+              title: "Final Value (number)",
+              type: "number",
+            }),
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+            }),
+            defineField({
+              name: "suffix",
+              title: "Suffix (e.g. +, %)",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
+
     defineField({
       name: "heroEyebrow",
       title: "Hero Eyebrow",
@@ -377,6 +508,111 @@ export default defineType({
       name: "ctaButtonHref",
       title: "CTA Button Link",
       type: "string",
+    }),
+
+    defineField({
+      name: "servicesEyebrow",
+      title: "Services Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "servicesTitle",
+      title: "Services Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "servicesDescription",
+      title: "Services Description",
+      type: "text",
+    }),
+
+    defineField({
+      name: "services",
+      title: "Services",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Service Title",
+              type: "string",
+            }),
+            defineField({
+              name: "description",
+              title: "Service Description",
+              type: "text",
+            }),
+            defineField({
+              name: "icon",
+              title: "Icon",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Search", value: "search" },
+                  { title: "Ship", value: "ship" },
+                  { title: "Users", value: "users" },
+                  { title: "CheckCircle", value: "checkCircle" },
+                  { title: "FileText", value: "fileText" },
+                  { title: "Box", value: "box" },
+                  { title: "Globe", value: "globe" },
+                  { title: "Zap", value: "zap" },
+                ],
+              },
+            }),
+          ],
+        },
+      ],
+    }),
+
+    defineField({
+      name: "productCategoriesEyebrow",
+      title: "Product Categories Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "productCategoriesTitle",
+      title: "Product Categories Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "productCategoriesDescription",
+      title: "Product Categories Description",
+      type: "text",
+    }),
+
+    defineField({
+      name: "productCategories",
+      title: "Product Categories",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "name",
+              title: "Category Name",
+              type: "string",
+            }),
+            defineField({
+              name: "description",
+              title: "Category Description",
+              type: "text",
+            }),
+            defineField({
+              name: "items",
+              title: "Items in Category",
+              type: "array",
+              of: [{ type: "string" }],
+            }),
+          ],
+        },
+      ],
     }),
   ],
 });

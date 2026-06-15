@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   Globe,
   ShieldCheck,
@@ -5,6 +8,8 @@ import {
   Leaf,
   Truck,
 } from "lucide-react";
+
+import { cardVariants, itemVariants, sectionVariants } from "./motion";
 
 type Feature = {
   title?: string | null;
@@ -57,21 +62,32 @@ export default function WhyChooseUs({
   return (
     <section id="why" style={{ scrollMarginTop: "6rem" }} className="bg-[#FAF8F5] section-padding py-16 sm:py-24 md:py-28 lg:py-32">
       <div className="container-width">
-        <div className="mb-20 text-center max-w-3xl mx-auto">
-          <p className="mb-8 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">{eyebrow}</p>
+        <motion.div
+          className="mb-20 text-center max-w-3xl mx-auto"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-15% 0px" }}
+        >
+          <motion.p variants={itemVariants} className="mb-8 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">{eyebrow}</motion.p>
 
-          <h2 className="text-5xl lg:text-6xl font-semibold leading-[1.2] tracking-tight text-[#111111] mb-8" style={{ fontFamily: "var(--font-playfair)" }}>{title}</h2>
+          <motion.h2 variants={itemVariants} className="text-5xl lg:text-6xl font-semibold leading-[1.2] tracking-tight text-[#111111] mb-8" style={{ fontFamily: "var(--font-playfair)" }}>{title}</motion.h2>
 
-          <p className="text-lg leading-relaxed text-[#555555] font-light">{description}</p>
-        </div>
+          <motion.p variants={itemVariants} className="text-lg leading-relaxed text-[#555555] font-light">{description}</motion.p>
+        </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {features?.map((feature, index) => {
             const Icon = feature?.icon ? iconMap[feature.icon as keyof typeof iconMap] : Globe;
 
             return (
-              <div 
+              <motion.div 
                 key={`${feature?.title ?? "feature"}-${index}`} 
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-12% 0px" }}
+                transition={{ delay: index * 0.08 }}
                 className="rounded-2xl border border-[#ECE8DF] bg-[#FFFFFF] p-8 text-center shadow-[0_8px_24px_rgba(15,15,15,0.04)] hover:shadow-[0_12px_32px_rgba(15,15,15,0.08)] transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#D9A96B]/15 to-transparent border border-[#D9A96B]/10">
@@ -81,7 +97,7 @@ export default function WhyChooseUs({
                 <h3 className="mt-6 text-xl font-semibold text-[#111111]">{feature?.title}</h3>
 
                 <p className="mt-4 text-base leading-relaxed text-[#555555] font-light">{feature?.description}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
