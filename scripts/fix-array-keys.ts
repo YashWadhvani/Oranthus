@@ -52,7 +52,7 @@ async function ensureKeys() {
     const patch = client
       .patch(homepage._id)
       .set(updated)
-      .commit({ ifRevisionID: homepage._rev })
+      .commit()
       .then((res) => {
         console.log("✅ Homepage arrays updated with _key values:", res);
       })
