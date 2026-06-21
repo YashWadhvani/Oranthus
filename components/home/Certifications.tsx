@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Award, ShieldCheck, BadgeCheck, FileText, CheckCircle2 } from "lucide-react";
 
 import { cardVariants, itemVariants, sectionVariants } from "./motion";
 
@@ -14,6 +15,9 @@ type Certification = {
   standards?: string[] | null;
   imageUrl?: string | null;
   imageAlt?: string | null;
+  logoUrl?: string | null;
+  logoAlt?: string | null;
+  certificationNumber?: string | null;
 };
 
 type CertificationsProps = {
@@ -22,6 +26,8 @@ type CertificationsProps = {
   description?: string | null;
   certifications?: Certification[] | null;
 };
+
+const certIcons = [Award, ShieldCheck, BadgeCheck, CheckCircle2, FileText];
 
 export default function Certifications({
   eyebrow = "Certifications",
@@ -34,6 +40,8 @@ export default function Certifications({
     { title: "HACCP Standards" },
   ],
 }: CertificationsProps) {
+  const certsToRender = certifications ?? [];
+
   return (
     <section id="certifications" style={{ scrollMarginTop: "6rem" }} className="bg-[#FFFFFF] section-padding py-16 sm:py-24 md:py-28 lg:py-32">
       <div className="container-width">
@@ -52,7 +60,7 @@ export default function Certifications({
         </motion.div>
 
         <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
-          {certifications?.map((item, index) => (
+          {certsToRender.map((item, index) => (
             <motion.div 
               key={item?._id ?? `${item?.title ?? "certification"}-${index}`} 
               variants={cardVariants}
@@ -62,15 +70,23 @@ export default function Certifications({
               transition={{ delay: index * 0.08 }}
               className="group flex flex-col items-center gap-5 rounded-2xl border border-[#ECE8DF] bg-[#FAF8F5] p-8 text-center shadow-[0_8px_24px_rgba(15,15,15,0.04)] hover:shadow-[0_12px_32px_rgba(15,15,15,0.08)] transition-all duration-300 hover:-translate-y-2 hover:bg-[#FFFFFF]"
             >
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-[#D9A96B]/10 to-transparent border border-[#D9A96B]/10 group-hover:border-[#D9A96B]/20 transition-colors">
-                {item?.imageUrl ? (
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#FFFFFF] border border-[#ECE8DF] group-hover:border-[#D9A96B]/30 transition-all duration-300 overflow-hidden p-2">
+                {item?.logoUrl ? (
+                  <Image src={item.logoUrl} alt={item.logoAlt || item.title || "Authority Logo"} width={80} height={80} className="w-full h-full object-contain" />
+                ) : item?.imageUrl ? (
                   <Image src={item.imageUrl} alt={item.imageAlt || item.title || "Certification badge"} width={48} height={48} className="object-contain" />
-                ) : (
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D9A96B]">Badge</span>
-                )}
+                ) : (() => {
+                  const Icon = certIcons[index % certIcons.length];
+                  return <Icon className="h-10 w-10 text-[#D9A96B] transition-transform duration-300 group-hover:scale-110" />;
+                })()}
               </div>
 
               <h3 className="text-lg font-semibold text-[#111111]">{item?.title}</h3>
+              {item?.certificationNumber && (
+                <span className="inline-block text-xs font-mono font-medium text-[#D9A96B] border border-[#D9A96B]/20 bg-[#D9A96B]/5 px-2.5 py-0.5 rounded">
+                  No: {item.certificationNumber}
+                </span>
+              )}
               <p className="text-sm text-[#555555] font-light">{item?.description || "Certified & Approved"}</p>
               {item?.issuer && <p className="text-xs text-[#555555] uppercase tracking-[0.2em]">{item.issuer}</p>}
               {item?.validity && <p className="text-xs text-[#555555]">Validity: {item.validity}</p>}

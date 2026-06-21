@@ -27,16 +27,7 @@ type ServicesProps = {
   services?: Service[] | null;
 };
 
-const iconMap = {
-  search: Search,
-  ship: Ship,
-  users: Users,
-  checkCircle: CheckCircle,
-  fileText: FileText,
-  box: Box,
-  globe: Globe,
-  zap: Zap,
-} as const;
+const serviceIcons = [Search, Ship, Users, CheckCircle, FileText, Box, Globe, Zap];
 
 export default function Services({
   eyebrow = "Our Services",
@@ -114,7 +105,7 @@ export default function Services({
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services?.map((service, index) => {
-            const Icon = service?.icon ? iconMap[service.icon as keyof typeof iconMap] : Search;
+            const Icon = serviceIcons[index % serviceIcons.length];
 
             return (
               <motion.div

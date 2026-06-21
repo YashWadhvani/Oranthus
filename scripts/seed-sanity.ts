@@ -274,7 +274,7 @@ const homepage = {
     { _key: "mq-6", text: "Red Chilli Powder" },
     { _key: "mq-7", text: "Cumin Seeds" },
   ],
-  statCounters: [
+  stats: [
     { _key: "stat-1", value: 30, label: "Countries Served", suffix: "+" },
     { _key: "stat-2", value: 2000, label: "Tons Exported", suffix: "+" },
     { _key: "stat-3", value: 98, label: "On-Time Shipments", suffix: "%" },
@@ -388,6 +388,25 @@ const homepage = {
   ctaDescription: "Get in touch with our team to discuss your export requirements and pricing.",
   ctaButtonText: "Contact Our Team",
   ctaButtonHref: "/contact",
+  servicesEyebrow: "Our Services",
+  servicesTitle: "Complete Export Solutions",
+  servicesDescription:
+    "End-to-end sourcing and export services designed to simplify your procurement needs.",
+  statsEyebrow: "Performance Snapshot",
+  statsTitle: "Trusted by importers across markets",
+  statsDescription: "A concise view of our export scale, reliability, and delivery consistency.",
+  tradeEyebrow: "WHO WE ARE",
+  tradeTitle: "Built on trust. Proven at scale.",
+  tradeDescription:
+    "For more than two decades, Oranthus has connected growers, manufacturers, and buyers through a disciplined trade model built on transparency, quality, and execution.",
+  tradeStoryTitle: "A structure designed for long-term partnerships.",
+  tradeStoryDescription:
+    "From origin coordination to final-mile delivery, we keep the moving parts visible, documented, and accountable — so buyers can move faster with fewer surprises.",
+  tradeStoryHighlights: [
+    "Transparent sourcing and contract clarity",
+    "Quality checks at every stage of handling",
+    "Reliable logistics across key trade corridors",
+  ],
 };
 
 const certifications = [
@@ -433,6 +452,60 @@ const certifications = [
   },
 ];
 
+const aboutPage = {
+  _id: "aboutPage",
+  _type: "aboutPage",
+  overviewTitle: "About Our Company",
+  overviewDescription:
+    "We specialize in exporting premium dried products with a strong focus on quality, trust, packaging excellence, and long-term international partnerships. Our commitment to sustainability and ethical sourcing sets us apart in the global market.",
+  visionEyebrow: "Vision",
+  visionTitle: "To be a trusted global partner",
+  vision: "We aim to deliver consistent quality and long-term value to international buyers.",
+  missionEyebrow: "Mission",
+  missionTitle: "Source, process, and export",
+  mission: "We build reliable supply chains that serve the needs of global food and ingredient markets.",
+  founderEyebrow: "Founder",
+  founderTitle: "A message from our founder",
+  founderName: "Arun Mehta",
+  founderRole: "Founder & Director",
+  founderMessage:
+    "Oranthus was created to serve global buyers with dependable quality, ethical sourcing, and export-friendly service.",
+  stats: [
+    { value: 50, suffix: "+", label: "Premium Products" },
+    { value: 10, suffix: "+", label: "Export Countries" },
+  ],
+  valuesEyebrow: "Values",
+  valuesTitle: "What we stand for",
+  valuesDescription: "Our values shape how we source, process, and deliver every shipment.",
+  values: [
+    {
+      title: "Quality First",
+      description: "Every batch is checked for consistency, safety, and export readiness.",
+      icon: "shieldCheck",
+    },
+    {
+      title: "Transparent Sourcing",
+      description: "We partner with vetted growers and processors with traceable sourcing.",
+      icon: "handshake",
+    },
+    {
+      title: "Sustainable Practices",
+      description: "We encourage responsible handling and eco-conscious packaging choices.",
+      icon: "leaf",
+    },
+  ],
+  sourcingEyebrow: "Sourcing",
+  sourcingTitle: "Reliable sourcing from trusted partners",
+  sourcingDescription:
+    "We work with vetted growers, processors, and logistics partners to ensure every export order meets specifications.",
+  sourcingPoints: [
+    "Verified supplier onboarding",
+    "Quality checks at origin",
+    "Export packaging controls",
+    "Traceability and compliance",
+  ],
+};
+
 const contactInfo = {
   _id: "contactInfo",
   _type: "contactInfo",
@@ -450,6 +523,9 @@ async function seedData() {
 
     await client.createOrReplace(homepage);
     console.log("✅ Homepage upserted");
+
+    await client.createOrReplace(aboutPage);
+    console.log("✅ About page document upserted");
 
     for (const category of categories) {
       await client.createOrReplace(category);

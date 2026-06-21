@@ -10,6 +10,9 @@ type StatCounter = {
 };
 
 type AnimatedStatsProps = {
+  eyebrow?: string | null;
+  title?: string | null;
+  description?: string | null;
   stats?: StatCounter[] | null;
 };
 
@@ -39,7 +42,12 @@ function CountUp({ value, duration = 2.5 }: { value: number; duration?: number }
   return <span ref={ref}>{count}</span>;
 }
 
-export default function AnimatedStats({ stats = null }: AnimatedStatsProps) {
+export default function AnimatedStats({
+  eyebrow = "Performance Snapshot",
+  title = "Trusted by importers across markets",
+  description = "A concise view of our export scale, reliability, and delivery consistency.",
+  stats = null,
+}: AnimatedStatsProps) {
   const activeStats = stats && stats.length > 0 ? stats : null;
 
   if (!activeStats) return null;
@@ -49,13 +57,13 @@ export default function AnimatedStats({ stats = null }: AnimatedStatsProps) {
       <div className="container-width">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#D9A96B]">
-            Performance Snapshot
+            {eyebrow}
           </p>
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#111111] sm:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-            Trusted by importers across markets
+            {title}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[#555555]">
-            A concise view of our export scale, reliability, and delivery consistency.
+            {description}
           </p>
         </div>
 

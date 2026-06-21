@@ -29,35 +29,65 @@ export default async function HomePage() {
 
             {/* Stats */}
 
-            <AnimatedStats stats={homepage?.stats ?? []} />
+            <AnimatedStats
+                eyebrow={homepage?.statsEyebrow}
+                title={homepage?.statsTitle}
+                description={homepage?.statsDescription}
+                stats={homepage?.stats ?? []}
+            />
 
             {/* About Preview */}
 
             <About
                 title={about?.overviewTitle}
                 description={about?.overviewDescription}
-                stats={about?.stats}
+                stats={about?.stats?.map((s: { value?: number; suffix?: string; label?: string }) => ({
+                    value: `${s.value || 0}${s.suffix || ""}`,
+                    label: s.label
+                }))}
             />
 
             {/* Services */}
 
-            <Services services={homepage?.featuredServices ?? []} />
+            <Services
+                eyebrow={homepage?.servicesEyebrow}
+                title={homepage?.servicesTitle}
+                description={homepage?.servicesDescription}
+                services={content?.services ?? []}
+            />
 
             {/* Categories */}
 
-            <Categories categories={homepage?.featuredCategories ?? []} />
+            <Categories
+                eyebrow={homepage?.categoriesEyebrow}
+                title={homepage?.categoriesTitle}
+                description={homepage?.categoriesDescription}
+                categories={content?.categories ?? []}
+            />
 
             {/* Trade Section */}
 
-            <TradeScaleSection office={content?.siteSettings} />
+            <TradeScaleSection
+                eyebrow={homepage?.tradeEyebrow}
+                title={homepage?.tradeTitle}
+                description={homepage?.tradeDescription}
+                highlights={homepage?.tradeStoryHighlights}
+                office={content?.contactInfo || content?.siteSettings}
+            />
 
             {/* Certifications */}
 
-            <Certifications certifications={content?.certifications ?? []} />
+            <Certifications
+                eyebrow={homepage?.certificationsEyebrow}
+                title={homepage?.certificationsTitle}
+                description={homepage?.certificationsDescription}
+                certifications={content?.certifications ?? []}
+            />
 
             {/* CTA */}
 
             <CTA
+                eyebrow={homepage?.ctaEyebrow}
                 title={homepage?.ctaTitle}
                 description={homepage?.ctaDescription}
                 buttonText={homepage?.ctaButtonText}

@@ -14,6 +14,7 @@ type ContactInfo = {
   email?: string | null;
   phone?: string | null;
   address?: string | null;
+  businessHours?: string | null;
 };
 
 type TradeScaleSectionProps = {
@@ -25,30 +26,11 @@ type TradeScaleSectionProps = {
   office?: ContactInfo | null;
 };
 
-const officeCards = [
-  {
-    city: "Rotterdam",
-    icon: MapPin,
-    address: "Waalhaven Oostzijde 12\n3087 BM Rotterdam, Netherlands",
-    phone: "+31 10 456 7890",
-    email: "europe@oranthus.com",
-  },
-  {
-    city: "Dubai",
-    icon: Building2,
-    address: "DMCC Business Centre\nJumeirah Lakes Towers, Dubai UAE",
-    phone: "+971 4 123 4567",
-    email: "mena@oranthus.com",
-  },
-];
-
-const metricIcons = [TrendingUp, Globe, ShieldCheck, Sparkles];
-
 const defaultStats = [
-  { value: "$500M+", label: "Annual trade volume" },
-  { value: "420+", label: "Team members" },
-  { value: "6", label: "Global offices" },
-  { value: "25", label: "Years in business" },
+  { value: "100%", label: "Traceable batches" },
+  { value: "Vetted", label: "Sourcing partners" },
+  { value: "Direct", label: "Farm-gate coordination" },
+  { value: "Custom", label: "Export packaging options" },
 ];
 
 const defaultHighlights = [
@@ -57,19 +39,20 @@ const defaultHighlights = [
   "Reliable logistics across key trade corridors",
 ];
 
+
 export default function TradeScaleSection({
   eyebrow = "WHO WE ARE",
-  title = "Built on trust. Proven at scale.",
-  description = "For more than two decades, Oranthus has connected growers, manufacturers, and buyers through a disciplined trade model built on transparency, quality, and execution.",
+  title = "Built on trust. Grounded in quality.",
+  description = "Oranthus connects growers, processors, and international buyers through a direct trade model built on transparency, strict quality control, and export efficiency.",
   stats = defaultStats,
   highlights = defaultHighlights,
   office,
 }: TradeScaleSectionProps) {
   const resolvedStats = stats ?? defaultStats;
   const resolvedHighlights = highlights ?? defaultHighlights;
-  const hqAddress = office?.address || "100 Maritime Blvd, Suite 4500\nSingapore 018983";
-  const hqPhone = office?.phone || "+65 6789 0123";
-  const hqEmail = office?.email || "partners@oranthus.com";
+  const hqAddress = office?.address || "123 Export Street, Ahmedabad,\nGujarat 380001, India";
+  const hqPhone = office?.phone || "+91 93169 27113";
+  const hqEmail = office?.email || "info@oranthus.com";
 
   return (
     <section className="relative overflow-hidden bg-[#8C661E] text-white">
@@ -133,7 +116,7 @@ export default function TradeScaleSection({
 
               <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
                 {resolvedStats.map((stat, index) => {
-                  const Icon = metricIcons[index % metricIcons.length];
+                  const Icon = ShieldCheck;
 
                   return (
                     <motion.div
@@ -143,7 +126,7 @@ export default function TradeScaleSection({
                     >
                       <div className="flex items-center justify-between gap-4">
                         <Icon className="h-5 w-5 text-white/65" />
-                        <span className="text-[11px] uppercase tracking-[0.25em] text-white/50">Metric</span>
+                        <span className="text-[11px] uppercase tracking-[0.25em] text-white/50">Indicator</span>
                       </div>
                       <p className="mt-6 text-4xl font-semibold text-white" style={{ fontFamily: "var(--font-playfair)" }}>
                         {stat?.value}
@@ -164,46 +147,28 @@ export default function TradeScaleSection({
               viewport={{ once: true, margin: "-12% 0px" }}
               className="rounded-[2rem] border border-white/10 bg-white/8 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.12)] backdrop-blur-sm"
             >
-              <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-white/70">
-                <Globe className="h-4 w-4" />
-                Global headquarters
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-white/70">
+                  <MapPin className="h-4 w-4" />
+                  Main Office & Exporter HQ
+                </div>
               </div>
               <div className="mt-6 space-y-4 text-sm text-white/82">
-                <p className="whitespace-pre-line">{hqAddress}</p>
-                <p>{hqPhone}</p>
-                <p>{hqEmail}</p>
+                <h4 className="text-lg font-semibold text-white">Ahmedabad, India</h4>
+                <p className="whitespace-pre-line leading-relaxed">{hqAddress}</p>
+                <p className="flex items-center gap-2">
+                  <span className="text-white/60">Phone:</span> {hqPhone}
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-white/60">Email:</span> {hqEmail}
+                </p>
+                {office?.businessHours && (
+                  <p className="flex items-center gap-2">
+                    <span className="text-white/60">Hours:</span> {office.businessHours}
+                  </p>
+                )}
               </div>
             </motion.div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {[{ city: "Singapore (HQ)", icon: Building2, address: hqAddress, phone: hqPhone, email: hqEmail }, ...officeCards].map((officeCard, index) => {
-                const Icon = officeCard.icon;
-                return (
-                  <motion.div
-                    key={officeCard.city}
-                    variants={cardVariants}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, margin: "-12% 0px" }}
-                    transition={{ delay: index * 0.08 }}
-                    className="rounded-[1.75rem] border border-white/10 bg-[#F9F2E6]/10 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)] backdrop-blur-sm"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/10">
-                        <Icon className="h-5 w-5 text-white/80" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-white">{officeCard.city}</h3>
-                    </div>
-
-                    <div className="mt-5 space-y-3 text-sm leading-relaxed text-white/78">
-                      <p className="whitespace-pre-line">{officeCard.address}</p>
-                      <p>{officeCard.phone}</p>
-                      <p>{officeCard.email}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </div>

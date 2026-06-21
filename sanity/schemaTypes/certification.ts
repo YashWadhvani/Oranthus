@@ -13,6 +13,21 @@ export default defineType({
     }),
 
     defineField({
+      name: "logo",
+      title: "Authority Logo",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+
+    defineField({
+      name: "certificationNumber",
+      title: "Certification Number",
+      type: "string",
+    }),
+
+    defineField({
       name: "image",
       title: "Certification Image",
       type: "image",

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { Sparkles, Globe2, Package, Award } from "lucide-react";
 
 import { cardVariants, itemVariants, sectionVariants } from "./motion";
 
@@ -16,6 +17,8 @@ type AboutProps = {
   description?: string;
   stats?: AboutStat[] | null;
 };
+
+const metricIcons = [Package, Globe2, Award, Sparkles];
 
 export default function About({
   eyebrow = "Who We Are",
@@ -40,15 +43,15 @@ export default function About({
             <p className="mb-8 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">
               {eyebrow}
             </p>
-
+ 
             <h2 className="text-5xl lg:text-6xl font-semibold leading-[1.2] tracking-tight text-[#111111] mb-8 max-w-xl" style={{ fontFamily: "var(--font-playfair)" }}>
               {title}
             </h2>
-
+ 
             <p className="max-w-xl text-lg leading-relaxed text-[#555555] font-light">
               {description}
             </p>
-
+ 
             <div className="mt-10 flex flex-wrap gap-3">
               {[
                 "Traceable sourcing",
@@ -62,27 +65,33 @@ export default function About({
               ))}
             </div>
           </motion.div>
-
+ 
           <motion.div variants={itemVariants}>
             <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
-              {stats?.map((stat, index) => (
-                <motion.div
-                  key={`${stat?.label ?? "about-stat"}-${index}`}
-                  variants={cardVariants}
-                >
-                  <Card className="rounded-2xl border-[#ECE8DF] p-8 shadow-[0_8px_24px_rgba(15,15,15,0.04)] hover:shadow-[0_12px_32px_rgba(15,15,15,0.08)] transition-shadow duration-300 bg-[#FFFFFF]">
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#555555] font-medium">
-                      Key Metric
-                    </p>
-                    <h3 className="text-4xl font-semibold text-[#D9A96B] mt-4">
-                      {stat?.value}
-                    </h3>
-                    <p className="mt-4 text-base text-[#555555] font-light">
-                      {stat?.label}
-                    </p>
-                  </Card>
-                </motion.div>
-              ))}
+              {stats?.map((stat, index) => {
+                const Icon = metricIcons[index % metricIcons.length];
+                return (
+                  <motion.div
+                    key={`${stat?.label ?? "about-stat"}-${index}`}
+                    variants={cardVariants}
+                  >
+                    <Card className="rounded-2xl border-[#ECE8DF] p-8 shadow-[0_8px_24px_rgba(15,15,15,0.04)] hover:shadow-[0_12px_32px_rgba(15,15,15,0.08)] transition-all duration-300 bg-[#FFFFFF] relative overflow-hidden group">
+                      <div className="flex items-center justify-between">
+                        <span className="rounded-full border border-[#D9A96B]/15 bg-[#D9A96B]/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8C661E]">
+                          Performance
+                        </span>
+                        <Icon className="h-5 w-5 text-[#D9A96B] transition-transform duration-300 group-hover:scale-110" />
+                      </div>
+                      <h3 className="text-4xl font-semibold text-[#D9A96B] mt-6" style={{ fontFamily: "var(--font-playfair)" }}>
+                        {stat?.value}
+                      </h3>
+                      <p className="mt-3 text-base text-[#555555] font-light leading-relaxed">
+                        {stat?.label}
+                      </p>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </motion.div>

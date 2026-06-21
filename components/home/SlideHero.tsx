@@ -27,8 +27,13 @@ export default function SlideHero({ slides = null }: SlideHeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
   const { scrollTo } = useLenis();
+  const [failedSlides, setFailedSlides] = useState<Record<number, boolean>>({});
 
   const activeSlides = slides && slides.length > 0 ? slides : [];
+
+  useEffect(() => {
+    setFailedSlides({});
+  }, [slides]);
 
   useEffect(() => {
     if (!autoPlay || activeSlides.length === 0) return;
@@ -75,12 +80,19 @@ export default function SlideHero({ slides = null }: SlideHeroProps) {
           className="absolute inset-0"
         >
           <Image
-            src={slide?.imageUrl || "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?q=80&w=1600&auto=format&fit=crop"}
+            src={
+              failedSlides[currentSlide] || !slide?.imageUrl
+                ? "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?q=80&w=1600&auto=format&fit=crop"
+                : slide.imageUrl
+            }
             alt={slide?.imageAlt || "Hero slide"}
             fill
             className="object-cover"
             sizes="100vw"
             priority
+            onError={() => {
+              setFailedSlides((prev) => ({ ...prev, [currentSlide]: true }));
+            }}
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,15,15,0.82)_0%,rgba(15,15,15,0.62)_42%,rgba(15,15,15,0.34)_70%,rgba(15,15,15,0.24)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,169,107,0.28),transparent_26%),radial-gradient(circle_at_left_center,rgba(255,255,255,0.08),transparent_26%)]" />

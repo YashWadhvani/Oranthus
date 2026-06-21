@@ -17,55 +17,61 @@ const valueIcons = {
 export default async function AboutPage() {
   const data = await client.fetch(homepageQuery);
   const content = data?.homepage;
+  const about = data?.about;
+
+  const aboutStats = about?.stats?.map((s: { value?: number; suffix?: string; label?: string }) => ({
+    value: `${s.value || 0}${s.suffix || ""}`,
+    label: s.label
+  })) || null;
 
   return (
     <main>
       <About
-        eyebrow={content?.aboutEyebrow}
-        title={content?.aboutTitle}
-        description={content?.aboutDescription}
-        stats={content?.aboutStats}
+        eyebrow="Who We Are"
+        title={about?.overviewTitle}
+        description={about?.overviewDescription}
+        stats={aboutStats}
       />
 
       <section className="bg-[#FFFFFF] py-16 sm:py-24 md:py-28 lg:py-32 section-padding">
         <div className="container-width grid gap-8 lg:grid-cols-3">
           <Card className="rounded-2xl border-[#ECE8DF] bg-[#FAF8F5] shadow-[0_8px_24px_rgba(15,15,15,0.04)]">
             <CardContent className="p-8">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{content?.aboutVisionEyebrow || "Vision"}</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{about?.visionEyebrow || "Vision"}</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-                {content?.aboutVisionTitle || "To be a trusted global export partner"}
+                {about?.visionTitle || "To be a trusted global partner"}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[#555555] font-light">
-                {content?.aboutVisionDescription || "We aim to deliver consistent quality and long-term value to international buyers."}
+                {about?.vision || "We aim to deliver consistent quality and long-term value to international buyers."}
               </p>
             </CardContent>
           </Card>
 
           <Card className="rounded-2xl border-[#ECE8DF] bg-[#FAF8F5] shadow-[0_8px_24px_rgba(15,15,15,0.04)]">
             <CardContent className="p-8">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{content?.aboutMissionEyebrow || "Mission"}</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{about?.missionEyebrow || "Mission"}</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-                {content?.aboutMissionTitle || "Source, process, and export with excellence"}
+                {about?.missionTitle || "Source, process, and export"}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[#555555] font-light">
-                {content?.aboutMissionDescription || "We build reliable supply chains that serve the needs of global food and ingredient markets."}
+                {about?.mission || "We build reliable supply chains that serve the needs of global food and ingredient markets."}
               </p>
             </CardContent>
           </Card>
 
           <Card className="rounded-2xl border-[#ECE8DF] bg-[#FAF8F5] shadow-[0_8px_24px_rgba(15,15,15,0.04)]">
             <CardContent className="p-8">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{content?.aboutFounderEyebrow || "Founder"}</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{about?.founderEyebrow || "Founder"}</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-                {content?.aboutFounderTitle || "A message from our founder"}
+                {about?.founderTitle || "A message from our founder"}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[#555555] font-light">
-                {content?.aboutFounderMessage || "Oranthus was created to serve global buyers with dependable quality and ethical sourcing."}
+                {about?.founderMessage || "Oranthus was created to serve global buyers with dependable quality and ethical sourcing."}
               </p>
               <p className="mt-4 text-sm font-medium text-[#111111]">
-                {content?.aboutFounderName || "Founder's Name"}
+                {about?.founderName || "Arun Mehta"}
               </p>
-              <p className="text-xs uppercase tracking-[0.25em] text-[#555555]">{content?.aboutFounderRole || "Founder & Director"}</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#555555]">{about?.founderRole || "Founder & Director"}</p>
             </CardContent>
           </Card>
         </div>
@@ -74,17 +80,17 @@ export default async function AboutPage() {
       <section className="bg-[#FAF8F5] py-16 sm:py-24 md:py-28 lg:py-32 section-padding">
         <div className="container-width">
           <div className="max-w-3xl mb-12">
-            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">{content?.aboutValuesEyebrow || "Values"}</p>
+            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold">{about?.valuesEyebrow || "Values"}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-              {content?.aboutValuesTitle || "What we stand for"}
+              {about?.valuesTitle || "What we stand for"}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-[#555555] font-light">
-              {content?.aboutValuesDescription || "Our values shape how we source, process, and deliver every shipment."}
+              {about?.valuesDescription || "Our values shape how we source, process, and deliver every shipment."}
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {(content?.aboutValues || []).map((value: { title?: string; description?: string; icon?: string }, index: number) => {
+            {(about?.values || []).map((value: { title?: string; description?: string; icon?: string }, index: number) => {
               const Icon = valueIcons[value.icon as keyof typeof valueIcons] || Target;
 
               return (
@@ -112,17 +118,17 @@ export default async function AboutPage() {
           <Card className="rounded-3xl border-[#ECE8DF] bg-[#FAF8F5] shadow-[0_12px_40px_rgba(15,15,15,0.06)]">
             <CardContent className="grid gap-8 p-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:p-12">
               <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{content?.aboutSourcingEyebrow || "Sourcing"}</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-[#D9A96B] font-semibold">{about?.sourcingEyebrow || "Sourcing"}</p>
                 <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-                  {content?.aboutSourcingTitle || "Reliable sourcing from trusted partners"}
+                  {about?.sourcingTitle || "Reliable sourcing from trusted partners"}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-[#555555] font-light">
-                  {content?.aboutSourcingDescription || "We work with vetted growers, processors, and logistics partners to ensure every export order meets specifications."}
+                  {about?.sourcingDescription || "We work with vetted growers, processors, and logistics partners to ensure every export order meets specifications."}
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {(content?.aboutSourcingPoints || [
+                {(about?.sourcingPoints || [
                   "Verified supplier onboarding",
                   "Quality checks at origin",
                   "Export packaging controls",

@@ -66,7 +66,13 @@ export default function Categories({
           <motion.p variants={itemVariants} className="text-lg leading-relaxed text-[#555555] max-w-2xl font-light">{description}</motion.p>
         </motion.div>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-10 sm:grid-cols-2 ${
+          categories && categories.length === 2 
+            ? "lg:grid-cols-2 max-w-4xl mx-auto" 
+            : categories && categories.length === 1 
+            ? "lg:grid-cols-1 max-w-md mx-auto" 
+            : "lg:grid-cols-3"
+        }`}>
           {categories?.map((category, index) => (
             <motion.div
               key={category?._id ?? `${category?.title ?? "category"}-${index}`} 

@@ -26,20 +26,90 @@ export const homepageQuery = `
     ctaTitle,
     ctaDescription,
     ctaButtonText,
-    ctaButtonHref
+    ctaButtonHref,
+
+    categoriesEyebrow,
+    categoriesTitle,
+    categoriesDescription,
+
+    whyChooseUsEyebrow,
+    whyChooseUsTitle,
+    whyChooseUsDescription,
+    whyChooseUsFeatures,
+
+    certificationsEyebrow,
+    certificationsTitle,
+    certificationsDescription,
+    ctaEyebrow,
+
+    servicesEyebrow,
+    servicesTitle,
+    servicesDescription,
+
+    statsEyebrow,
+    statsTitle,
+    statsDescription,
+
+    tradeEyebrow,
+    tradeTitle,
+    tradeDescription,
+    tradeStoryTitle,
+    tradeStoryDescription,
+    tradeStoryHighlights
   },
 
   "about": *[_type == "aboutPage"][0]{
     overviewTitle,
     overviewDescription,
-    stats
+    visionEyebrow,
+    visionTitle,
+    vision,
+    missionEyebrow,
+    missionTitle,
+    mission,
+    founderEyebrow,
+    founderTitle,
+    founderName,
+    founderRole,
+    founderMessage,
+    stats,
+    valuesEyebrow,
+    valuesTitle,
+    valuesDescription,
+    values,
+    sourcingEyebrow,
+    sourcingTitle,
+    sourcingDescription,
+    sourcingPoints
   },
 
-  "categories": *[_type == "category"] | order(name asc),
+  "categories": *[_type == "category"] | order(coalesce(title, name) asc) {
+    _id,
+    "title": coalesce(title, name),
+    description,
+    "slug": slug.current,
+    "imageUrl": image.asset->url,
+    "imageAlt": coalesce(image.alt, title, name),
+    "productCount": count(*[_type == "product" && references(^._id)])
+  },
 
   "services": *[_type == "service"] | order(title asc),
 
-  "certifications": *[_type == "certification"],
+  "certifications": *[_type == "certification"] {
+    _id,
+    title,
+    description,
+    issuer,
+    validity,
+    standards,
+    "imageUrl": image.asset->url,
+    "imageAlt": coalesce(image.alt, title),
+    "logoUrl": logo.asset->url,
+    "logoAlt": coalesce(logo.alt, title),
+    certificationNumber
+  },
+
+  "contactInfo": *[_type == "contactInfo"] | order(_createdAt asc)[0],
 
   "siteSettings": *[_type == "siteSettings"][0]
 }
@@ -65,8 +135,13 @@ export const certificationsQuery = `
 *[_type=="certification"]{
   _id,
   title,
-  image,
-  description
+  description,
+  issuer,
+  validity,
+  standards,
+  "imageUrl": image.asset->url,
+  "logoUrl": logo.asset->url,
+  certificationNumber
 }
 `;
 
@@ -77,13 +152,13 @@ export const productsPageQuery = defineQuery(`
       categoriesTitle,
       categoriesDescription
     },
-    "categories": *[_type == "category"] | order(title asc) {
+    "categories": *[_type == "category"] | order(coalesce(title, name) asc) {
       _id,
-      title,
+      "title": coalesce(title, name),
       description,
       "slug": slug.current,
       "imageUrl": image.asset->url,
-      "imageAlt": coalesce(image.alt, title),
+      "imageAlt": coalesce(image.alt, title, name),
       "productCount": count(*[_type == "product" && references(^._id)])
     }
   }
@@ -93,11 +168,11 @@ export const categoryPageQuery = defineQuery(`
   {
     "category": *[_type == "category" && slug.current == $slug][0]{
       _id,
-      title,
+      "title": coalesce(title, name),
       description,
       "slug": slug.current,
       "imageUrl": image.asset->url,
-      "imageAlt": coalesce(image.alt, title),
+      "imageAlt": coalesce(image.alt, title, name),
       "productCount": count(*[_type == "product" && references(^._id)])
     },
     "products": *[_type == "product" && category->slug.current == $slug] | order(name asc) {
@@ -129,7 +204,7 @@ export const productPageQuery = defineQuery(`
     "galleryAlts": gallery[].alt,
     category->{
       _id,
-      title,
+      "title": coalesce(title, name),
       "slug": slug.current
     },
     grade,

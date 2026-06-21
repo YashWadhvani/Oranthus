@@ -61,5 +61,84 @@ export default defineType({
       type: "array",
       of: [{ type: "statItem" }],
     }),
+
+    defineField({
+      name: "visionEyebrow",
+      title: "Vision Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "visionTitle",
+      title: "Vision Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "missionEyebrow",
+      title: "Mission Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "missionTitle",
+      title: "Mission Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "founderEyebrow",
+      title: "Founder Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "founderTitle",
+      title: "Founder Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "valuesEyebrow",
+      title: "Values Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "valuesTitle",
+      title: "Values Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "valuesDescription",
+      title: "Values Description",
+      type: "text",
+    }),
+
+    defineField({
+      name: "sourcingEyebrow",
+      title: "Sourcing Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
+      name: "sourcingTitle",
+      title: "Sourcing Title",
+      type: "string",
+    }),
+
+    defineField({
+      name: "sourcingDescription",
+      title: "Sourcing Description",
+      type: "text",
+    }),
+
+    defineField({
+      name: "sourcingPoints",
+      title: "Sourcing Points",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
   ],
 });
