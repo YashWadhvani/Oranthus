@@ -17,7 +17,7 @@ export default async function ProductsPage() {
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-[#111111] mb-6 sm:mb-8" 
               style={{ fontFamily: "var(--font-playfair)" }}>
-              {content?.categoriesTitle || "Premium Export Collection"}
+              {content?.categoriesTitle && content.categoriesTitle !== "Explore Our Products" ? content.categoriesTitle : "Explore Our Categories"}
             </h1>
             <p className="text-lg sm:text-xl leading-relaxed text-[#555555] max-w-2xl font-light">
               {content?.categoriesDescription || "Explore our extensive range of carefully sourced and expertly packaged dried products, ready for global export."}
@@ -27,9 +27,9 @@ export default async function ProductsPage() {
       </section>
 
       <Categories
-        eyebrow={content?.categoriesEyebrow}
-        title={content?.categoriesTitle}
-        description={content?.categoriesDescription}
+        eyebrow=""
+        title=""
+        description=""
         categories={categories}
       />
     </main>

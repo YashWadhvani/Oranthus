@@ -6,9 +6,11 @@ import { inter, playfair } from "@/lib/fonts";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProvider from "@/components/ScrollProvider";
+import PageLoader from "@/components/layout/PageLoader";
 
 import { client } from "@/sanity/lib/client";
 import { siteSettingsQuery } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 
 export const metadata: Metadata = {
     title: "ORANTHUS",
@@ -21,18 +23,20 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     const siteSettings = await client.fetch(siteSettingsQuery);
+    const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).url() : null;
 
     return (
         <html lang="en">
             <body
                 className={`${inter.variable} ${playfair.variable} bg-background text-foreground antialiased`}
             >
+                <PageLoader logoUrl={logoUrl} companyName={siteSettings?.companyName} />
                 <ScrollProvider>
-                    <Navbar siteSettings={siteSettings} />
+                    <Navbar siteSettings={siteSettings} logoUrl={logoUrl} />
 
                     <main className="min-h-screen">{children}</main>
 
-                    <Footer siteSettings={siteSettings} />
+                    <Footer siteSettings={siteSettings} logoUrl={logoUrl} />
                 </ScrollProvider>
             </body>
         </html>

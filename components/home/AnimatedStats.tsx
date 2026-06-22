@@ -16,10 +16,14 @@ type AnimatedStatsProps = {
   stats?: StatCounter[] | null;
 };
 
-function CountUp({ value, duration = 2.5 }: { value: number; duration?: number }) {
+function CountUp({ value, duration = 2.5 }: { value: number | string; duration?: number }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  const numericValue = typeof value === "number" 
+    ? value 
+    : parseInt(String(value).replace(/[^\d]/g, ""), 10) || 0;
 
   useEffect(() => {
     if (!isInView) return;
@@ -30,14 +34,14 @@ function CountUp({ value, duration = 2.5 }: { value: number; duration?: number }
     const interval = setInterval(() => {
       const now = Date.now();
       const progress = Math.min((now - startTime) / (endTime - startTime), 1);
-      const current = Math.floor(progress * value);
+      const current = Math.floor(progress * numericValue);
       setCount(current);
 
       if (progress === 1) clearInterval(interval);
     }, 10);
 
     return () => clearInterval(interval);
-  }, [isInView, value, duration]);
+  }, [isInView, numericValue, duration]);
 
   return <span ref={ref}>{count}</span>;
 }
@@ -84,8 +88,12 @@ export default function AnimatedStats({
               className="rounded-2xl border border-[#ECE8DF] bg-white p-8 text-center shadow-[0_12px_30px_rgba(15,15,15,0.05)]"
             >
               <div className="mb-4 text-4xl sm:text-5xl font-bold text-[#8C661E]" style={{ fontFamily: "var(--font-playfair)" }}>
-                <CountUp value={stat?.value || 0} />
-                {stat?.suffix && <span className="text-[#D9A96B]">{stat.suffix}</span>}
+                <CountUp value={stat?.value ?? 0} />
+                {(stat?.suffix || (typeof stat?.value === "string" && String(stat.value).replace(/[\d]/g, ""))) && (
+                  <span className="text-[#D9A96B]">
+                    {stat.suffix || String(stat.value).replace(/[\d]/g, "")}
+                  </span>
+                )}
               </div>
               <p className="text-base font-medium text-[#555555]">
                 {stat?.label}

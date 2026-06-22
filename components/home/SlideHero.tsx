@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useLenis } from "@/components/ScrollProvider";
@@ -28,6 +28,15 @@ export default function SlideHero({ slides = null }: SlideHeroProps) {
   const [autoPlay, setAutoPlay] = useState(true);
   const { scrollTo } = useLenis();
   const [failedSlides, setFailedSlides] = useState<Record<number, boolean>>({});
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Shift background image downwards by 20% of its height as we scroll down
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   const activeSlides = slides && slides.length > 0 ? slides : [];
 
@@ -69,7 +78,7 @@ export default function SlideHero({ slides = null }: SlideHeroProps) {
   };
 
   return (
-    <section id="home" style={{ scrollMarginTop: "6rem" }} className="relative overflow-hidden bg-black">
+    <section ref={containerRef} id="home" style={{ scrollMarginTop: "6rem" }} className="relative overflow-hidden bg-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -77,7 +86,8 @@ export default function SlideHero({ slides = null }: SlideHeroProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-0"
+          style={{ y }}
+          className="absolute -top-[10%] left-0 w-full h-[120%]"
         >
           <Image
             src={

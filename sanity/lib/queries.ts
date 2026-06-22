@@ -27,6 +27,7 @@ export const homepageQuery = `
     ctaDescription,
     ctaButtonText,
     ctaButtonHref,
+    ctaBgImage,
 
     categoriesEyebrow,
     categoriesTitle,
@@ -59,6 +60,7 @@ export const homepageQuery = `
   },
 
   "about": *[_type == "aboutPage"][0]{
+    overviewEyebrow,
     overviewTitle,
     overviewDescription,
     visionEyebrow,
@@ -95,18 +97,28 @@ export const homepageQuery = `
 
   "services": *[_type == "service"] | order(title asc),
 
-  "certifications": *[_type == "certification"] {
+  "certifications": *[_type == "certification" && active == true] | order(displayOrder asc) {
     _id,
     title,
-    description,
-    issuer,
-    validity,
-    standards,
-    "imageUrl": image.asset->url,
-    "imageAlt": coalesce(image.alt, title),
+    "slug": slug.current,
+    type,
+    issuingAuthority,
+    certificateNumber,
+    issueDate,
+    expiryDate,
+    isLifetime,
+    badgeText,
+    active,
+    featured,
+    shortDescription,
+    fullDescription,
+    pdfUrl,
+    logo,
+    coverImage,
+    pdfFile,
     "logoUrl": logo.asset->url,
-    "logoAlt": coalesce(logo.alt, title),
-    certificationNumber
+    "coverImageUrl": coverImage.asset->url,
+    "pdfFileUrl": pdfFile.asset->url
   },
 
   "contactInfo": *[_type == "contactInfo"] | order(_createdAt asc)[0],
@@ -132,16 +144,28 @@ export const whyChooseUsQuery = `
 `;
 
 export const certificationsQuery = `
-*[_type=="certification"]{
+*[_type=="certification" && active == true] | order(displayOrder asc) {
   _id,
   title,
-  description,
-  issuer,
-  validity,
-  standards,
-  "imageUrl": image.asset->url,
+  "slug": slug.current,
+  type,
+  issuingAuthority,
+  certificateNumber,
+  issueDate,
+  expiryDate,
+  isLifetime,
+  badgeText,
+  active,
+  featured,
+  shortDescription,
+  fullDescription,
+  pdfUrl,
+  logo,
+  coverImage,
+  pdfFile,
   "logoUrl": logo.asset->url,
-  certificationNumber
+  "coverImageUrl": coverImage.asset->url,
+  "pdfFileUrl": pdfFile.asset->url
 }
 `;
 
@@ -179,14 +203,24 @@ export const categoryPageQuery = defineQuery(`
       _id,
       name,
       description,
+      sourcing,
       "slug": slug.current,
       "thumbnailUrl": thumbnail.asset->url,
       "thumbnailAlt": coalesce(thumbnail.alt, name),
+      grade,
+      specifications[]{
+        label,
+        value
+      },
       packaging,
       moq,
+      moqNote,
       origin,
-      grade,
-      leadTime
+      leadTime,
+      shelfLife,
+      storageInstructions,
+      applications,
+      certificationNotes
     }
   }
 `);

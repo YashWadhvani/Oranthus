@@ -1,0 +1,1797 @@
+[
+  {
+    "_createdAt": "2026-05-16T19:41:27Z",
+    "_id": "11ceQugRC4GuR1GhSpTpKJ",
+    "_rev": "11ceQugRC4GuR1GhSpTpH0",
+    "_type": "certification",
+    "_updatedAt": "2026-05-16T19:41:27Z",
+    "title": "APEDA Approved"
+  },
+  {
+    "_createdAt": "2026-05-16T19:41:30Z",
+    "_id": "11ceQugRC4GuR1GhSpTpXX",
+    "_rev": "mgP7H962VNAkqBXsgeyDft",
+    "_system": {
+      "base": {
+        "id": "11ceQugRC4GuR1GhSpTpXX",
+        "rev": "LMUgafKEvELchM4PJH4Fg3"
+      }
+    },
+    "_type": "contactInfo",
+    "_updatedAt": "2026-06-22T13:02:48Z",
+    "address": "GOVINDRATNA RESIDENCY-3, B/H AASTHA\nRESIDENCY, 150 FEET RING ROAD, MAVDI,\nRajkot, Gujarat, India - 360004",
+    "businessHours": "09:00 AM - 07:00 PM IST",
+    "email": "info@oranthus.com",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3670.3955705366207!2d72.64754107516636!3d23.082610979131804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDA0JzU3LjQiTiA3MsKwMzknMDAuNCJF!5e0!3m2!1sen!2sin!4v1778961563955!5m2!1sen!2sin",
+    "phone": "+91 93169 27113",
+    "whatsapp": "+919316927113"
+  },
+  {
+    "_createdAt": "2026-06-15T18:03:37Z",
+    "_id": "17ce18ca-8f89-4ac1-91c2-ec269650d4ab",
+    "_rev": "KnsYOy7j3Cq9bVfe754GbS",
+    "_system": {
+      "base": {
+        "id": "17ce18ca-8f89-4ac1-91c2-ec269650d4ab",
+        "rev": "KnsYOy7j3Cq9bVfe754BeC"
+      }
+    },
+    "_type": "service",
+    "_updatedAt": "2026-06-15T18:04:50Z",
+    "description": "Work closely with suppliers to maintain product consistency and meet buyer expectations.",
+    "featured": true,
+    "slug": {
+      "_type": "slug",
+      "current": "quality-coordination"
+    },
+    "title": "Quality Coordination"
+  },
+  {
+    "_createdAt": "2026-06-15T17:53:24Z",
+    "_id": "1bd875f9-7e94-4646-bc09-18e304d09593",
+    "_rev": "iUpfRLGdJJghNOcIuy3jaP",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:54:12Z",
+    "category": {
+      "_ref": "61feb902-9934-40d3-8489-de00b9072c7a",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Onions - Minced",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-onions-minced"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-dc823cbe550dd73ed3c9aabe0674a3095c3ee9f9-900x900-png",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T18:03:11Z",
+    "_id": "3ddc8dec-a30f-4c3f-a9d6-34168ca9b84c",
+    "_rev": "ELVtnUXUxhK8jStWQ0cMW5",
+    "_type": "service",
+    "_updatedAt": "2026-06-15T18:03:29Z",
+    "description": "End-to-end export support including procurement, coordination, documentation, and shipment assistance.",
+    "featured": true,
+    "slug": {
+      "_type": "slug",
+      "current": "merchant-exporting"
+    },
+    "title": "Merchant Exporting"
+  },
+  {
+    "_createdAt": "2026-06-15T17:57:13Z",
+    "_id": "5616e470-777e-4fb6-bfa6-416933cf97e6",
+    "_rev": "KnsYOy7j3Cq9bVfe753S4O",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:57:45Z",
+    "category": {
+      "_ref": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Garlic - Chopped",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-garlic-chopped"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-9e59ec9c74286f961c47bcd7954150548ab62846-500x500-jpg",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T18:04:02Z",
+    "_id": "5927ef18-1023-49ce-8a1f-542489891b13",
+    "_rev": "ELVtnUXUxhK8jStWQ0cQQt",
+    "_type": "service",
+    "_updatedAt": "2026-06-15T18:04:20Z",
+    "description": "Professional assistance with export documentation and international trade requirements.",
+    "featured": true,
+    "slug": {
+      "_type": "slug",
+      "current": "export-documentation"
+    },
+    "title": "Export Documentation"
+  },
+  {
+    "_createdAt": "2026-06-15T17:45:40Z",
+    "_id": "61feb902-9934-40d3-8489-de00b9072c7a",
+    "_rev": "KnsYOy7j3Cq9bVfe752mac",
+    "_type": "category",
+    "_updatedAt": "2026-06-15T17:46:59Z",
+    "description": "Dried Onion ",
+    "featured": true,
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-1d011c8101a165c7acfc4d1311b9b7431fbbbe58-225x225-jpg",
+        "_type": "reference"
+      }
+    },
+    "name": "Dried Onions",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-onion"
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T17:55:59Z",
+    "_id": "6302002b-e838-4d51-9ebf-8156d57d0ba7",
+    "_rev": "ELVtnUXUxhK8jStWQ0c0CD",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:57:12Z",
+    "category": {
+      "_ref": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Garlic - Flakes",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-garlic-flakes"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-c9aec58c0dbf11b080ab038986ea823683319b84-2000x1481-png",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T17:51:10Z",
+    "_id": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+    "_rev": "iUpfRLGdJJghNOcIuy3Wit",
+    "_type": "category",
+    "_updatedAt": "2026-06-15T17:51:46Z",
+    "description": "Dried Garlic",
+    "featured": true,
+    "image": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-c335a5f53f40f52cb51b90492f6b2385eeef0f16-500x500-jpg",
+        "_type": "reference"
+      }
+    },
+    "name": "Dried Garlic",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-garlic"
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T17:58:24Z",
+    "_id": "93f151f5-5fd3-499b-b7bb-dee005f3f8f6",
+    "_rev": "iUpfRLGdJJghNOcIuy4DHR",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:59:09Z",
+    "category": {
+      "_ref": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Garlic - Granules",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-garlic-granules"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-242fc84598e01f135a1eacc438df58cbfbe0993a-500x500-webp",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.access-manager",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.administrator",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [
+      {
+        "filter": "_id in path(\"**\")",
+        "permissions": [
+          "history",
+          "read",
+          "update",
+          "create"
+        ]
+      },
+      {
+        "filter": "(_id in path(\"**\")) && (_id in path(\"drafts.**\") || _id in path(\"versions.**\"))",
+        "permissions": [
+          "history",
+          "read",
+          "update",
+          "create"
+        ]
+      }
+    ],
+    "members": [
+      "pptWEba7r",
+      "p9NEuszke"
+    ]
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.blueprints-deployer",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.create-session",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.public",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [
+      {
+        "filter": "_id in path(\"*\")",
+        "permissions": [
+          "read"
+        ]
+      }
+    ],
+    "members": [
+      "everyone"
+    ]
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.read",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.sanity.contributor",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.sanity.developer",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.sanity.editor",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [
+      {
+        "filter": "_id in path(\"**\")",
+        "permissions": [
+          "history",
+          "read",
+          "update",
+          "create"
+        ]
+      },
+      {
+        "filter": "(_id in path(\"**\")) && (_id in path(\"drafts.**\") || _id in path(\"versions.**\"))",
+        "permissions": [
+          "history",
+          "read",
+          "update",
+          "create"
+        ]
+      }
+    ],
+    "members": [
+      "p4pKx1Ek4"
+    ]
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.sanity.viewer",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [
+      {
+        "filter": "_id in path(\"**\")",
+        "permissions": [
+          "history",
+          "read"
+        ]
+      },
+      {
+        "filter": "(_id in path(\"**\")) && (_id in path(\"drafts.**\") || _id in path(\"versions.**\"))",
+        "permissions": [
+          "history",
+          "read"
+        ]
+      }
+    ],
+    "members": []
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.groups.write",
+    "_rev": "ELVtnUXUxhK8jStWQ0cD7b",
+    "_type": "system.group",
+    "_updatedAt": "2026-06-15T18:01:28Z",
+    "grants": [],
+    "members": [
+      "p4pKx1Ek4"
+    ]
+  },
+  {
+    "_createdAt": "2026-05-16T17:49:40Z",
+    "_id": "_.retention._maximum_project",
+    "_rev": "ELVtnUXUxhK8jStWQ0bmmd",
+    "_type": "system.retention",
+    "_updatedAt": "2026-06-15T17:49:32Z",
+    "days": 3,
+    "maximum": true,
+    "preferShorter": true
+  },
+  {
+    "_createdAt": "2026-06-21T07:38:23Z",
+    "_id": "aboutPage",
+    "_rev": "A5rszj5Ko7F4y4qV5HRwxD",
+    "_system": {
+      "base": {
+        "id": "aboutPage",
+        "rev": "JjjY3To9JKokKf0NH6WtQC"
+      }
+    },
+    "_type": "aboutPage",
+    "_updatedAt": "2026-06-22T12:34:42Z",
+    "founderMessage": "Oranthus was created to serve global buyers with dependable quality, ethical sourcing, and export-friendly service.",
+    "founderName": "Darshit Sardhara",
+    "founderRole": "Founder & Director",
+    "mission": "We build reliable supply chains that serve the needs of global food and ingredient markets.",
+    "overviewDescription": "We partner with local growers and modern processors to export premium dried onions, garlic, and spices. Focused on food safety and strict quality standards, we ensure that every batch is fully traceable and meets international buyer requirements.",
+    "overviewTitle": "About Our Company",
+    "stats": [
+      {
+        "_key": "A5rszj5Ko7F4y4qV5HRvQH",
+        "label": "Primary Export Categories",
+        "suffix": "",
+        "value": 2
+      },
+      {
+        "_key": "A5rszj5Ko7F4y4qV5HRvS2",
+        "label": "Traceability at Origin",
+        "suffix": "%",
+        "value": 100
+      }
+    ],
+    "values": [
+      {
+        "_key": "A5rszj5Ko7F4y4qV5HRvL0",
+        "description": "Every batch is checked for consistency, safety, and export readiness.",
+        "icon": "shieldCheck",
+        "title": "Quality First"
+      },
+      {
+        "_key": "A5rszj5Ko7F4y4qV5HRvMl",
+        "description": "We partner with vetted growers and processors with traceable sourcing.",
+        "icon": "handshake",
+        "title": "Transparent Sourcing"
+      },
+      {
+        "_key": "A5rszj5Ko7F4y4qV5HRvOW",
+        "description": "We encourage responsible handling and eco-conscious packaging choices.",
+        "icon": "leaf",
+        "title": "Sustainable Practices"
+      }
+    ],
+    "vision": "We aim to deliver consistent quality and long-term value to international buyers."
+  },
+  {
+    "_createdAt": "2026-06-15T17:59:09Z",
+    "_id": "b40c1305-42a9-4478-98ca-0ca52c470412",
+    "_rev": "ELVtnUXUxhK8jStWQ0c5Bh",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:59:44Z",
+    "category": {
+      "_ref": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Garlic - Powder",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-garlic-powder"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-aaf2e45a20674b84c4b6d3413e35abedfe995120-1080x1080-avif",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T17:57:45Z",
+    "_id": "be93e847-ad78-46bf-a5d3-3114b074d697",
+    "_rev": "iUpfRLGdJJghNOcIuy4A15",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:58:24Z",
+    "category": {
+      "_ref": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Garlic - Minced",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-garlic-minced"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-00ea785af22de038471987b56f60dd3ebf524f33-500x500-jpg",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T17:54:58Z",
+    "_id": "c1b4780d-e393-48b1-a7c5-cb4d5cb50940",
+    "_rev": "iUpfRLGdJJghNOcIuy3s67",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:55:57Z",
+    "category": {
+      "_ref": "61feb902-9934-40d3-8489-de00b9072c7a",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Onions - Slices",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-onions-slices"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-b88402a3066048794755359b7b289c507b38faa5-500x500-webp",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T18:02:47Z",
+    "_id": "d7166342-906c-4631-9234-f79f66cb64df",
+    "_rev": "iUpfRLGdJJghNOcIuy53Z5",
+    "_type": "service",
+    "_updatedAt": "2026-06-15T18:03:07Z",
+    "description": "Identify reliable Indian manufacturers and suppliers that match your quality, pricing, and volume requirements.",
+    "featured": true,
+    "slug": {
+      "_type": "slug",
+      "current": "product-sourcing"
+    },
+    "title": "Product Sourcing"
+  },
+  {
+    "_createdAt": "2026-06-15T17:51:53Z",
+    "_id": "e0d7f3be-40c8-42d0-83dc-f27a7b46c381",
+    "_rev": "KnsYOy7j3Cq9bVfe753BMu",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:53:25Z",
+    "category": {
+      "_ref": "61feb902-9934-40d3-8489-de00b9072c7a",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Onions - Granules",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-onion-granules"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-71de8d6b17698e520d8b85b14a60d50cb58f3f20-1000x1000-jpg",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-15T17:22:50Z",
+    "_id": "e24ad79d-ca70-46f0-ad68-8b313eae608d",
+    "_rev": "ELVtnUXUxhK8jStWQ0bIjR",
+    "_system": {
+      "base": {
+        "id": "e24ad79d-ca70-46f0-ad68-8b313eae608d",
+        "rev": "ELVtnUXUxhK8jStWQ0bChn"
+      }
+    },
+    "_type": "siteSettings",
+    "_updatedAt": "2026-06-15T17:37:05Z",
+    "companyName": "Oranthus",
+    "email": "info@oranthus.com",
+    "favicon": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62-227x227-png",
+        "_type": "reference"
+      }
+    },
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62-227x227-png",
+        "_type": "reference"
+      },
+      "crop": {
+        "_type": "sanity.imageCrop",
+        "bottom": 0.23329777668934903,
+        "left": 0.13518181311870212,
+        "right": 0.1330019925337147,
+        "top": 0.03706593272191754
+      },
+      "hotspot": {
+        "_type": "sanity.imageHotspot",
+        "height": 0.7296362905887335,
+        "width": 0.7318161943475832,
+        "x": 0.5010899102924937,
+        "y": 0.40188407801628423
+      }
+    },
+    "phone": "9316927113",
+    "seoDescription": "Oranthus is an India-based export and sourcing company connecting global buyers with reliable Indian products through trusted sourcing, quality assurance, and professional export support.",
+    "seoTitle": "Oranthus | Global Sourcing & Export Solutions",
+    "tagline": "Born in India. Built for the World.",
+    "website": "https://www.oranthus.com",
+    "whatsapp": "9316927113"
+  },
+  {
+    "_createdAt": "2026-06-15T17:54:14Z",
+    "_id": "f15a87af-aef3-4bc4-89e3-b8c8116fe423",
+    "_rev": "ELVtnUXUxhK8jStWQ0bwJv",
+    "_type": "product",
+    "_updatedAt": "2026-06-15T17:54:56Z",
+    "category": {
+      "_ref": "61feb902-9934-40d3-8489-de00b9072c7a",
+      "_type": "reference"
+    },
+    "featured": true,
+    "moq": "2500kg",
+    "name": "Dried Onions - Powder",
+    "origin": "India",
+    "packaging": "25kg",
+    "shelfLife": "12 Months",
+    "slug": {
+      "_type": "slug",
+      "current": "dried-onions-powder"
+    },
+    "thumbnail": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-ef5981f03912b126e85276ed798254bb7564d008-894x739-jpg",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-06-01T17:06:32Z",
+    "_id": "homepage",
+    "_rev": "A5rszj5Ko7F4y4qV5HRupM",
+    "_system": {
+      "base": {
+        "id": "homepage",
+        "rev": "JjjY3To9JKokKf0NH6WjUO"
+      }
+    },
+    "_type": "homepage",
+    "_updatedAt": "2026-06-22T12:33:34Z",
+    "ctaButtonHref": "/contact",
+    "ctaButtonText": "Contact Our Team",
+    "ctaDescription": "Get in touch with our team to discuss your export requirements and pricing.",
+    "ctaTitle": "Let's Work Together",
+    "featuredCategories": [
+      {
+        "_key": "3aa14031a7b8",
+        "_ref": "61feb902-9934-40d3-8489-de00b9072c7a",
+        "_type": "reference"
+      },
+      {
+        "_key": "a4b3ae43b0e8",
+        "_ref": "82315fd4-c662-4062-9d46-5c9046b6fa3b",
+        "_type": "reference"
+      }
+    ],
+    "featuredServices": [
+      {
+        "_key": "6da8d0fdafee",
+        "_ref": "17ce18ca-8f89-4ac1-91c2-ec269650d4ab",
+        "_type": "reference"
+      },
+      {
+        "_key": "11049c3ac297",
+        "_ref": "3ddc8dec-a30f-4c3f-a9d6-34168ca9b84c",
+        "_type": "reference"
+      },
+      {
+        "_key": "3fdc33647e55",
+        "_ref": "5927ef18-1023-49ce-8a1f-542489891b13",
+        "_type": "reference"
+      },
+      {
+        "_key": "f047b679e23d",
+        "_ref": "d7166342-906c-4631-9234-f79f66cb64df",
+        "_type": "reference"
+      }
+    ],
+    "heroSlides": [
+      {
+        "_key": "hero-slide-1",
+        "ctaHref": "/products/dried-onions",
+        "ctaText": "Explore Onion Products",
+        "eyebrow": "Global Ingredient Exporter",
+        "imageUrl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
+        "secondaryCtaHref": "/contact",
+        "secondaryCtaText": "Request Sample",
+        "subtitle": "Consistent cut-size, low moisture, and export-ready packaging for seasoning and processed food applications.",
+        "title": "Premium Dried Onions for Food Manufacturers"
+      },
+      {
+        "_key": "hero-slide-2",
+        "ctaHref": "/products/dehydrated-garlic",
+        "ctaText": "Browse Garlic Range",
+        "eyebrow": "Dehydrated Garlic Specialists",
+        "imageUrl": "https://images.unsplash.com/photo-1514995669114-6081b9f5d5f4?q=80&w=1600&auto=format&fit=crop",
+        "secondaryCtaHref": "/contact",
+        "secondaryCtaText": "Get Quote",
+        "subtitle": "Batch-tested dehydrated garlic for blend houses, contract manufacturers, and global importers.",
+        "title": "Garlic Granules & Powder with Reliable Quality"
+      },
+      {
+        "_key": "hero-slide-3",
+        "ctaHref": "/products/spices",
+        "ctaText": "View Spices",
+        "eyebrow": "Spices & Bulk Ingredients",
+        "imageUrl": "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1600&auto=format&fit=crop",
+        "secondaryCtaHref": "/contact",
+        "secondaryCtaText": "Talk to Sales",
+        "subtitle": "Traceable sourcing, export documentation, and private-label packing options for global supply chains.",
+        "title": "Turmeric, Chilli, Cumin and More"
+      }
+    ],
+    "marqueeItems": [
+      "Dried Onion",
+      "Dried Garlic",
+      "Vegetable Powder",
+      "Spices",
+      "Peanuts"
+    ],
+    "stats": [
+      {
+        "_key": "stat-1",
+        "label": "Products Available",
+        "suffix": "+",
+        "value": 50
+      },
+      {
+        "_key": "stat-2",
+        "label": "Verified Supplier Network",
+        "suffix": "+",
+        "value": 100
+      },
+      {
+        "_key": "304a602183c7",
+        "_type": "statItem",
+        "label": "Target Export Market",
+        "suffix": "+",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-06-15T17:58:09Z",
+    "_id": "image-00ea785af22de038471987b56f60dd3ebf524f33-500x500-jpg",
+    "_rev": "KnsYOy7j3Cq9bVfe753T5I",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:58:09Z",
+    "assetId": "00ea785af22de038471987b56f60dd3ebf524f33",
+    "extension": "jpg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "e6I|R1?v0#RPt6%g%gIoM{WV.m?b=_D*ax?HJV=^RjR+5?o#V?enR*",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 500,
+        "width": 500
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUCAwQG/8QAIxAAAQQBAwQDAAAAAAAAAAAAAQACAwQRBRIhEyIxQRYjUf/EABgBAAMBAQAAAAAAAAAAAAAAAAABBQID/8QAHREAAgIBBQAAAAAAAAAAAAAAAAIBEQMhIjFBUf/aAAwDAQACEQMRAD8A76Gswts05YnB9iq0jqPOXHPpcOrRM6stncCJSXFv4So8VGSvYeQxxZjJIPtUm4e0MmAc0jGM4UBnb0upjWOibFaiLeS0c+Ci0fEdMnc+Q2LMeXHtEnhEbQ1PZNgjlr9w5x5Cgap9NUbecnByiLcnGODJjdkMIDiewHlEROhXJ//Z",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#4c4430",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#5d2c0d",
+          "foreground": "#fff",
+          "population": 5.84,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#5d2c0d",
+          "foreground": "#fff",
+          "population": 5.84,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#dfcfba",
+          "foreground": "#000",
+          "population": 3.58,
+          "title": "#000"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f4b17a",
+          "foreground": "#000",
+          "population": 0.11,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a27f5e",
+          "foreground": "#fff",
+          "population": 4.01,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d47830",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "3VkGDwI9h5iZdZe/WpimV2iVSWMFVGcA"
+    },
+    "mimeType": "image/jpeg",
+    "originalFilename": "garlic-minced.png",
+    "path": "images/dvhn6875/production/00ea785af22de038471987b56f60dd3ebf524f33-500x500.jpg",
+    "sha1hash": "00ea785af22de038471987b56f60dd3ebf524f33",
+    "size": 275905,
+    "uploadId": "7c89439dcb10b37b8a2c82ba73b5a95e39a16366",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/00ea785af22de038471987b56f60dd3ebf524f33-500x500.jpg"
+  },
+  {
+    "_createdAt": "2026-06-15T17:46:55Z",
+    "_id": "image-1d011c8101a165c7acfc4d1311b9b7431fbbbe58-225x225-jpg",
+    "_rev": "iUpfRLGdJJghNOcIuy2xOh",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:46:55Z",
+    "assetId": "1d011c8101a165c7acfc4d1311b9b7431fbbbe58",
+    "extension": "jpg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eDL3=O-;-BIAMy~qr?RjRjMy:kV?WAs:xtQ-tkM{Io?aZ~jZX8x[xa",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 225,
+        "width": 225
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEBgf/xAAmEAABBAIBAwMFAAAAAAAAAAABAAIDBAUREgYTITFBYRQiI1Fx/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQQAAgP/xAAdEQADAAEFAQAAAAAAAAAAAAAAAQISAxEhMUFR/9oADAMBAAIRAxEAPwD0DFRMlsCXJF1eq9pET3HXNR2zz5jqK3jMPejjq1dc7GuR2fZY2Pjs9Q1xnnvGLbHypwSv8c/felIvRjCdW2JenJIoq9lgL4/Vpd8JXaZQ47u3wdDlbOXwls05GR3dNDhM37dg/CKd9DYyYFq7cl7zvGm+AB+kQyj1F8dX6bbVeKwfzRtf/QslSpBvl228mPPE69ERYjL7KIcdIiKAP//Z",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#54643c",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#762c2a",
+          "foreground": "#fff",
+          "population": 1.04,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#caaa9c",
+          "foreground": "#000",
+          "population": 7.32,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#caaa9c",
+          "foreground": "#000",
+          "population": 7.32,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#e5b7a0",
+          "foreground": "#000",
+          "population": 0.14,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#9c7558",
+          "foreground": "#fff",
+          "population": 2.02,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#865a38",
+          "foreground": "#fff",
+          "population": 0.56,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "5SgGDwSqY5+NdpV7hklZdYdYbVn6p6UP"
+    },
+    "mimeType": "image/jpeg",
+    "originalFilename": "product-onion.png",
+    "path": "images/dvhn6875/production/1d011c8101a165c7acfc4d1311b9b7431fbbbe58-225x225.jpg",
+    "sha1hash": "1d011c8101a165c7acfc4d1311b9b7431fbbbe58",
+    "size": 10618,
+    "uploadId": "0a975bf14b327a5141985c5cc25397f8fe29e5e4",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/1d011c8101a165c7acfc4d1311b9b7431fbbbe58-225x225.jpg"
+  },
+  {
+    "_createdAt": "2026-06-15T17:24:35Z",
+    "_id": "image-1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62-227x227-png",
+    "_rev": "ELVtnUXUxhK8jStWQ0aRRl",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:24:35Z",
+    "assetId": "1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eCB{oPjZ03azR+?Ef7IWbGWC03fR~9fi%09cfkt5f6-mocbFt6jbIq",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 227,
+        "width": 227
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADeElEQVR4nK1TbWtcRRR+NnuT2NQ0Ma2NLaYvoqmtNBJtq61i1LyoUGNyZ06C1g9+EtEvIgakYK6ppBZBsTYkbN66M3OTpVsEDRrUFDc3d2buJuSD/2hl4l0pdUsreODhHObc+8x5eQa4DwsC1AVBUIf/w0qlHu/H+cFmPT/YvJ17tr4CZBz+E0kFyBSJsqVS4EVq+ECk2EAcjr4RFUY7igE1BEGPV6ncP2nGFmlXvOA/tiHZc9GiP2okfW0lfWPlyAUj2bk1MdT5p3x39z1Ji0TZsrqwJ8mzLi3YB1rwKSPYdav4FSP4pA35gpF8Jhb84/XFkdPx9DsPlYIer3ablUrGzclVYBT7XEuSOs8XrOKzScgny5JfMpLPakXzRrHQSD5pFOstXX+r1f37r5lVgqBua3G0w4TsI6P4D1qyn2PBJxNFn5QLIzNbyzRnFY1pyQMj2U9G8RWtaCySdDQlvIO0gkxZ0YlYsgnX5oZgYkOwa3FIE0lhZMqRGskmYuFfjSWTWvK8UeyyDelkzUXsLCOkk0b43xrJfokFCyPBvtCKvrRqZDZRNK8Fu7wh/PEN4Qst+Gos2LQRrLsmoRPuphjqtJJ9ZSTbTBRfs4rGjaRPk5Av25BuGkWfacUuWslXE8m2rPKvbubZU7W2vUOYLL/ZriW9pxUrJIqtuVkayb4vh1Swiopa0ndG8htW8ltWsptG8A/LavhRN/9aYs+srr7euC5YtxY0bhX7NVnikZFsLhYspxXljKJpq/gfVvq3XPta0Nntlfeb7qpHl9guUkssqT8J6dpWgX5PlviNWPjLcd4v2JAvu7NyyObW88ODpdzb++75xiuVoM7OUZsJ/ZfKSzRmlD8T5f2CFqygFcuVl+hiIqn/Nzm8/66ixt/9u2QDgHoiZFdy55tiQYei/NCZKM8GokX/tdWp8y+KS33Hc1f6WogoW1UHapA1AtgH4GAKF7e0tbXtOXy4pbWrq31/97G9B9tbGo82NzR0NjXhEZcH0JxiFwB3wT/WCuA4ACfScymeBtDteTjled4Zz/POZoFXAPSn+VMAnnHfAHgCwIN3Ep5ICV8A8DKA5wG8CmAAQG8aO+8Ie7PZbB8AB3d+GsDeavvVlh8GcADAIQBHUhxLK3cVPJ76KlzuyTTuALD79nnevpQq3CUPpPNxvhaquXoAO/L5C2g+lumibmWEAAAAAElFTkSuQmCC",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#4e412f",
+          "foreground": "#fff",
+          "population": 0.2,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#644a21",
+          "foreground": "#fff",
+          "population": 0.07,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a08c58",
+          "foreground": "#fff",
+          "population": 0.59,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#b5a177",
+          "foreground": "#000",
+          "population": 0.4,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d4a351",
+          "foreground": "#000",
+          "population": 0.15,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a08c58",
+          "foreground": "#fff",
+          "population": 0.59,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#c4a23c",
+          "foreground": "#000",
+          "population": 0.31,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "nzqGDQAjWId+hYCKl2h+gOYHB3iId4JbiA=="
+    },
+    "mimeType": "image/png",
+    "originalFilename": "oranthus-flat.png",
+    "path": "images/dvhn6875/production/1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62-227x227.png",
+    "sha1hash": "1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62",
+    "size": 37616,
+    "uploadId": "0b0cc95d31df5f7cd6ae5ae376bc1cdbeb0e8f9c",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/1d4cadab41d11c2bb715bce7b5d4a4fc1964ef62-227x227.png"
+  },
+  {
+    "_createdAt": "2026-06-15T17:58:52Z",
+    "_id": "image-242fc84598e01f135a1eacc438df58cbfbe0993a-500x500-webp",
+    "_rev": "iUpfRLGdJJghNOcIuy4BkD",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:58:52Z",
+    "assetId": "242fc84598e01f135a1eacc438df58cbfbe0993a",
+    "extension": "webp",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eFNvSY$w02?ZbI~U0MoLWUWC9G?a~Uo4xs^%RoM{%LxZ%LxabFIp9a",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 500,
+        "width": 500
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYHBf/EACYQAAICAgAFAwUAAAAAAAAAAAECAwQABQYREiExEyJhIzJBUVL/xAAXAQADAQAAAAAAAAAAAAAAAAADBAUC/8QAGxEAAgIDAQAAAAAAAAAAAAAAAAECEQMEITH/2gAMAwEAAhEDEQA/ALSLabPbX5IdeypGh90jeBlLVhvwwkzyrOqjmQF5HJjhmI6Pb26N9ukTP1xSN4b4y9ezWp0nnmkRYkXmSTkUqtnDS0JVDoD0n4xkTX39tfVeFR6MkjSJz/kntjHI44V1GLZe7WlXvqy2ow4Xx+xmQbYSyb/Y69rNg1IvsjL9h2xjAa6ufQkfTJNvxfuauwmrxWfpxHoUEfgYxjH6FG3Z/9k=",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#744b37",
+          "foreground": "#fff",
+          "population": 5.08,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#533221",
+          "foreground": "#fff",
+          "population": 5.88,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#533221",
+          "foreground": "#fff",
+          "population": 5.88,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#c9af9b",
+          "foreground": "#000",
+          "population": 3.4,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f5cd91",
+          "foreground": "#000",
+          "population": 0.23,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#967359",
+          "foreground": "#fff",
+          "population": 5.64,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#b99466",
+          "foreground": "#000",
+          "population": 3.38,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "aTkGDwAIi8kPeHjjjshmmnp7+7N1f4kP"
+    },
+    "mimeType": "image/webp",
+    "originalFilename": "garlic-granules.png",
+    "path": "images/dvhn6875/production/242fc84598e01f135a1eacc438df58cbfbe0993a-500x500.webp",
+    "sha1hash": "242fc84598e01f135a1eacc438df58cbfbe0993a",
+    "size": 47268,
+    "uploadId": "b78a3e19e57a320e2d3734cd35e03eb01665b80d",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/242fc84598e01f135a1eacc438df58cbfbe0993a-500x500.webp"
+  },
+  {
+    "_createdAt": "2026-06-15T17:52:47Z",
+    "_id": "image-71de8d6b17698e520d8b85b14a60d50cb58f3f20-1000x1000-jpg",
+    "_rev": "KnsYOy7j3Cq9bVfe7539c2",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:52:47Z",
+    "assetId": "71de8d6b17698e520d8b85b14a60d50cb58f3f20",
+    "extension": "jpg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eYM%1VRj_2t6x]~poeM{bHRj?ut7M|bHM{D%WVj]WBt7%2j[M|WVt6",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 1000,
+        "width": 1000
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUEBgcI/8QAJBAAAQMEAgICAwAAAAAAAAAAAQACAwQFBhEhMQcSE0FCUYH/xAAYAQACAwAAAAAAAAAAAAAAAAABBAACBf/EABoRAQEBAQADAAAAAAAAAAAAAAEAEQIEEzH/2gAMAwEAAhEDEQA/AO0XO7W23vfHLM0zsGzGOSsG032nrHOFRH8I/EnrS415OyCst2W1jqbTWSEOAcO1GtWb3apkEW4ueBwkvbyfbXPGegxvTsUEU0YfE4OYeiPtFIw2vjZjlGJzqX124H9orjpsr0Y5Tsmwmx35gNxpfd46c12iP6odn8c45a6gS01LIXg8F7/bSIikRbdIaGBkYa1nCIikL//Z",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#69392e",
+          "foreground": "#fff",
+          "population": 0.83,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#601e04",
+          "foreground": "#fff",
+          "population": 0.04,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a07973",
+          "foreground": "#fff",
+          "population": 7.19,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d2b8b1",
+          "foreground": "#000",
+          "population": 5.76,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#fcded1",
+          "foreground": "#000",
+          "population": 0.28,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a07973",
+          "foreground": "#fff",
+          "population": 7.19,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#bc714f",
+          "foreground": "#fff",
+          "population": 0.09,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "6EgODwTmqJiPdXeMhzaHp2h2iBYIOIIA"
+    },
+    "mimeType": "image/jpeg",
+    "originalFilename": "onion-granules.png",
+    "path": "images/dvhn6875/production/71de8d6b17698e520d8b85b14a60d50cb58f3f20-1000x1000.jpg",
+    "sha1hash": "71de8d6b17698e520d8b85b14a60d50cb58f3f20",
+    "size": 146607,
+    "uploadId": "750cf40eeb8840a97219cdcb2c900eaf058e9b51",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/71de8d6b17698e520d8b85b14a60d50cb58f3f20-1000x1000.jpg"
+  },
+  {
+    "_createdAt": "2026-06-15T17:57:33Z",
+    "_id": "image-9e59ec9c74286f961c47bcd7954150548ab62846-500x500-jpg",
+    "_rev": "ELVtnUXUxhK8jStWQ0c0pD",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:57:33Z",
+    "assetId": "9e59ec9c74286f961c47bcd7954150548ab62846",
+    "extension": "jpg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "e.P?daa|.9oftR%2j[R*a|WB?wj[M{fkRPIpayt6jtoft7j@RPayoz",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 500,
+        "width": 500
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUHCAT/xAAhEAABBAIBBQEAAAAAAAAAAAACAAEDBAUGEQcSITFCE//EABcBAQEBAQAAAAAAAAAAAAAAAAUCAAH/xAAbEQACAwEBAQAAAAAAAAAAAAAAAQIDEQRhof/aAAwDAQACEQMRAD8A6RzWeq4wSEy7pm+GUXFboM9n87cXYLv4IVl/XC5lsNsZWYBkjqTC3EnHI8rO8Psubv3QgC05uT8CID5dCX9t0LGsxL6JVc1coL07Crzx2IhkhJiAvTsij6XXsVdapRXBcZ2Hkmf2iYrk5RTYfNJSaRTv0at+B4bteKeJ/mQWdl4KGtYWhM0tLF1IZG+gjZnRFWInSwiIumP/2Q==",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#6b4d32",
+          "foreground": "#fff",
+          "population": 0.1,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#7c4b07",
+          "foreground": "#fff",
+          "population": 1.68,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#925f0a",
+          "foreground": "#fff",
+          "population": 3.73,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d3c59c",
+          "foreground": "#000",
+          "population": 0.07,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f0ce8f",
+          "foreground": "#000",
+          "population": 3.5,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a98456",
+          "foreground": "#fff",
+          "population": 1.34,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#925f0a",
+          "foreground": "#fff",
+          "population": 3.73,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "MCkSLwbXmIiKdnePhUaXmGh4h3MIOIcA"
+    },
+    "mimeType": "image/jpeg",
+    "originalFilename": "garlic-chopped.png",
+    "path": "images/dvhn6875/production/9e59ec9c74286f961c47bcd7954150548ab62846-500x500.jpg",
+    "sha1hash": "9e59ec9c74286f961c47bcd7954150548ab62846",
+    "size": 72051,
+    "uploadId": "7718fa60620b50edeb154a04f082039737139003",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/9e59ec9c74286f961c47bcd7954150548ab62846-500x500.jpg"
+  },
+  {
+    "_createdAt": "2026-06-15T17:59:31Z",
+    "_id": "image-aaf2e45a20674b84c4b6d3413e35abedfe995120-1080x1080-avif",
+    "_rev": "ELVtnUXUxhK8jStWQ0c4nn",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:59:31Z",
+    "assetId": "aaf2e45a20674b84c4b6d3413e35abedfe995120",
+    "extension": "avif",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eCK18oIT00WFg4%%01R5-o%g000L=?-:%gw@W?D%-=t7s+xukC%ME2",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 1080,
+        "width": 1080
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAIFAQQHBv/EACgQAAEEAgECBAcAAAAAAAAAAAIAAQMEBREhBhMHEkFhFBUWIjFx0f/EABYBAQEBAAAAAAAAAAAAAAAAAAIDBP/EABwRAAMAAQUAAAAAAAAAAAAAAAABAjEDBBESIv/aAAwDAQACEQMRAD8A8PifDDNZq5NHVjYYYz13T4Z29l3apXlxHSFXDfDtC8IMAmBbYiWejcsPyGKsxs00fBb4cvdbGdv16uFsSTm29fbz6rLe5qn1ZqnQlekTwuKvhRFjsgJbfbO6LkMrZOxIUr3bYMfLMM+m1+kTVQkFxfJPDFJ9MVrHdk75h3CPzcu/8VM+Ut2W1YleQW07CX45RFKssqsIsgkI22Xo+mRETSA2f//Z",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#624737",
+          "foreground": "#fff",
+          "population": 2.56,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#1f130c",
+          "foreground": "#fff",
+          "population": 2.85,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d6bca3",
+          "foreground": "#000",
+          "population": 6.56,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d6bca3",
+          "foreground": "#000",
+          "population": 6.56,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#edcfb3",
+          "foreground": "#000",
+          "population": 5.04,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a18167",
+          "foreground": "#fff",
+          "population": 3.62,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#cfae8c",
+          "foreground": "#000",
+          "population": 1.27,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "oygKFwIliHQ4l3lAmXloeYiKWQQVZVAD"
+    },
+    "mimeType": "image/avif",
+    "originalFilename": "garlic-powder.png",
+    "path": "images/dvhn6875/production/aaf2e45a20674b84c4b6d3413e35abedfe995120-1080x1080.avif",
+    "sha1hash": "aaf2e45a20674b84c4b6d3413e35abedfe995120",
+    "size": 95869,
+    "uploadId": "663b71994d6fc7bb26e9e58d81b31143b385e908",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/aaf2e45a20674b84c4b6d3413e35abedfe995120-1080x1080.avif"
+  },
+  {
+    "_createdAt": "2026-06-15T17:55:43Z",
+    "_id": "image-b88402a3066048794755359b7b289c507b38faa5-500x500-webp",
+    "_rev": "ELVtnUXUxhK8jStWQ0bxSN",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:55:43Z",
+    "assetId": "b88402a3066048794755359b7b289c507b38faa5",
+    "extension": "webp",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "e*O:O#s:-=oftR%2fkRjayWB?^azaya|RjR*f6ofj[ozx]ayMxoLWB",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 500,
+        "width": 500
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYFBwj/xAAnEAABAwMCBQUBAAAAAAAAAAABAgMEAAURBjEHEhMhIhQyQVFhsf/EABcBAAMBAAAAAAAAAAAAAAAAAAEDBAX/xAAZEQEBAQEBAQAAAAAAAAAAAAABAgARBCH/2gAMAwEAAhEDEQA/AO+3rWEeE+6xHSHHG/consPysCPxKT6ghbQcayB4DuDUBxMRO09epfUbWuNIX1EL+APqo5vU7PIY0BlS1LIJJHkFflQ16Hv15tWPNDIh3u9S2m+wbnDEhh0AZKSFbgjcUqK4eacmK0009cFKQ++sulO2AcY/lKpmqQeaC4gpB17dLXCujBanxm32/pYzWPb9D6dgSOtFtcdLgOQeXOKUpnDKFNSJASAEgADYClKUcN//2Q==",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#684533",
+          "foreground": "#fff",
+          "population": 0.32,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#693216",
+          "foreground": "#fff",
+          "population": 4.8,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#693216",
+          "foreground": "#fff",
+          "population": 4.8,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d6a6a4",
+          "foreground": "#000",
+          "population": 2.32,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#e4bca6",
+          "foreground": "#000",
+          "population": 2.34,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#955f54",
+          "foreground": "#fff",
+          "population": 4.62,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#e48c3c",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "rjgSHwbIl5d6dod/d2aHqFeGh2UHSHcA"
+    },
+    "mimeType": "image/webp",
+    "originalFilename": "onion-slices.png",
+    "path": "images/dvhn6875/production/b88402a3066048794755359b7b289c507b38faa5-500x500.webp",
+    "sha1hash": "b88402a3066048794755359b7b289c507b38faa5",
+    "size": 50582,
+    "uploadId": "d01980306f330e9b12ddd91f421bc1824b2ae552",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/b88402a3066048794755359b7b289c507b38faa5-500x500.webp"
+  },
+  {
+    "_createdAt": "2026-06-15T17:51:39Z",
+    "_id": "image-c335a5f53f40f52cb51b90492f6b2385eeef0f16-500x500-jpg",
+    "_rev": "iUpfRLGdJJghNOcIuy3W9B",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:51:39Z",
+    "assetId": "c335a5f53f40f52cb51b90492f6b2385eeef0f16",
+    "extension": "jpg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eHHw_L%g59IB02-PRPRkR-SiE3WB?EWX9v%Mxut6aeIo02RPE3t7~A",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 500,
+        "width": 500
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMFBgEC/8QAJxAAAQQCAQIFBQAAAAAAAAAAAQIDBAUABhEhIgcSIzFRExQyQXH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgQF/8QAHhEBAAICAgMBAAAAAAAAAAAAAQACESEDIhIxYaH/2gAMAwEAAhEDEQA/AJfDWt157WVLltsPSnSQ4VK7k/wZWatrkCLcT3LOEVNJV6AdPQjnJNE8NBIq4l+7YlD59ZDA/EgfOSS5cfeYk2thOrjrYc8rrpHHBB9hmXyti1sW0+/kt4vFDJs/ZnNwh0bF46mKtLKCkKKEK5AP7xmXvKGTR2TkN1f1iO4L59wcZdxnU7Zk93s6nuv3++qqJ6viSEBhAKUFSOVJB+DlXp2w2FTNcMVxJ+47nAsc8n5xjDaph1Fqok5b3E2xsHZEp3zOE8dOgAxjGPUAIq5Z/9k=",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#604e34",
+          "foreground": "#fff",
+          "population": 2.07,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#7c340c",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#9e7747",
+          "foreground": "#fff",
+          "population": 7.7,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d5c5a0",
+          "foreground": "#000",
+          "population": 3.61,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f6cd96",
+          "foreground": "#000",
+          "population": 3.27,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#9e7747",
+          "foreground": "#fff",
+          "population": 7.7,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#bf873c",
+          "foreground": "#fff",
+          "population": 0.02,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "2hgKDwJZFod5d4h2epWIB1d3R8AoAZwC"
+    },
+    "mimeType": "image/jpeg",
+    "originalFilename": "product-garlic.png",
+    "path": "images/dvhn6875/production/c335a5f53f40f52cb51b90492f6b2385eeef0f16-500x500.jpg",
+    "sha1hash": "c335a5f53f40f52cb51b90492f6b2385eeef0f16",
+    "size": 182702,
+    "uploadId": "6474b0f3ad31722c0b80cb72c1b5b68792e9102d",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/c335a5f53f40f52cb51b90492f6b2385eeef0f16-500x500.jpg"
+  },
+  {
+    "_createdAt": "2026-06-15T17:56:59Z",
+    "_id": "image-c9aec58c0dbf11b080ab038986ea823683319b84-2000x1481-png",
+    "_rev": "ELVtnUXUxhK8jStWQ0bzaT",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:56:59Z",
+    "assetId": "c9aec58c0dbf11b080ab038986ea823683319b84",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "V5FEZH000G.88_1R]g={15VX00x]}7Djtm8^PWnN}R%$",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1.350438892640108,
+        "height": 1481,
+        "width": 2000
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAAEDklEQVR4nB2SW28UBQBG9yeoiQlFiEjb3Z3Zmdm57GVmZ3e2u9vupbSlZWtBSkvBli5tuXTpDagCbcGaSkQSJIpGUAwlJCAqICBFlAg86JP/Y97nYY4pD9/bl5PzcAKCqBEWVCJiFD2qkjZUiqZKpy2zPSWy3RJpT0bIx2QsTUFTFKKKjqYnSCRtUnb29ZKWQ8LMEAiGowSDCsGghCjKGKqGpUdJKSHsyFYyciOWHESLCEiihCis/6JEZA1ZMYhqcTQ9iWaY6DGLQHNQpqlZoqlJRJJUMsk4XWmF3Zkg+50mRvPN7HFCtMYFNEkiHJYIhSXCgoKqJck4eex0Di1moeomgVBo3U4mFFZIJxLUulJ8Phjn2rDG6gGVm6Ma10YMVgYS7C0aJHX1tZmVyjIwuJ+lxSXqk3UKrRWMRJqAGNERIxqSbFB2UiwPpLlXt/hjxuLZjMmTqSS/T1k8mknz5bDFYMWm2t3D8dk5bt64wfNna1y5fIkd1Z1Y6QIBSYkjyTFkJU7etpitWqzW4jw+ZrE2bfFoMsHjeoKn00nuHDI5s7fI/NQRbq9e579/X/Lyzyd8srTEto4e0tkigaiaxE5lKZfKdFba6C+ZnN6h8sN+nZ/HdH47GufprM2zOZs7h1Oc+CBHbWgPl84v8/zhXe7fXmW8NkYuX8bJlQmYpsPY6DArSzPUD+6knNFoN5qYbAtxsU/k1sEYj2YyPJlz+HEiw1hnku6cyUT/dr5YmOOzswvs2rkbJ1skm68QcDI5jk9PcH7xCEO9WaTGBja9/SbGexsYTG3lXK/Ed8Mxbh2yuDaRYWXIZnnA4sKBHIuj3ezb1UtbW+U1sGUdqKoxWvNZWmyDSOM7hDa+gbjpLazgBvrtRs70SHyzT+PuUYvHJ1p4+nErfy+WebHcyU+nezj5YRddlTK5XIlcoZ3AeoNbtgRpaNjM5oaNpMV3GSmEWehV+GpI50Ytxi+HE6zNpHi1kOefcyVeLhV5dbbEi0+7uXWqjxPD3VQ7KhTWgcFQlKYmia2NAs2NYVLRCLV2na9HTB5M2zw4ZvHwmMlf8w7PT+VYm89xfzbDr9MZ7p0scme+k4sT7QxXi7QWyusdGr4o6r4gaH44rPgRUfZbYoo/1q77K4MJ/+JQzL8yHPevT6T8qwdN/2rN9L8fT/nfjjv+hdG8v7i3xa/3Zf1queDn8iU/IEoxTxANTxBUTxAUTxRlz5AVLx9XvKqjeKMlxZvqinqTXap3uEP1ju/QvLP9SW95n+PV+7Lenort9RazXrHQ6uUKJS8QkWKuKOquIGiuJKqurihuOqa6lZTm9rWo7khRdQ9t093xdsMd22a4R7sMd7Y34X6023brfY471OG471fybkepzS21ldz/ASR5Qq+ptcc0AAAAAElFTkSuQmCC",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#563c2d",
+          "foreground": "#fff",
+          "population": 6.73,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a64011",
+          "foreground": "#fff",
+          "population": 0.03,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d18a49",
+          "foreground": "#000",
+          "population": 9.54,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#e3ded8",
+          "foreground": "#000",
+          "population": 3.7,
+          "title": "#000"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f6b871",
+          "foreground": "#000",
+          "population": 2.04,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#595a6e",
+          "foreground": "#fff",
+          "population": 0.03,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d18a49",
+          "foreground": "#000",
+          "population": 9.54,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "1CiGLIYPIWmVWZBIeFBZB5V1ePiHCHd/AA=="
+    },
+    "mimeType": "image/png",
+    "originalFilename": "garlic-flakes.png",
+    "path": "images/dvhn6875/production/c9aec58c0dbf11b080ab038986ea823683319b84-2000x1481.png",
+    "sha1hash": "c9aec58c0dbf11b080ab038986ea823683319b84",
+    "size": 3452755,
+    "uploadId": "3ef5ac41b5594836f8ba1ad4c198e1dcba889047",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/c9aec58c0dbf11b080ab038986ea823683319b84-2000x1481.png"
+  },
+  {
+    "_createdAt": "2026-06-15T17:53:59Z",
+    "_id": "image-dc823cbe550dd73ed3c9aabe0674a3095c3ee9f9-900x900-png",
+    "_rev": "ELVtnUXUxhK8jStWQ0buKd",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:53:59Z",
+    "assetId": "dc823cbe550dd73ed3c9aabe0674a3095c3ee9f9",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eGFrFpRktlt7bb~VayNGoLWByDj[s.WVoK0Loes.WBt7$*ayM{ayNG",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 900,
+        "width": 900
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEmUlEQVR4nE2U+VNTVxiG8wewB1RUHOuCZetI3Uop1AULLRpCkEKBsi8hhOz7QkIgN/ueEDbZ1bG2/RPzdO6NY/3hmfc73z3nnfOdmfvKAnYrm3YLm7avsFsQ+xIOK1tO22fsbLscEkG3E8HjJOR1E/a6ifg8RP1eZJEND5ENN6KKjdgXNkhsbpAI+Ehub5ISCQZIiwgBMsIW2dAWuVCQfFigEBEoREPIdqIhirGwxG4iwm48zK5YxyPsJaLsJ2IcpGIcpuOfSXCYSZT1yzrJ28/ITvIZ/ifNSS7FcTbJcSYhcZpJ8i6X5F0mLnGRT3Fa+Gp/PsOxpGlJZefFPGVynO1kOcmlOUonOEpGOY4EOQ0F+BAN8CHs52MkwF/JMO9zSc53spzuZDnbEc+Vz4pr2cVegYvdvOQujpgLBsj6vez6XBy6rezb9Bw6DJx6rLz3O/m47eVTUuBDNs5ROiZNJBqKHhe7BWRnxZz0XlGPk6DFSNikI67TkNWtUjRoyGlXyOvUHFj1HDnMnHts/Bvd5O9EkGPBz4EQYC8icCQ+jWiY2vJjUy9jmZ4ivKamaDWwa9KS0y6RVs+RXJkjp11mz6zjrd3IqcvMp6CHf8I+3m26eeuxk7KaiDhtFMICMvXUJItDr/DNTLJn0XPsMHNk05NbWySxOEVyaZq0ep68doUDs5ZTl4Fzr4Uzt4UTp1kiq9dgm5nEsDCPTNn3gqXXvxFTL3BoM3BgWqeoU5NemSO+NCMRW5ghtbxAQbypUcO+cY2iYU3af+Iyk9IsoRlWMD44iGx08Dd+73uOYVRFZGWR9NoK6dUFksuzxBamEWYmEP6cJLYwS2plnpR6nuzaIhntMnmjlpROg3lslImBfqZUw8g0s9O87O6m934nb54+ZUnxCt2wAvOIArNKgVE5iEWlwDY6jHN8BMf4CJZRJfqRITSqIaYG+unv6mLw2VM0czPInDotr/pe0HzzG25fb6Lt1i06m+/ypOUeXa0tdLe20NPeKtHb0UbPd+10tbXwsOVb7t9rpvX2He63tKAc6Me2pkbmMxuYGxvlQXs7jQ31NNTU0FBbS0OtqDXltUS1pJdqa7lcV8eV+noaGxq4ee0aPz16yPLUBF6jrmxoWV1G9Ws/bc13aKyXI6+ppq6qitqqKmoqKqiuqJBUROzJq6u5XCfnRmMjDzo6GB9SYF9bxW8xlg29hnV0i7MoB17S2dbKjcYr0m0k08pKaiorqa2skGrR7Ipczu2mJroefM8fSgUm9RIbJn3ZMGA1SYXHuI5xeYFJlZJnXT/Q0XyXm9euSmNdlsslrl66xK2m63S2ttD/cy/zE2PYtGp8FgObNjNbDguysMeJ4Laz7bRJTZdey/r8DFMqJa/7XvC8+0d6Hj+i98lj+nq6Ufb/wtzYG+lWPouRoMtG2OuUMjXm8yBLS+HpR/wFxUCN+cXAdRF02fFbTbiNOhw6LU69Fq9Jz5bDSnTDTXLLR0YMEmGLfFgM2aAUsrJCRCjtRIVSMRoq7UgIpWIsVCrGw6W9RLS0n4yV9lPx0kEqXjpMiyTKZEQt98RvZWKl/wCr0opi4KSBawAAAABJRU5ErkJggg==",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#552f2b",
+          "foreground": "#fff",
+          "population": 4.76,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#140405",
+          "foreground": "#fff",
+          "population": 0.09,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#887774",
+          "foreground": "#fff",
+          "population": 6.56,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#c39e97",
+          "foreground": "#000",
+          "population": 3.57,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#e4c0b9",
+          "foreground": "#000",
+          "population": 4.1,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#887774",
+          "foreground": "#fff",
+          "population": 6.56,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d42a35",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "WyiKDQIPp4h+hosIuEd8cLQHiIh/d4D4Bw=="
+    },
+    "mimeType": "image/png",
+    "originalFilename": "onion-minced.png",
+    "path": "images/dvhn6875/production/dc823cbe550dd73ed3c9aabe0674a3095c3ee9f9-900x900.png",
+    "sha1hash": "dc823cbe550dd73ed3c9aabe0674a3095c3ee9f9",
+    "size": 373059,
+    "uploadId": "76349dd6e0ba87283269d5a5fd4a134ac0905c7b",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/dc823cbe550dd73ed3c9aabe0674a3095c3ee9f9-900x900.png"
+  },
+  {
+    "_createdAt": "2026-06-15T17:54:43Z",
+    "_id": "image-ef5981f03912b126e85276ed798254bb7564d008-894x739-jpg",
+    "_rev": "iUpfRLGdJJghNOcIuy3nAb",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-06-15T17:54:43Z",
+    "assetId": "ef5981f03912b126e85276ed798254bb7564d008",
+    "extension": "jpg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eYP?E,%g?]ofspoyM{x]xukC_NRjtRRjRjR5V@S2ozMxXSxuIAj[xu",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1.2097428958051422,
+        "height": 739,
+        "width": 894
+      },
+      "hasAlpha": false,
+      "isOpaque": true,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAARABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAcFAwb/xAAmEAABBAEDAgcBAAAAAAAAAAABAgMEBQAGESESMQcTNTZCcXOh/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQIABAX/xAAfEQACAgEEAwAAAAAAAAAAAAAAAQIRBAMhMoFRU2H/2gAMAwEAAhEDEQA/AL9rN+0QUt1r7aEqTyn5b55Kmk3lU4p2ZJbRG6t1rcXxm9J0VMdtTMVauK4I6SP5k5ZoZkvUVnXazXMaqFJHllJIQog998Rq9zS0IRcHUlS+b9Fsr7+smxkvMTo7iDwSlY74yTVXhOG46hUWzoglZLW53O33jDb8CvHx/ZXRbcwdZeiSvzOMYxShyR20n7eg/mMYxkBPkz//2Q==",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#84444c",
+          "foreground": "#fff",
+          "population": 2.21,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#710513",
+          "foreground": "#fff",
+          "population": 0.41,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d39ca3",
+          "foreground": "#000",
+          "population": 4.58,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d39ca3",
+          "foreground": "#000",
+          "population": 4.58,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#fc84bc",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a5686f",
+          "foreground": "#fff",
+          "population": 4.16,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d43065",
+          "foreground": "#fff",
+          "population": 2.01,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "cTgKDoTbh6lomXhveUZ3iEqNFJkgUAk="
+    },
+    "mimeType": "image/jpeg",
+    "originalFilename": "onion-powder.png",
+    "path": "images/dvhn6875/production/ef5981f03912b126e85276ed798254bb7564d008-894x739.jpg",
+    "sha1hash": "ef5981f03912b126e85276ed798254bb7564d008",
+    "size": 83983,
+    "uploadId": "138b25ab6470ab3cbe99ed0a35292947e6c689f3",
+    "url": "https://cdn.sanity.io/images/dvhn6875/production/ef5981f03912b126e85276ed798254bb7564d008-894x739.jpg"
+  },
+  {
+    "_createdAt": "2026-05-16T19:41:26Z",
+    "_id": "oeeqzfnXc2Dw0PW0W0x5N2",
+    "_rev": "oeeqzfnXc2Dw0PW0W0x5Ik",
+    "_type": "certification",
+    "_updatedAt": "2026-05-16T19:41:26Z",
+    "title": "ISO Certified"
+  },
+  {
+    "_createdAt": "2026-05-16T19:41:28Z",
+    "_id": "oeeqzfnXc2Dw0PW0W0x5eC",
+    "_rev": "A5rszj5Ko7F4y4qV5HTBHv",
+    "_system": {
+      "base": {
+        "id": "oeeqzfnXc2Dw0PW0W0x5eC",
+        "rev": "oeeqzfnXc2Dw0PW0W0x5Zu"
+      }
+    },
+    "_type": "certification",
+    "_updatedAt": "2026-06-22T12:55:15Z",
+    "description": "Licensed by the Food Safety and Standards Authority of India (FSSAI) for food-related import, export, wholesale, distribution, and trading activities.",
+    "issuer": "Food Safety and Standards Authority of India (FSSAI)",
+    "title": "FSSAI Central License",
+    "validity": "14 June 2027"
+  },
+  {
+    "_createdAt": "2026-05-16T19:41:29Z",
+    "_id": "oeeqzfnXc2Dw0PW0W0x5vM",
+    "_rev": "oeeqzfnXc2Dw0PW0W0x5r4",
+    "_type": "certification",
+    "_updatedAt": "2026-05-16T19:41:29Z",
+    "title": "HACCP Standards"
+  }
+]

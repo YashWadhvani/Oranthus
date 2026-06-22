@@ -15,6 +15,7 @@ type CTAProps = {
   description?: string | null;
   buttonText?: string | null;
   buttonHref?: string | null;
+  bgImageUrl?: string | null;
 };
 
 export default function CTA({
@@ -23,10 +24,20 @@ export default function CTA({
   description = "Connect with us to explore premium dried products sourced and delivered with international quality standards.",
   buttonText = "Contact Us",
   buttonHref = "#contact",
+  bgImageUrl = null,
 }: CTAProps) {
   const { scrollTo } = useLenis();
   return (
-    <section id="contact" style={{ scrollMarginTop: "6rem" }} className="relative overflow-hidden bg-[linear-gradient(135deg,#0b0b0b_0%,#1a1a1a_50%,#0b0b0b_100%)] py-16 sm:py-24 md:py-28 lg:py-32 section-padding">
+    <section 
+      id="contact" 
+      style={{ 
+        scrollMarginTop: "6rem",
+        backgroundImage: bgImageUrl 
+          ? `linear-gradient(to bottom, rgba(17, 17, 17, 0.88), rgba(17, 17, 17, 0.88)), url(${bgImageUrl})`
+          : undefined
+      }} 
+      className="relative overflow-hidden bg-cover bg-center py-16 sm:py-24 md:py-28 lg:py-32 section-padding bg-[linear-gradient(135deg,#0b0b0b_0%,#1a1a1a_50%,#0b0b0b_100%)]"
+    >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(217,169,107,0.06),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(217,169,107,0.03),transparent_55%)]" />
       
       <div className="container-width text-center">

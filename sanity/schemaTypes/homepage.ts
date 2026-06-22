@@ -76,88 +76,18 @@ export default defineType({
     }),
 
     defineField({
-      name: "categoriesEyebrow",
-      title: "Categories Eyebrow",
-      type: "string",
-    }),
-
-    defineField({
-      name: "categoriesTitle",
-      title: "Categories Title",
-      type: "string",
-    }),
-
-    defineField({
-      name: "categoriesDescription",
-      title: "Categories Description",
-      type: "text",
-    }),
-
-    defineField({
-      name: "whyChooseUsEyebrow",
-      title: "Why Choose Us Eyebrow",
-      type: "string",
-    }),
-
-    defineField({
-      name: "whyChooseUsTitle",
-      title: "Why Choose Us Title",
-      type: "string",
-    }),
-
-    defineField({
-      name: "whyChooseUsDescription",
-      title: "Why Choose Us Description",
-      type: "text",
-    }),
-
-    defineField({
-      name: "whyChooseUsFeatures",
-      title: "Why Choose Us Features",
-      type: "array",
-      of: [{ type: "featureItem" }],
-    }),
-
-    defineField({
-      name: "certificationsEyebrow",
-      title: "Certifications Eyebrow",
-      type: "string",
-    }),
-
-    defineField({
-      name: "certificationsTitle",
-      title: "Certifications Title",
-      type: "string",
-    }),
-
-    defineField({
-      name: "certificationsDescription",
-      title: "Certifications Description",
-      type: "text",
+      name: "ctaBgImage",
+      title: "CTA Background Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     }),
 
     defineField({
       name: "ctaEyebrow",
       title: "CTA Eyebrow",
       type: "string",
-    }),
-
-    defineField({
-      name: "servicesEyebrow",
-      title: "Services Eyebrow",
-      type: "string",
-    }),
-
-    defineField({
-      name: "servicesTitle",
-      title: "Services Title",
-      type: "string",
-    }),
-
-    defineField({
-      name: "servicesDescription",
-      title: "Services Description",
-      type: "text",
     }),
 
     defineField({

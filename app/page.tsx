@@ -6,10 +6,10 @@ import Services from "@/components/home/Services";
 import Categories from "@/components/home/Categories";
 import Certifications from "@/components/home/Certifications";
 import CTA from "@/components/home/CTA";
-import TradeScaleSection from "@/components/home/TradeScaleSection";
 
 import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function HomePage() {
     const content = await client.fetch(homepageQuery);
@@ -17,38 +17,50 @@ export default async function HomePage() {
     const homepage = content?.homepage;
     const about = content?.about;
 
+    const logoUrl = siteSettingsLogo(content?.siteSettings);
+
+    const ctaBgImageUrl = homepage?.ctaBgImage
+        ? urlFor(homepage.ctaBgImage).url()
+        : null;
+
+    // Build the dynamic statistics array: try homepage stats first, then about stats.
+    const rawStats = (homepage?.stats && homepage.stats.length > 0)
+        ? homepage.stats
+        : (about?.stats && about.stats.length > 0)
+            ? about.stats
+            : [];
+
+    const stats = rawStats.map((s: { value?: number | string; suffix?: string; label?: string }) => ({
+        value: s.value || 0,
+        suffix: s.suffix || "",
+        label: s.label
+    }));
+
     return (
         <>
             {/* Hero */}
-
             <SlideHero slides={homepage?.heroSlides ?? []} />
 
             {/* Marquee */}
-
             <Marquee items={homepage?.marqueeItems ?? []} />
 
-            {/* Stats */}
-
+            {/* Stats (Performance Snapshot) */}
             <AnimatedStats
-                eyebrow={homepage?.statsEyebrow}
-                title={homepage?.statsTitle}
-                description={homepage?.statsDescription}
-                stats={homepage?.stats ?? []}
+                eyebrow={homepage?.statsEyebrow || "Performance Snapshot"}
+                title={homepage?.statsTitle || "Trusted by importers across markets"}
+                description={homepage?.statsDescription || "A concise view of our export scale, reliability, and delivery consistency."}
+                stats={stats}
             />
 
-            {/* About Preview */}
-
+            {/* About Profile (Merged/Single Section) */}
             <About
-                title={about?.overviewTitle}
+                eyebrow={about?.overviewEyebrow || "Who We Are"}
+                title={about?.overviewTitle || "Born in India. Built for the World."}
                 description={about?.overviewDescription}
-                stats={about?.stats?.map((s: { value?: number; suffix?: string; label?: string }) => ({
-                    value: `${s.value || 0}${s.suffix || ""}`,
-                    label: s.label
-                }))}
+                stats={null}
             />
 
             {/* Services */}
-
             <Services
                 eyebrow={homepage?.servicesEyebrow}
                 title={homepage?.servicesTitle}
@@ -57,26 +69,14 @@ export default async function HomePage() {
             />
 
             {/* Categories */}
-
             <Categories
-                eyebrow={homepage?.categoriesEyebrow}
-                title={homepage?.categoriesTitle}
+                eyebrow={homepage?.categoriesEyebrow || "Product Categories"}
+                title={homepage?.categoriesTitle && homepage.categoriesTitle !== "Explore Our Products" ? homepage.categoriesTitle : "Explore Our Categories"}
                 description={homepage?.categoriesDescription}
                 categories={content?.categories ?? []}
             />
 
-            {/* Trade Section */}
-
-            <TradeScaleSection
-                eyebrow={homepage?.tradeEyebrow}
-                title={homepage?.tradeTitle}
-                description={homepage?.tradeDescription}
-                highlights={homepage?.tradeStoryHighlights}
-                office={content?.contactInfo || content?.siteSettings}
-            />
-
             {/* Certifications */}
-
             <Certifications
                 eyebrow={homepage?.certificationsEyebrow}
                 title={homepage?.certificationsTitle}
@@ -85,14 +85,23 @@ export default async function HomePage() {
             />
 
             {/* CTA */}
-
             <CTA
                 eyebrow={homepage?.ctaEyebrow}
                 title={homepage?.ctaTitle}
                 description={homepage?.ctaDescription}
                 buttonText={homepage?.ctaButtonText}
                 buttonHref={homepage?.ctaButtonHref}
+                bgImageUrl={ctaBgImageUrl}
             />
         </>
     );
+}
+
+function siteSettingsLogo(settings: any) {
+    if (!settings?.logo) return null;
+    try {
+        return urlFor(settings.logo).url();
+    } catch {
+        return null;
+    }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -10,6 +11,7 @@ import { SiteSettings } from "@/types/site-settings";
 
 type NavbarProps = {
     siteSettings?: SiteSettings | null;
+    logoUrl?: string | null;
 };
 
 const navLinks = [
@@ -20,7 +22,7 @@ const navLinks = [
     { label: "Contact", href: "/contact" },
 ];
 
-export default function Navbar({ siteSettings }: NavbarProps) {
+export default function Navbar({ siteSettings, logoUrl }: NavbarProps) {
     const companyName = siteSettings?.companyName || "ORANTHUS";
 
     const contactHref = siteSettings?.whatsapp
@@ -36,9 +38,20 @@ export default function Navbar({ siteSettings }: NavbarProps) {
     return (
         <header className="sticky top-0 z-50 border-b border-[#ECE8DF] bg-white/85 backdrop-blur-xl">
             <div className="container-width flex h-20 items-center justify-between">
-                <Link href="/" className="flex items-center gap-3">
+                <Link href="/" className="flex items-center gap-3 group">
+                    {logoUrl ? (
+                        <div className="relative h-10 w-10 overflow-hidden rounded-md transition-transform duration-300 group-hover:scale-105">
+                            <Image
+                                src={logoUrl}
+                                alt={companyName}
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+                    ) : null}
                     <span
-                        className="text-2xl font-semibold tracking-wide text-[#111111]"
+                        className="text-2xl font-semibold tracking-wide text-[#111111] transition-colors duration-300 group-hover:text-[#D9A96B]"
                         style={{ fontFamily: "var(--font-playfair)" }}
                     >
                         {companyName}

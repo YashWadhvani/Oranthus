@@ -7,6 +7,12 @@ export default defineType({
 
   fields: [
     defineField({
+      name: "overviewEyebrow",
+      title: "Overview Eyebrow",
+      type: "string",
+    }),
+
+    defineField({
       name: "overviewTitle",
       title: "Overview Title",
       type: "string",
