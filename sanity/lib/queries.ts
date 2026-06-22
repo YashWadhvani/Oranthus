@@ -169,6 +169,32 @@ export const certificationsQuery = `
 }
 `;
 
+export const certificationQuery = defineQuery(`
+  *[_type == "certification" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    type,
+    issuingAuthority,
+    certificateNumber,
+    issueDate,
+    expiryDate,
+    isLifetime,
+    badgeText,
+    active,
+    featured,
+    shortDescription,
+    fullDescription,
+    pdfUrl,
+    logo,
+    coverImage,
+    pdfFile,
+    "logoUrl": logo.asset->url,
+    "coverImageUrl": coverImage.asset->url,
+    "pdfFileUrl": pdfFile.asset->url
+  }
+`);
+
 export const productsPageQuery = defineQuery(`
   {
     "homepage": *[_type == "homepage"][0]{
