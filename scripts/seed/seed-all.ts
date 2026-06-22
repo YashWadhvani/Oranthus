@@ -1,11 +1,11 @@
 import { createClient } from "@sanity/client";
 import dotenv from "dotenv";
-import { siteSettingsData } from "./seed-site-settings.js";
-import { aboutPageData } from "./seed-about.js";
-import { servicesData } from "./seed-services.js";
-import { categoriesData } from "./seed-categories.js";
-import { certificationsData } from "./seed-certifications.js";
-import { homepageData } from "./seed-homepage.js";
+import { siteSettingsData } from "./seed-site-settings";
+import { aboutPageData } from "./seed-about";
+import { servicesData } from "./seed-services";
+import { categoriesData } from "./seed-categories";
+import { certificationsData } from "./seed-certifications";
+import { homepageData } from "./seed-homepage";
 
 dotenv.config();
 
@@ -32,28 +32,28 @@ async function main() {
     console.log("🌱 Starting seed all...");
 
     console.log("Seeding site settings...");
-    await client.createOrReplace(siteSettingsData);
+    await client.createOrReplace(siteSettingsData as any);
 
     console.log("Seeding about page...");
-    await client.createOrReplace(aboutPageData);
+    await client.createOrReplace(aboutPageData as any);
 
     console.log("Seeding services...");
     for (const service of servicesData) {
-      await client.createOrReplace(service);
+      await client.createOrReplace(service as any);
     }
 
     console.log("Seeding categories...");
     for (const category of categoriesData) {
-      await client.createOrReplace(category);
+      await client.createOrReplace(category as any);
     }
 
     console.log("Seeding certifications...");
     for (const cert of certificationsData) {
-      await client.createOrReplace(cert);
+      await client.createOrReplace(cert as any);
     }
 
     console.log("Seeding homepage...");
-    await client.createOrReplace(homepageData);
+    await client.createOrReplace(homepageData as any);
 
     console.log("✅ Seeding completed successfully!");
   } catch (error) {
