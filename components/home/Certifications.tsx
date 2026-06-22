@@ -25,6 +25,7 @@ type Certification = {
   logoUrl?: string | null;
   coverImageUrl?: string | null;
   pdfFileUrl?: string | null;
+  issuingCountry?: string | null;
 };
 
 type CertificationsProps = {
