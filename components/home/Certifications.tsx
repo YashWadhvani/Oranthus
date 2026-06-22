@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Award, ShieldCheck, BadgeCheck, FileText, CheckCircle2, Calendar, FileDown, ExternalLink } from "lucide-react";
 import { cardVariants, itemVariants, sectionVariants } from "./motion";
+import { Button } from "@/components/ui/button";
 
 type Certification = {
   _id?: string;
