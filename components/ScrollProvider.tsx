@@ -11,6 +11,8 @@ interface LenisOptions {
 
 type LenisContextType = {
   scrollTo: (target: string | number | Element, options?: LenisOptions) => void
+  stop: () => void
+  start: () => void
   lenis?: Lenis | null
 }
 const LenisContext = createContext<LenisContextType | undefined>(undefined)
@@ -47,6 +49,14 @@ export default function ScrollProvider({ children }: { children: ReactNode }) {
       lenisRef.current?.scrollTo(targetEl, options)
   }
 
+  const stop = () => {
+    lenisRef.current?.stop()
+  }
+
+  const start = () => {
+    lenisRef.current?.start()
+  }
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -77,7 +87,7 @@ export default function ScrollProvider({ children }: { children: ReactNode }) {
   }, [])
 
   return (
-    <LenisContext.Provider value={{ scrollTo }}>
+    <LenisContext.Provider value={{ scrollTo, stop, start, lenis: lenisRef.current }}>
       {children}
     </LenisContext.Provider>
   )

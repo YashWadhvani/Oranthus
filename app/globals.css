@@ -139,6 +139,56 @@
   }
   html {
     @apply font-sans;
+    position: relative;
+  }
+
+  /* Lenis smooth scrolling compatibility */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  /* Custom scrollbar matching brand colors for all devices */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold) var(--color-off-white);
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-off-white);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 9999px;
+    border: 3px solid var(--color-off-white);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-light);
+  }
+
+  /* Slightly thinner scrollbar on mobile/touch screens to look sleek but remain visible */
+  @media (max-width: 1023px) {
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-width: 2px;
+    }
   }
 }
 

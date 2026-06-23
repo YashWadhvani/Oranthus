@@ -70,9 +70,9 @@ export default function SlideHero({ slides = null }: SlideHeroProps) {
 
   const handleCTA = (href?: string | null, e?: React.MouseEvent) => {
     if (!href) return;
-    if (e) e.preventDefault();
 
     if (typeof href === "string" && href.startsWith("#")) {
+      if (e) e.preventDefault();
       scrollTo(href, { offset: -96 });
     }
   };

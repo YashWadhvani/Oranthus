@@ -8,9 +8,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "eslint",
-        "seed": "node --loader ts-node/esm scripts/seed-sanity.ts",
-        "seed-all": "node --loader ts-node/esm scripts/seed/seed-all.ts",
-        "fix-keys": "node --loader ts-node/esm scripts/fix-array-keys.ts",
+        "seed": "tsx scripts/seed-sanity.ts",
+        "seed-all": "tsx scripts/seed/seed-all.ts",
+        "fix-keys": "tsx scripts/fix-array-keys.ts",
         "fix-keys-node": "node scripts/fix-array-keys.mjs"
     },
     "dependencies": {
