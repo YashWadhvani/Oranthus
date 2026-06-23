@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaInstagram, FaLinkedin, FaWhatsapp, FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 import { useLenis } from "@/components/ScrollProvider";
@@ -125,6 +126,8 @@ export default function Navbar({ siteSettings, logoUrl }: NavbarProps) {
     const rawWa = siteSettings?.whatsapp || "9316927113";
     const cleanWa = rawWa.replace(/\D/g, "");
     const waUrl = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}`;
+    const textMsg = encodeURIComponent("Hello Oranthus team, I would like to make an inquiry regarding your sourcing and export services.");
+    const whatsappFabUrl = `${waUrl}?text=${textMsg}`;
     
     socialLinks.push({ platform: "whatsapp", url: waUrl });
 
@@ -147,7 +150,7 @@ export default function Navbar({ siteSettings, logoUrl }: NavbarProps) {
     }
 
     const contactHref = siteSettings?.whatsapp
-        ? `https://wa.me/${siteSettings.whatsapp.replace(/\D/g, "")}`
+        ? waUrl
         : siteSettings?.phone
           ? `tel:${siteSettings.phone}`
           : siteSettings?.email
@@ -222,6 +225,88 @@ export default function Navbar({ siteSettings, logoUrl }: NavbarProps) {
                     </div>
                 </div>
             </header>
+
+            {/* Floating WhatsApp Action Button */}
+            <AnimatePresence>
+                {!isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0, y: 30 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0, y: 30 }}
+                        transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                        className="fixed bottom-6 right-6 z-40"
+                    >
+                        {/* Ambient double pulse wave effect behind the FAB */}
+                        <motion.div
+                            className="absolute inset-0 rounded-full bg-[#25D366] z-[-1]"
+                            animate={{
+                                scale: [1, 1.35],
+                                opacity: [0.4, 0]
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 2.5,
+                                ease: "easeOut"
+                            }}
+                        />
+                        <motion.div
+                            className="absolute inset-0 rounded-full bg-[#25D366] z-[-1]"
+                            animate={{
+                                scale: [1, 1.35],
+                                opacity: [0.4, 0]
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 2.5,
+                                delay: 1.25,
+                                ease: "easeOut"
+                            }}
+                        />
+
+                        {/* Floating button itself */}
+                        <motion.a
+                            href={whatsappFabUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/25 hover:bg-[#20ba5f] cursor-pointer"
+                            aria-label="Contact us on WhatsApp"
+                            whileHover="hover"
+                            whileTap="tap"
+                            variants={{
+                                hover: {
+                                    scale: 1.10,
+                                    y: -2,
+                                    boxShadow: "0 20px 35px rgba(37,211,102,0.45)"
+                                },
+                                tap: {
+                                    scale: 0.95,
+                                    y: 0
+                                }
+                            }}
+                        >
+                            {/* Inner icon with hover wiggle animation */}
+                            <motion.div
+                                variants={{
+                                    hover: {
+                                        rotate: [0, -12, 12, -8, 8, 0],
+                                        transition: {
+                                            duration: 0.5,
+                                            ease: "easeInOut"
+                                        }
+                                    }
+                                }}
+                            >
+                                <FaWhatsapp className="h-7 w-7" />
+                            </motion.div>
+
+                            {/* Static gold notification dot with a premium subtle pulse */}
+                            <span className="absolute -top-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-[#D9A96B] border-2 border-white shadow-md flex items-center justify-center">
+                                <span className="absolute inset-0 rounded-full bg-[#D9A96B] animate-ping opacity-35" />
+                            </span>
+                        </motion.a>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <AnimatePresence>
                 {isOpen && (
@@ -330,51 +415,22 @@ export default function Navbar({ siteSettings, logoUrl }: NavbarProps) {
                                                 let hoverClass = "";
 
                                                 if (platformName === "whatsapp") {
-                                                    icon = (
-                                                        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.718.737 5.33 2.135 7.623L.855 23.87a.5.5 0 00.658.658l6.183-1.624a9.87 9.87 0 007.623 2.135c5.45 0 9.85-4.4 9.85-9.85s-4.4-9.85-9.85-9.85zm0 18.25c-2.324 0-4.52-.629-6.404-1.83l-.46.24-1.598.42.42-1.598.24-.46a9.35 9.35 0 011.83-6.404c0 4.873 3.978 8.851 8.851 8.851s8.851-3.978 8.851-8.851-3.978-8.851-8.851-8.851z"/>
-                                                        </svg>
-                                                    );
+                                                    icon = <FaWhatsapp className="h-5 w-5" />;
                                                     hoverClass = "hover:bg-[#25D366] hover:text-white hover:border-[#25D366]";
                                                 } else if (platformName === "instagram") {
-                                                    icon = (
-                                                        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                                                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                                        </svg>
-                                                    );
+                                                    icon = <FaInstagram className="h-5 w-5" />;
                                                     hoverClass = "hover:bg-[#E1306C] hover:text-white hover:border-[#E1306C]";
                                                 } else if (platformName === "linkedin") {
-                                                    icon = (
-                                                        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                                            <rect width="4" height="12" x="2" y="9" />
-                                                            <circle cx="4" cy="4" r="2" />
-                                                        </svg>
-                                                    );
+                                                    icon = <FaLinkedin className="h-5 w-5" />;
                                                     hoverClass = "hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5]";
                                                 } else if (platformName === "facebook") {
-                                                    icon = (
-                                                        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                                                        </svg>
-                                                    );
+                                                    icon = <FaFacebookF className="h-5 w-5" />;
                                                     hoverClass = "hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]";
                                                 } else if (platformName === "youtube") {
-                                                    icon = (
-                                                        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                                                            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" />
-                                                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-                                                        </svg>
-                                                    );
+                                                    icon = <FaYoutube className="h-5 w-5" />;
                                                     hoverClass = "hover:bg-[#FF0000] hover:text-white hover:border-[#FF0000]";
                                                 } else if (platformName === "twitter" || platformName === "x") {
-                                                    icon = (
-                                                        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                                        </svg>
-                                                    );
+                                                    icon = <FaTwitter className="h-5 w-5" />;
                                                     hoverClass = "hover:bg-white hover:text-black hover:border-white";
                                                 }
 

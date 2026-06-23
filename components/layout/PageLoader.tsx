@@ -17,6 +17,7 @@ export default function PageLoader({ logoUrl, companyName }: PageLoaderProps) {
   const [isInitial, setIsInitial] = useState(true);
   const [isNavigating, setIsNavigating] = useState(false);
   const lastPathnameRef = useRef(pathname);
+  const transitionStartRef = useRef<number>(0);
 
   useEffect(() => {
     setMounted(true);
@@ -38,6 +39,8 @@ export default function PageLoader({ logoUrl, companyName }: PageLoaderProps) {
 
   // Intercept internal clicks to slide down the loader BEFORE navigating
   useEffect(() => {
+    let navTimer: NodeJS.Timeout;
+
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest("a");
@@ -77,33 +80,51 @@ export default function PageLoader({ logoUrl, companyName }: PageLoaderProps) {
 
       // Intercept navigation
       e.preventDefault();
+      transitionStartRef.current = Date.now();
       setIsNavigating(true);
 
-      // Slide down animation duration is 600ms, trigger route change just before it finishes
-      setTimeout(() => {
+      // Clear any existing timers to prevent double-clicks
+      clearTimeout(navTimer);
+
+      // 1. Slide down animation is 600ms. Trigger navigation once fully covered (600ms)
+      navTimer = setTimeout(() => {
         router.push(href);
-      }, 500);
+      }, 600);
     };
 
     document.addEventListener("click", handleAnchorClick);
     return () => {
       document.removeEventListener("click", handleAnchorClick);
+      clearTimeout(navTimer);
     };
   }, [router]);
 
-  // 2. Page transition slide-up trigger on pathname changes
+  // 2. Page transition slide-up trigger on pathname changes (for back/forward history navigation fallback)
   useEffect(() => {
     if (pathname !== lastPathnameRef.current) {
       lastPathnameRef.current = pathname;
 
-      // Page change has finished. Keep the loader down for a 200ms buffer, then slide up.
-      const timer = setTimeout(() => {
-        setIsNavigating(false);
-      }, 400);
-
-      return () => clearTimeout(timer);
+      // If we are navigating (clicked an internal link)
+      if (isNavigating) {
+        const elapsed = Date.now() - transitionStartRef.current;
+        // Ensure at least 600ms slide down + 500ms hold (1100ms total elapsed)
+        // AND at least 500ms hold on the new page
+        const remainingHold = Math.max(500, 1100 - elapsed);
+        
+        const timer = setTimeout(() => {
+          setIsNavigating(false);
+        }, remainingHold);
+        return () => clearTimeout(timer);
+      } else {
+        // Back/forward browser buttons fallback: trigger full transition sequence
+        setIsNavigating(true);
+        const timer = setTimeout(() => {
+          setIsNavigating(false);
+        }, 1100); // 600ms slide down + 500ms hold
+        return () => clearTimeout(timer);
+      }
     }
-  }, [pathname]);
+  }, [pathname, isNavigating]);
 
   const showLoader = isInitialLoading || isNavigating;
 
@@ -111,7 +132,7 @@ export default function PageLoader({ logoUrl, companyName }: PageLoaderProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FAF8F5] text-[#111111] transition-transform duration-600 ease-[cubic-bezier(0.85,0,0.15,1)] ${showLoader ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FAF8F5] text-[#111111] transition-transform duration-[600ms] ease-[cubic-bezier(0.85,0,0.15,1)] ${showLoader ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
         }`}
     >
       <style>{`
