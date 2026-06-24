@@ -6,6 +6,30 @@ import ContactForm from "@/components/contact/ContactForm";
 import { FaWhatsapp } from "react-icons/fa";
 
 export const revalidate = 60;
+
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Reach out to Oranthus for bulk trade inquiries, sourcing quotes, export documentation, and container shipment scheduling. Connect with our sourcing desk via WhatsApp, email, or our inquiry form for fast response on dried vegetables, spices, and agri commodity exports from India.",
+  keywords: [
+    "contact Oranthus",
+    "agri export inquiry India",
+    "bulk trade quote India",
+    "sourcing desk India",
+    "export inquiry form",
+    "container shipment quote",
+    "dried vegetable bulk order",
+    "WhatsApp trade inquiry India",
+    "Oranthus contact",
+  ],
+  alternates: { canonical: "https://www.oranthus.com/contact" },
+  openGraph: {
+    title: "Oranthus - Contact Us",
+    description:
+      "Connect with Oranthus sourcing desk for bulk trade quotes, export documentation, and container scheduling inquiries.",
+    url: "https://www.oranthus.com/contact",
+  },
+};
 import { 
   Mail, 
   Phone, 

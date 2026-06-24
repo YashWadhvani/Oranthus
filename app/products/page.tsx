@@ -5,6 +5,29 @@ import ScrollReveal from "@/components/layout/ScrollReveal";
 
 export const revalidate = 60;
 
+export const metadata = {
+  title: "Products",
+  description:
+    "Explore Oranthus's export-grade product catalogue — dehydrated onion, dried garlic, spices, and bulk agricultural commodities sourced from certified Indian farms. Available in multiple grades, custom packaging sizes, and container-ready quantities for global importers.",
+  keywords: [
+    "Indian export products",
+    "dehydrated onion export",
+    "dried garlic exporter India",
+    "bulk spices India",
+    "agri commodity catalogue",
+    "export grade vegetables India",
+    "dried vegetable varieties India",
+    "Oranthus product range",
+  ],
+  alternates: { canonical: "https://www.oranthus.com/products" },
+  openGraph: {
+    title: "Oranthus - Products",
+    description:
+      "Explore export-grade dehydrated vegetables, spices, and bulk agricultural commodities from India.",
+    url: "https://www.oranthus.com/products",
+  },
+};
+
 export default async function ProductsPage() {
   const data = await client.fetch(productsPageQuery);
   const content = data?.homepage;

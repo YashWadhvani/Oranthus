@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.oranthus.com/</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/about</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/products</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/services</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/products/dried-garlic</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/products/dried-onion</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/certifications/fssai-central-license</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/certifications/importer-exporter-code</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact?service=Export%20Documentation%20Support</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact?service=International%20Trade%20Facilitation</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact?service=Merchant%20Exporting</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact?service=Product%20Sourcing</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact?service=Quality%20Coordination</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/contact?service=Supplier%20Identification</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oranthus.com/certifications</loc>
+  <lastmod>2026-06-24T12:09:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+</urlset>

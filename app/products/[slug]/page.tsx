@@ -37,6 +37,39 @@ type CategoryPageProps = {
   }>;
 };
 
+export async function generateMetadata({ params }: CategoryPageProps) {
+  const { slug } = await params;
+  const data = await client.fetch(categoryPageQuery, { slug });
+  const category = data?.category;
+
+  if (!category) return {};
+
+  const title = category.title;
+  const description =
+    category.description ||
+    `Browse export-grade ${title} from India. Oranthus supplies certified, pre-graded ${title} in bulk packaging for international importers. Available in multiple grades with flexible MOQ and container-ready shipments.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      `${title} exporter India`,
+      `${title} bulk export`,
+      `export grade ${title}`,
+      `buy ${title} from India`,
+      `${title} supplier India`,
+      "dehydrated vegetables export",
+      "Indian agri commodity export",
+    ],
+    alternates: { canonical: `https://www.oranthus.com/products/${slug}` },
+    openGraph: {
+      title: `Oranthus - ${title}`,
+      description,
+      url: `https://www.oranthus.com/products/${slug}`,
+    },
+  };
+}
+
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
   const data = await client.fetch(categoryPageQuery, { slug });

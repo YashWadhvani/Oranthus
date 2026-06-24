@@ -5,6 +5,30 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const revalidate = 60;
+
+export const metadata = {
+  title: "Our Services",
+  description:
+    "Oranthus offers end-to-end agricultural export services including product sourcing, export documentation, quality coordination, international trade facilitation, and container scheduling. Partner with India's trusted merchant exporter for seamless B2B agri supply chains.",
+  keywords: [
+    "agricultural export services India",
+    "product sourcing India",
+    "export documentation services",
+    "quality coordination export",
+    "international trade facilitation",
+    "container scheduling agri export",
+    "merchant export services",
+    "B2B agri supply chain",
+    "Oranthus services",
+  ],
+  alternates: { canonical: "https://www.oranthus.com/services" },
+  openGraph: {
+    title: "Oranthus - Our Services",
+    description:
+      "End-to-end agricultural export services including sourcing, documentation, quality coordination, and container scheduling from India.",
+    url: "https://www.oranthus.com/services",
+  },
+};
 import {
   Search,
   Ship,

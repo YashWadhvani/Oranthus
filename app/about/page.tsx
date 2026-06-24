@@ -24,6 +24,28 @@ import { ScrollStagger, ScrollStaggerItem } from "@/components/layout/ScrollStag
 
 export const revalidate = 60;
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn about Oranthus — a certified Indian merchant exporter specializing in dehydrated vegetables, dried spices, and bulk agri commodities. Founded with a vision to connect Indian farms to global buyers, we operate under FSSAI and IEC certification with active export support for importers in 20+ countries.",
+  keywords: [
+    "about Oranthus",
+    "Indian agri export company",
+    "merchant exporter India",
+    "FSSAI certified company",
+    "dried vegetable exporter company profile",
+    "India food export brand",
+    "Oranthus about",
+  ],
+  alternates: { canonical: "https://www.oranthus.com/about" },
+  openGraph: {
+    title: "Oranthus - About Us",
+    description:
+      "Learn about Oranthus — a certified Indian merchant exporter specializing in dehydrated vegetables, dried spices, and bulk agri commodities.",
+    url: "https://www.oranthus.com/about",
+  },
+};
+
 const iconMap: Record<string, React.ComponentType<any>> = {
   shieldCheck: ShieldCheck,
   coins: Coins,
