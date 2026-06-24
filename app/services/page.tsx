@@ -50,6 +50,16 @@ export default async function ServicesPage() {
   const services = data?.services || [];
   const content = data?.homepage;
 
+  const colMap: Record<number, string> = {
+    1: "grid-cols-1 max-w-2xl mx-auto",
+    2: "grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+  };
+
+  const colsToUse = content?.servicesColumns || 3;
+  const gridClass = colMap[colsToUse] || colMap[3];
+
   // Process workflow details
   const processSteps = [
     {
@@ -117,7 +127,7 @@ export default async function ServicesPage() {
               No export services registered in Sanity yet. Sourcing desk is open for inquiries.
             </div>
           ) : (
-            <ScrollStagger className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <ScrollStagger className={`grid gap-8 ${gridClass}`}>
               {services.map((service: { _id: string; title: string; description: string; icon?: string }, index: number) => {
                 let IconComponent: React.ComponentType<{ className?: string }> = (fallbackIcons[index % fallbackIcons.length]) as React.ComponentType<{ className?: string }>;
                 if (service.icon && iconMap[service.icon]) {
@@ -150,10 +160,13 @@ export default async function ServicesPage() {
 
                         {/* Small checklist of operations */}
                         <div className="mt-6 pt-6 border-t border-[#ECE8DF]/60">
-                          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D9A96B] transition-all duration-300 group-hover:translate-x-1">
-                            <span>Sourcing Desk Support</span>
+                          <Link 
+                            href={`/contact?service=${encodeURIComponent(service.title)}`}
+                            className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D9A96B] transition-all duration-300 hover:text-[#c89a5a] group-hover:translate-x-1 cursor-pointer"
+                          >
+                            <span>Request Sourcing Support</span>
                             <ArrowRight className="h-3 w-3" />
-                          </div>
+                          </Link>
                         </div>
                       </CardContent>
                     </Card>

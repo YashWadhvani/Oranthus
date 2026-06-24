@@ -2,6 +2,8 @@ import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/contact/ContactForm";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const revalidate = 60;
 import { 
@@ -10,7 +12,6 @@ import {
   MapPin, 
   Clock, 
   Send,
-  MessageSquare,
   ArrowRight,
   ShieldCheck,
   Building
@@ -56,11 +57,13 @@ function getGoogleMapsEmbedUrl(mapUrl?: string | null) {
 export default async function ContactPage() {
   const data = await client.fetch(homepageQuery);
   const contactInfo = data?.contactInfo || {};
+  const products = data?.products || [];
+  const services = data?.services || [];
   
   // Resolve address and coordinates
   const hqAddress = contactInfo?.address || "123 Export Street, Ahmedabad, Gujarat 380001, India";
   const hqPhone = contactInfo?.phone || "+91 93169 27113";
-  const hqEmail = contactInfo?.email || "info@oranthus.com";
+  const hqEmail = contactInfo?.email || data?.siteSettings?.email || "info@oranthus.com";
   const businessHours = contactInfo?.businessHours || "Mon–Sat, 9:00 AM to 6:00 PM IST";
   const mapEmbedUrl = getGoogleMapsEmbedUrl(contactInfo?.mapEmbedUrl) || "https://www.google.com/maps?q=Ahmedabad,Gujarat,India&output=embed";
 
@@ -94,7 +97,7 @@ export default async function ContactPage() {
           </ScrollReveal>
         </div>
       </section>
-
+ 
       {/* 2. Overhauled Split Layout (Contact Cards + Map/Form) */}
       <section className="py-20 sm:py-28 md:py-32 section-padding bg-white">
         <div className="container-width">
@@ -113,7 +116,7 @@ export default async function ContactPage() {
                   Reach Oranthus Directly
                 </h2>
               </ScrollReveal>
-
+ 
               <ScrollStagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
                 {/* Email Card */}
                 <ScrollStaggerItem>
@@ -133,7 +136,7 @@ export default async function ContactPage() {
                     </div>
                   </Card>
                 </ScrollStaggerItem>
-
+ 
                 {/* Phone Card */}
                 <ScrollStaggerItem>
                   <Card className="rounded-2xl border-[#ECE8DF] bg-[#FAF8F5] p-6 shadow-sm hover:shadow-md hover:border-[#D9A96B]/30 transition-all duration-300 h-full">
@@ -152,7 +155,7 @@ export default async function ContactPage() {
                     </div>
                   </Card>
                 </ScrollStaggerItem>
-
+ 
                 {/* Address Card */}
                 <ScrollStaggerItem className="sm:col-span-2 lg:col-span-1">
                   <Card className="rounded-2xl border-[#ECE8DF] bg-[#FAF8F5] p-6 shadow-sm hover:shadow-md hover:border-[#D9A96B]/30 transition-all duration-300 h-full">
@@ -168,7 +171,7 @@ export default async function ContactPage() {
                   </Card>
                 </ScrollStaggerItem>
               </ScrollStagger>
-
+ 
               {/* Large WhatsApp CTA Button */}
               <ScrollReveal direction="left" className="mt-4 p-6 rounded-2xl border border-[#25D366]/20 bg-[#25D366]/5 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_8px_20px_rgba(37,211,102,0.04)]">
                 <div className="text-center sm:text-left">
@@ -185,87 +188,36 @@ export default async function ContactPage() {
                   className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5f] text-white px-6 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#25D366]/20 shrink-0"
                 >
                   <span>Chat on WhatsApp</span>
-                  <MessageSquare className="h-4 w-4" />
+                  <FaWhatsapp className="h-5 w-5" />
                 </a>
               </ScrollReveal>
             </div>
-
-            {/* Right Column: Google Maps Location & Form */}
-            <div className="flex flex-col gap-8">
-              {/* Google Map Card */}
-              <ScrollReveal direction="right" className="overflow-hidden rounded-3xl border border-[#ECE8DF] bg-white shadow-[0_12px_40px_rgba(15,15,15,0.04)] p-2">
-                <iframe
-                  src={mapEmbedUrl}
-                  title="Oranthus maps coordinates"
-                  className="h-[320px] w-full sm:h-[380px] rounded-[1.5rem]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </ScrollReveal>
-
-              {/* Contact Inquiry Form */}
-              <ScrollReveal direction="right" delay={0.1} className="rounded-3xl border border-[#ECE8DF] bg-[#FAF8F5] p-8 shadow-[0_12px_40px_rgba(15,15,15,0.03)]">
-                <div className="flex flex-col gap-6">
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#111111]" style={{ fontFamily: "var(--font-playfair)" }}>
-                      Send an Export Inquiry
-                    </h3>
-                    <p className="text-xs text-[#555555] font-light mt-1">We respond to specifications worksheets within 24 hours.</p>
-                  </div>
-
-                  <form className="space-y-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-xs font-semibold uppercase tracking-wider text-[#555555]">Your Name</label>
-                        <input 
-                          type="text" 
-                          placeholder="e.g. John Doe"
-                          className="w-full px-4 py-2.5 rounded-lg border border-[#ECE8DF] bg-white text-sm focus:outline-none focus:border-[#D9A96B] transition-colors"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-xs font-semibold uppercase tracking-wider text-[#555555]">Work Email</label>
-                        <input 
-                          type="email" 
-                          placeholder="e.g. john@importco.com"
-                          className="w-full px-4 py-2.5 rounded-lg border border-[#ECE8DF] bg-white text-sm focus:outline-none focus:border-[#D9A96B] transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold uppercase tracking-wider text-[#555555]">Target Product Category</label>
-                      <select className="w-full px-4 py-2.5 rounded-lg border border-[#ECE8DF] bg-white text-sm focus:outline-none focus:border-[#D9A96B] transition-colors">
-                        <option>Dried Onions (Flakes / Powder)</option>
-                        <option>Dehydrated Garlic (Granules / Powder)</option>
-                        <option>Spices & Seasonings</option>
-                        <option>Grains & Commodities</option>
-                        <option>Other Sourced Ingredients</option>
-                      </select>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold uppercase tracking-wider text-[#555555]">Inquiry details</label>
-                      <textarea 
-                        rows={4}
-                        placeholder="Detail your specifications, moisture limit, packing type (e.g. multi-ply paper bags), target volume, and destination port..."
-                        className="w-full px-4 py-2.5 rounded-lg border border-[#ECE8DF] bg-white text-sm focus:outline-none focus:border-[#D9A96B] transition-colors resize-none"
-                      />
-                    </div>
-
-                    <button 
-                      type="button"
-                      className="w-full flex items-center justify-center gap-2 bg-[#D9A96B] hover:bg-[#c89a5a] text-white py-3 rounded-lg text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 shadow-[0_4px_12px_rgba(217,169,107,0.15)]"
-                    >
-                      <span>Send Sourcing Worksheet</span>
-                      <Send className="h-3.5 w-3.5" />
-                    </button>
-                  </form>
-                </div>
-              </ScrollReveal>
+            {/* Right Column: Sourcing Inquiry Form */}
+            <div className="flex flex-col gap-8 scroll-mt-24" id="inquiry-form-section">
+              <ContactForm 
+                products={products} 
+                services={services} 
+                contactEmail={hqEmail} 
+                whatsappNumber={whatsappNumber}
+              />
             </div>
-
+ 
           </div>
+        </div>
+      </section>
+
+      {/* 3. Full-Width Map Location */}
+      <section className="pb-20 sm:pb-28 md:pb-32 section-padding bg-white">
+        <div className="container-width">
+          <ScrollReveal direction="up" className="overflow-hidden rounded-3xl border border-[#ECE8DF] bg-white shadow-[0_12px_40px_rgba(15,15,15,0.04)] p-2">
+            <iframe
+              src={mapEmbedUrl}
+              title="Oranthus maps coordinates"
+              className="h-[380px] w-full sm:h-[460px] rounded-[1.5rem]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </ScrollReveal>
         </div>
       </section>
     </main>

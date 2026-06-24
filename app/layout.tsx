@@ -24,8 +24,10 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const siteSettings = await client.fetch(siteSettingsQuery);
+    const layoutData = await client.fetch(siteSettingsQuery);
+    const siteSettings = layoutData?.settings;
     const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).url() : null;
+    const categories = layoutData?.categories || [];
 
     return (
         <html lang="en">
@@ -38,7 +40,7 @@ export default async function RootLayout({
 
                     <main className="min-h-screen">{children}</main>
 
-                    <Footer siteSettings={siteSettings} logoUrl={logoUrl} />
+                    <Footer siteSettings={siteSettings} logoUrl={logoUrl} categories={categories} />
                 </ScrollProvider>
             </body>
         </html>

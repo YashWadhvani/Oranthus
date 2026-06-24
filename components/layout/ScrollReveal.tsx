@@ -11,6 +11,7 @@ interface ScrollRevealProps {
     distance?: number;
     className?: string;
     once?: boolean;
+    layout?: boolean | "position" | "size";
 }
 
 export default function ScrollReveal({
@@ -20,7 +21,8 @@ export default function ScrollReveal({
     delay = 0,
     distance = 25,
     className = "",
-    once = true
+    once = true,
+    layout
 }: ScrollRevealProps) {
     const directions = {
         up: { y: distance },
@@ -52,6 +54,7 @@ export default function ScrollReveal({
             whileInView={animate}
             viewport={{ once, margin: "-10% 0px" }}
             className={className}
+            layout={layout}
         >
             {children}
         </motion.div>

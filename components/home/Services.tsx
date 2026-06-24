@@ -25,6 +25,7 @@ type ServicesProps = {
   title?: string | null;
   description?: string | null;
   services?: Service[] | null;
+  columns?: number | null;
 };
 
 const serviceIcons = [Search, Ship, Users, CheckCircle, FileText, Box, Globe, Zap];
@@ -75,7 +76,17 @@ export default function Services({
       description: "Quick turnaround times with efficient procurement and delivery processes.",
     },
   ],
+  columns = 4,
 }: ServicesProps) {
+  const colMap: Record<number, string> = {
+    1: "grid-cols-1 max-w-xl mx-auto",
+    2: "grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto",
+    3: "grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto",
+    4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+  };
+
+  const colsToUse = columns || 4;
+  const gridClass = colMap[colsToUse] || colMap[4];
   return (
     <section id="services" style={{ scrollMarginTop: "6rem" }} className="bg-[#FFFFFF] section-padding py-16 sm:py-24 md:py-28 lg:py-32">
       <div className="container-width">
@@ -103,7 +114,7 @@ export default function Services({
           </motion.p>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className={`grid gap-8 ${gridClass}`}>
           {services?.map((service, index) => {
             const Icon = serviceIcons[index % serviceIcons.length];
 

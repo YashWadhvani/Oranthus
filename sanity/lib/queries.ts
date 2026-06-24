@@ -32,6 +32,7 @@ export const homepageQuery = `
     categoriesEyebrow,
     categoriesTitle,
     categoriesDescription,
+    categoriesColumns,
 
     whyChooseUsEyebrow,
     whyChooseUsTitle,
@@ -41,11 +42,13 @@ export const homepageQuery = `
     certificationsEyebrow,
     certificationsTitle,
     certificationsDescription,
+    certificationsColumns,
     ctaEyebrow,
 
     servicesEyebrow,
     servicesTitle,
     servicesDescription,
+    servicesColumns,
 
     statsEyebrow,
     statsTitle,
@@ -117,10 +120,14 @@ export const homepageQuery = `
     "logoUrl": logo.asset->url,
     "coverImageUrl": coverImage.asset->url
   },
-
   "contactInfo": *[_type == "contactInfo"] | order(_createdAt asc)[0],
 
-  "siteSettings": *[_type == "siteSettings"][0]
+  "products": *[_type == "product"] | order(name asc) {
+    _id,
+    name
+  },
+
+  "siteSettings": coalesce(*[_id == "site-settings"][0], *[_type == "siteSettings"] | order(_updatedAt desc)[0])
 }
 `;
 
@@ -191,7 +198,8 @@ export const productsPageQuery = defineQuery(`
     "homepage": *[_type == "homepage"][0]{
       categoriesEyebrow,
       categoriesTitle,
-      categoriesDescription
+      categoriesDescription,
+      categoriesColumns
     },
     "categories": *[_type == "category"] | order(coalesce(title, name) asc) {
       _id,
@@ -276,24 +284,31 @@ export const productPageQuery = defineQuery(`
 `);
 
 export const siteSettingsQuery = `
-  *[_type == "siteSettings"][0]{
-    companyName,
-    tagline,
-
-    logo,
-    favicon,
-
-    email,
-    phone,
-    whatsapp,
-    website,
-    address,
-    googleMapsLink,
-
-    seoTitle,
-    seoDescription,
-    ogImage,
-
-    socialLinks
+  {
+    "settings": coalesce(*[_id == "site-settings"][0], *[_type == "siteSettings"] | order(_updatedAt desc)[0]){
+      companyName,
+      tagline,
+  
+      logo,
+      favicon,
+  
+      email,
+      phone,
+      whatsapp,
+      website,
+      address,
+      googleMapsLink,
+  
+      seoTitle,
+      seoDescription,
+      ogImage,
+  
+      socialLinks
+    },
+    "categories": *[_type == "category"] | order(coalesce(title, name) asc) {
+      _id,
+      "title": coalesce(title, name),
+      "slug": slug.current
+    }
   }
 `;

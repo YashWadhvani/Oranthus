@@ -32,6 +32,7 @@ type CertificationsProps = {
   title?: string | null;
   description?: string | null;
   certifications?: Certification[] | null;
+  columns?: number | null;
 };
 
 const certIcons = [Award, ShieldCheck, BadgeCheck, CheckCircle2, FileText];
@@ -55,7 +56,17 @@ export default function Certifications({
   title = "International Standards & Compliance",
   description = "Trusted badges and approvals that reinforce our quality-first export process.",
   certifications = [],
+  columns = 2,
 }: CertificationsProps) {
+  const colMap: Record<number, string> = {
+    1: "grid-cols-1 max-w-2xl mx-auto",
+    2: "grid-cols-1 sm:grid-cols-2 max-w-5xl mx-auto",
+    3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto",
+    4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-none mx-auto",
+  };
+
+  const colsToUse = columns || 2;
+  const gridClass = colMap[colsToUse] || colMap[2];
   const certsToRender = certifications ?? [];
 
   return (
@@ -91,7 +102,7 @@ export default function Certifications({
           )}
         </motion.div>
 
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 max-w-5xl mx-auto">
+        <div className={`grid gap-8 ${gridClass}`}>
           {certsToRender.map((item, index) => {
             return (
               <motion.div 

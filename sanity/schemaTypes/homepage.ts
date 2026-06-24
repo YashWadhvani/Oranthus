@@ -144,5 +144,32 @@ export default defineType({
       type: "array",
       of: [{ type: "string" }],
     }),
+
+    defineField({
+      name: "categoriesColumns",
+      title: "Categories Cards Per Row",
+      type: "number",
+      description: "Number of columns to display on large screens (1 to 4)",
+      validation: (Rule) => Rule.min(1).max(4).integer(),
+      initialValue: 3,
+    }),
+
+    defineField({
+      name: "servicesColumns",
+      title: "Services Cards Per Row",
+      type: "number",
+      description: "Number of columns to display on large screens (1 to 4)",
+      validation: (Rule) => Rule.min(1).max(4).integer(),
+      initialValue: 4,
+    }),
+
+    defineField({
+      name: "certificationsColumns",
+      title: "Certifications Cards Per Row",
+      type: "number",
+      description: "Number of columns to display on large screens (1 to 4)",
+      validation: (Rule) => Rule.min(1).max(4).integer(),
+      initialValue: 2,
+    }),
   ],
 });

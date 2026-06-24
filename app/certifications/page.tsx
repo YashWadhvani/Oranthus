@@ -40,6 +40,7 @@ export default async function CertificationsPage() {
         title=""
         description=""
         certifications={certifications}
+        columns={content?.certificationsColumns}
       />
     </main>
   );

@@ -8,6 +8,7 @@ import { FaInstagram, FaLinkedin, FaWhatsapp, FaFacebookF, FaYoutube, FaTwitter 
 type FooterProps = {
     siteSettings?: SiteSettings | null;
     logoUrl?: string | null;
+    categories?: { _id: string; title: string; slug: string }[] | null;
 };
 
 const quickLinks = [
@@ -18,14 +19,9 @@ const quickLinks = [
     { label: "Contact", href: "/contact" },
 ];
 
-const categoryLinks = [
-    { label: "Dehydrated Onions", href: "/products/dried-onions" },
-    { label: "Dehydrated Garlic", href: "/products/dehydrated-garlic" },
-    { label: "Spices & Seasonings", href: "/products/spices" },
-    { label: "Explore All Categories", href: "/products" },
-];
 
-export default function Footer({ siteSettings, logoUrl }: FooterProps) {
+
+export default function Footer({ siteSettings, logoUrl, categories }: FooterProps) {
     const companyName = siteSettings?.companyName || "ORANTHUS";
     const tagline = siteSettings?.tagline || "Born in India. Built for the World.";
 
@@ -35,29 +31,40 @@ export default function Footer({ siteSettings, logoUrl }: FooterProps) {
 
     // Build premium social links list with fallbacks
     const socialLinks: { platform: string; url: string }[] = [];
-    const rawWa = siteSettings?.whatsapp || "9316927113";
-    const cleanWa = rawWa.replace(/\D/g, "");
-    const waUrl = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}`;
     
-    socialLinks.push({ platform: "whatsapp", url: waUrl });
-
     if (siteSettings?.socialLinks && siteSettings.socialLinks.length > 0) {
         siteSettings.socialLinks.forEach((link) => {
-            if (link.platform === "whatsapp") {
-                const idx = socialLinks.findIndex((s) => s.platform === "whatsapp");
-                if (idx !== -1) socialLinks[idx].url = link.url;
-            } else {
-                socialLinks.push(link);
+            if (link.platform && link.url) {
+                socialLinks.push({ platform: link.platform, url: link.url });
             }
         });
+    } else {
+        // Fallbacks if nothing is configured in Sanity
+        const rawWa = siteSettings?.whatsapp || "9316927113";
+        const cleanWa = rawWa.replace(/\D/g, "");
+        const waUrl = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}`;
+        
+        socialLinks.push(
+            { platform: "whatsapp", url: waUrl },
+            { platform: "instagram", url: "https://instagram.com/oranthus" },
+            { platform: "linkedin", url: "https://linkedin.com/company/oranthus" }
+        );
     }
 
-    if (!socialLinks.some((s) => s.platform === "instagram")) {
-        socialLinks.push({ platform: "instagram", url: "https://instagram.com/oranthus" });
-    }
-    if (!socialLinks.some((s) => s.platform === "linkedin")) {
-        socialLinks.push({ platform: "linkedin", url: "https://linkedin.com/company/oranthus" });
-    }
+    const waUrl = socialLinks.find(s => s.platform === "whatsapp")?.url || `https://wa.me/91${whatsappNumber}`;
+
+    const categoriesToRender = categories && categories.length > 0
+        ? categories.map(cat => ({ label: cat.title, href: `/products/${cat.slug}` }))
+        : [
+            { label: "Dehydrated Onions", href: "/products/dried-onions" },
+            { label: "Dehydrated Garlic", href: "/products/dehydrated-garlic" },
+            { label: "Spices & Seasonings", href: "/products/spices" },
+        ];
+    
+    const finalCategoryLinks = [
+        ...categoriesToRender,
+        { label: "All Categories", href: "/products" }
+    ];
 
     return (
         <footer className="border-t border-neutral-800 bg-[#111111] text-neutral-400">
@@ -138,7 +145,7 @@ export default function Footer({ siteSettings, logoUrl }: FooterProps) {
                             Export Offerings
                         </h4>
                         <div className="flex flex-col gap-4">
-                            {categoryLinks.map((link) => (
+                             {finalCategoryLinks.map((link) => (
                                 <Link
                                     key={link.label}
                                     href={link.href}
@@ -210,7 +217,7 @@ export default function Footer({ siteSettings, logoUrl }: FooterProps) {
                                     className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider hover:bg-[#20ba5f] transition-all duration-300 shadow-md shadow-[#25D366]/10"
                                 >
                                     <span>WhatsApp Trade Desk</span>
-                                    <ExternalLink className="h-3.5 w-3.5" />
+                                    <FaWhatsapp className="h-4 w-4" />
                                 </a>
                             </div>
                         )}

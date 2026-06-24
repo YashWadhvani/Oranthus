@@ -306,31 +306,38 @@ export default async function AboutPage() {
       )}
 
       {/* 7. CTA Inquiry Banner */}
-      <section className="py-20 sm:py-28 section-padding bg-[#FAF8F5] border-t border-[#ECE8DF]/40">
-        <div className="container-width text-center">
-          <ScrollReveal className="max-w-2xl mx-auto flex flex-col items-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold mb-6">
-              Partner With Us
-            </p>
-            <h2 
-              className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#111111] mb-6 leading-tight"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              Coordinate Your Next Import Shipment
-            </h2>
-            <p className="text-sm sm:text-base text-[#555555] font-light leading-relaxed mb-10">
-              Our sourcing team is ready to analyze your product specifications, schedule trial batches, and prepare a custom ocean or air container freight quotation.
-            </p>
-            <div className="flex gap-4">
-              <Button 
-                asChild
-                className="bg-[#D9A96B] text-white hover:bg-[#c89a5a] px-8 rounded-lg shadow-md shadow-[#D9A96B]/10"
-              >
-                <Link href="/contact">
-                  Contact Sourcing Desk
-                </Link>
-              </Button>
-            </div>
+      <section className="py-20 sm:py-28 md:py-32 section-padding bg-[#FFFFFF]">
+        <div className="container-width">
+          <ScrollReveal>
+            <Card className="rounded-3xl border border-[#ECE8DF] bg-gradient-to-br from-[#FAF8F5] via-[#FAF8F5] to-[#D9A96B]/5 shadow-[0_12px_40px_rgba(15,15,15,0.03)] relative overflow-hidden">
+              <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#D9A96B]/5 blur-3xl pointer-events-none" />
+              
+              <CardContent className="p-8 sm:p-12 md:p-16 lg:p-20 relative z-10 text-center flex flex-col items-center">
+                <p className="text-xs uppercase tracking-[0.4em] text-[#D9A96B] font-semibold mb-6">
+                  Partner With Us
+                </p>
+                <h2 
+                  className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#111111] max-w-3xl leading-[1.2]" 
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  Coordinate Your Next Import Shipment
+                </h2>
+                <p className="mt-6 text-base sm:text-lg text-[#555555] max-w-2xl font-light leading-relaxed mb-10">
+                  Our sourcing team is ready to analyze your product specifications, schedule trial batches, and prepare a custom ocean or air container freight quotation.
+                </p>
+                <div className="flex gap-4">
+                  <Button 
+                    asChild
+                    size="lg"
+                    className="bg-[#D9A96B] text-white hover:bg-[#c89a5a] px-8 rounded-full shadow-lg shadow-[#D9A96B]/20"
+                  >
+                    <Link href="/contact">
+                      Contact Sourcing Desk
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </ScrollReveal>
         </div>
       </section>

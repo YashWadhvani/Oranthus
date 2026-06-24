@@ -40,6 +40,7 @@ export default async function ProductsPage() {
         title=""
         description=""
         categories={categories}
+        columns={content?.categoriesColumns}
       />
     </main>
   );

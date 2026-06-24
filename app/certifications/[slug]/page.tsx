@@ -72,9 +72,17 @@ export default async function CertificationDetailPage({ params }: CertificationP
               </h1>
             </div>
 
-            {/* Icon representation */}
-            <div className="h-20 w-20 shrink-0 flex items-center justify-center rounded-2xl bg-[#FAF8F5] border border-[#ECE8DF] p-3 shadow-inner">
-              <Award className="h-10 w-10 text-[#D9A96B]" />
+            {/* Icon or Logo representation */}
+            <div className="h-20 w-20 shrink-0 flex items-center justify-center rounded-2xl bg-[#FAF8F5] border border-[#ECE8DF] overflow-hidden p-2">
+              {cert.logoUrl ? (
+                <img
+                  src={cert.logoUrl}
+                  alt={cert.title || "Authority Logo"}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <Award className="h-10 w-10 text-[#D9A96B]" />
+              )}
             </div>
           </div>
 

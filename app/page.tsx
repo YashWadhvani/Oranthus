@@ -2,6 +2,7 @@ import SlideHero from "@/components/home/SlideHero";
 import Marquee from "@/components/home/Marquee";
 import AnimatedStats from "@/components/home/AnimatedStats";
 import About from "@/components/home/About";
+import TradeStory from "@/components/home/TradeStory";
 import Services from "@/components/home/Services";
 import Categories from "@/components/home/Categories";
 import Certifications from "@/components/home/Certifications";
@@ -60,14 +61,27 @@ export default async function HomePage() {
                 title={about?.overviewTitle || "Born in India. Built for the World."}
                 description={about?.overviewDescription}
                 stats={null}
+                values={about?.values}
+                sourcingPoints={about?.sourcingPoints}
+            />
+
+            {/* Trade Story (Scale & Trust) */}
+            <TradeStory
+                eyebrow={homepage?.tradeEyebrow}
+                title={homepage?.tradeTitle}
+                description={homepage?.tradeDescription}
+                storyTitle={homepage?.tradeStoryTitle}
+                storyDescription={homepage?.tradeStoryDescription}
+                storyHighlights={homepage?.tradeStoryHighlights}
             />
 
             {/* Services */}
             <Services
-                eyebrow={homepage?.servicesEyebrow}
-                title={homepage?.servicesTitle}
-                description={homepage?.servicesDescription}
+                eyebrow="Our Services"
+                title="Complete Export Solutions"
+                description="End-to-end sourcing and export services designed to simplify your procurement needs."
                 services={content?.services ?? []}
+                columns={homepage?.servicesColumns}
             />
 
             {/* Categories */}
@@ -76,14 +90,16 @@ export default async function HomePage() {
                 title={homepage?.categoriesTitle && homepage.categoriesTitle !== "Explore Our Products" ? homepage.categoriesTitle : "Explore Our Categories"}
                 description={homepage?.categoriesDescription}
                 categories={content?.categories ?? []}
+                columns={homepage?.categoriesColumns}
             />
 
             {/* Certifications */}
             <Certifications
-                eyebrow={homepage?.certificationsEyebrow}
-                title={homepage?.certificationsTitle}
-                description={homepage?.certificationsDescription}
+                eyebrow="Certifications"
+                title="International Standards & Compliance"
+                description="Trusted badges and approvals that reinforce our quality-first export process."
                 certifications={content?.certifications ?? []}
+                columns={homepage?.certificationsColumns}
             />
 
             {/* CTA */}
