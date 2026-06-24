@@ -48,12 +48,12 @@ export default async function HomePage() {
             <Marquee items={homepage?.marqueeItems ?? []} />
 
             {/* Stats (Performance Snapshot) */}
-            <AnimatedStats
+            {/* <AnimatedStats
                 eyebrow={homepage?.statsEyebrow || "Performance Snapshot"}
                 title={homepage?.statsTitle || "Trusted by importers across markets"}
                 description={homepage?.statsDescription || "A concise view of our export scale, reliability, and delivery consistency."}
                 stats={stats}
-            />
+            /> */}
 
             {/* About Profile (Merged/Single Section) */}
             <About
