@@ -3,6 +3,8 @@ import { homepageQuery } from "@/sanity/lib/queries";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export const revalidate = 60;
 import {
   Search,
   Ship,

@@ -2,6 +2,8 @@ import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+
+export const revalidate = 60;
 import { 
   Mail, 
   Phone, 

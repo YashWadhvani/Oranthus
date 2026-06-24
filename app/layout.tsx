@@ -12,6 +12,8 @@ import { client } from "@/sanity/lib/client";
 import { siteSettingsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
     title: "ORANTHUS",
     description: "Born in India. Built for the World.",

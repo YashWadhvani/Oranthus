@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Award, ShieldCheck, BadgeCheck, FileText, CheckCircle2, Calendar, FileDown, ExternalLink } from "lucide-react";
+import { Award, ShieldCheck, BadgeCheck, FileText, CheckCircle2, Calendar } from "lucide-react";
 import { cardVariants, itemVariants, sectionVariants } from "./motion";
 import { Button } from "@/components/ui/button";
 
@@ -22,10 +22,8 @@ type Certification = {
   featured?: boolean | null;
   shortDescription?: string | null;
   fullDescription?: string | null;
-  pdfUrl?: string | null;
   logoUrl?: string | null;
   coverImageUrl?: string | null;
-  pdfFileUrl?: string | null;
   issuingCountry?: string | null;
 };
 
@@ -95,7 +93,6 @@ export default function Certifications({
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 max-w-5xl mx-auto">
           {certsToRender.map((item, index) => {
-            const docLink = item.pdfFileUrl || item.pdfUrl;
             return (
               <motion.div 
                 key={item._id ?? `${item.title ?? "certification"}-${index}`} 
@@ -184,20 +181,6 @@ export default function Certifications({
                         Details
                       </Link>
                     </Button>
-                  )}
-                  {docLink && (
-                    <>
-                      <Button asChild variant="outline" className="text-xs border-[#ECE8DF] text-[#111111] hover:bg-[#FAF8F5] rounded-lg px-3">
-                        <a href={docLink} target="_blank" rel="noopener noreferrer" title="View Document File">
-                          <ExternalLink className="h-3.5 w-3.5" />
-                        </a>
-                      </Button>
-                      <Button asChild variant="outline" className="text-xs border-[#ECE8DF] text-[#111111] hover:bg-[#FAF8F5] rounded-lg px-3">
-                        <a href={docLink} download title="Download Document File">
-                          <FileDown className="h-3.5 w-3.5" />
-                        </a>
-                      </Button>
-                    </>
                   )}
                 </div>
               </motion.div>

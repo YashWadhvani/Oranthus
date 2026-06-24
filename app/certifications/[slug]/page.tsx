@@ -2,7 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { client } from "@/sanity/lib/client";
 import { certificationQuery } from "@/sanity/lib/queries";
-import { Award, ShieldCheck, BadgeCheck, FileText, CheckCircle2, Calendar, FileDown, ExternalLink, ArrowLeft } from "lucide-react";
+import { Award, ShieldCheck, BadgeCheck, FileText, CheckCircle2, Calendar, ArrowLeft } from "lucide-react";
+
+export const revalidate = 60;
 
 type CertificationPageProps = {
   params: Promise<{
@@ -31,8 +33,6 @@ export default async function CertificationDetailPage({ params }: CertificationP
   if (!cert) {
     notFound();
   }
-
-  const docLink = cert.pdfFileUrl || cert.pdfUrl;
 
   return (
     <main className="min-h-screen bg-[#FAF8F5] py-20 sm:py-28 section-padding">
@@ -139,29 +139,6 @@ export default async function CertificationDetailPage({ params }: CertificationP
               </p>
             </div>
           </div>
-
-          {/* Action buttons */}
-          {docLink && (
-            <div className="pt-8 border-t border-[#ECE8DF]/60 flex flex-col sm:flex-row gap-4">
-              <a
-                href={docLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-[#111111] text-white px-6 py-4 text-sm uppercase tracking-[0.15em] font-semibold hover:bg-[#D9A96B] transition-colors shadow-md hover:shadow-lg duration-300"
-              >
-                <ExternalLink className="h-4 w-4" />
-                View Document
-              </a>
-              <a
-                href={docLink}
-                download
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl border border-[#ECE8DF] bg-white text-[#111111] px-6 py-4 text-sm uppercase tracking-[0.15em] font-semibold hover:bg-[#FAF8F5] transition-colors shadow-sm duration-300"
-              >
-                <FileDown className="h-4 w-4 text-[#D9A96B]" />
-                Download PDF Copy
-              </a>
-            </div>
-          )}
         </div>
       </div>
     </main>

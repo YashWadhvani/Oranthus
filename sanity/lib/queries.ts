@@ -112,13 +112,10 @@ export const homepageQuery = `
     featured,
     shortDescription,
     fullDescription,
-    pdfUrl,
     logo,
     coverImage,
-    pdfFile,
     "logoUrl": logo.asset->url,
-    "coverImageUrl": coverImage.asset->url,
-    "pdfFileUrl": pdfFile.asset->url
+    "coverImageUrl": coverImage.asset->url
   },
 
   "contactInfo": *[_type == "contactInfo"] | order(_createdAt asc)[0],
@@ -159,13 +156,10 @@ export const certificationsQuery = `
   featured,
   shortDescription,
   fullDescription,
-  pdfUrl,
   logo,
   coverImage,
-  pdfFile,
   "logoUrl": logo.asset->url,
-  "coverImageUrl": coverImage.asset->url,
-  "pdfFileUrl": pdfFile.asset->url
+  "coverImageUrl": coverImage.asset->url
 }
 `;
 
@@ -185,13 +179,10 @@ export const certificationQuery = defineQuery(`
     featured,
     shortDescription,
     fullDescription,
-    pdfUrl,
     logo,
     coverImage,
-    pdfFile,
     "logoUrl": logo.asset->url,
-    "coverImageUrl": coverImage.asset->url,
-    "pdfFileUrl": pdfFile.asset->url
+    "coverImageUrl": coverImage.asset->url
   }
 `);
 

@@ -5,6 +5,8 @@ import { client } from "@/sanity/lib/client";
 import { categoryPageQuery } from "@/sanity/lib/queries";
 import CategoryProductsList from "@/components/products/CategoryProductsList";
 
+export const revalidate = 60;
+
 type CategoryProduct = {
   _id: string;
   name: string;

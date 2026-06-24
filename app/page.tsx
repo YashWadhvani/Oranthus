@@ -11,6 +11,8 @@ import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
+export const revalidate = 60;
+
 export default async function HomePage() {
     const content = await client.fetch(homepageQuery);
 

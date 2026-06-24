@@ -22,6 +22,8 @@ import { homepageQuery } from "@/sanity/lib/queries";
 import ScrollReveal from "@/components/layout/ScrollReveal";
 import { ScrollStagger, ScrollStaggerItem } from "@/components/layout/ScrollStagger";
 
+export const revalidate = 60;
+
 const iconMap: Record<string, React.ComponentType<any>> = {
   shieldCheck: ShieldCheck,
   coins: Coins,

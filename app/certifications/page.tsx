@@ -3,6 +3,8 @@ import { client } from "@/sanity/lib/client";
 import { homepageQuery } from "@/sanity/lib/queries";
 import ScrollReveal from "@/components/layout/ScrollReveal";
 
+export const revalidate = 60;
+
 export default async function CertificationsPage() {
   const data = await client.fetch(homepageQuery);
   const content = data?.homepage;

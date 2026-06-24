@@ -131,35 +131,6 @@ export default defineType({
       group: "documents",
       options: { hotspot: true },
     }),
-    defineField({
-      name: "pdfFile",
-      title: "PDF Document (Upload)",
-      type: "file",
-      group: "documents",
-      options: { accept: ".pdf" },
-      validation: (Rule) =>
-        Rule.custom((currentValue, context) => {
-          const parent = context.parent as any;
-          if (!currentValue && !parent?.pdfUrl) {
-            return "Either PDF File (Upload) or PDF URL must be provided";
-          }
-          return true;
-        }),
-    }),
-    defineField({
-      name: "pdfUrl",
-      title: "PDF Document URL (External Fallback)",
-      type: "url",
-      group: "documents",
-      validation: (Rule) =>
-        Rule.custom((currentValue, context) => {
-          const parent = context.parent as any;
-          if (!currentValue && !parent?.pdfFile) {
-            return "Either PDF File (Upload) or PDF URL must be provided";
-          }
-          return true;
-        }),
-    }),
 
     // --- Status Group ---
     defineField({
