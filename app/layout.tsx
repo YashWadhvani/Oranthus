@@ -74,6 +74,9 @@ export async function generateMetadata(): Promise<Metadata> {
             ? { icons: { icon: faviconUrl, shortcut: faviconUrl, apple: faviconUrl } }
             : {}),
         alternates: { canonical: SITE_URL },
+        verification: {
+            google: "bSD3_tut1_TVbVgWwmF7rY67VW1xGMwTfp2od13JBGA"
+        }
     };
 }
 
